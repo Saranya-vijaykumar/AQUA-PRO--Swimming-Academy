@@ -217,12 +217,14 @@
       const isOpen = content.classList.contains('active');
 
       if (!isOpen) {
+        content.classList.remove('hidden');
         content.classList.add('active');
         content.style.maxHeight = content.scrollHeight + 'px';
         if (icon) icon.classList.add('rotate-180');
       } else {
         content.classList.remove('active');
         content.style.maxHeight = null;
+        content.classList.add('hidden');
         if (icon) icon.classList.remove('rotate-180');
       }
     });

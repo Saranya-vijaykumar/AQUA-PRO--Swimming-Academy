@@ -147,7 +147,7 @@
   <!-- Hero Banner with Content & Pillars on Left, Swimmer Image on Right -->
   <section class="relative isolate overflow-hidden py-6 sm:py-12 lg:py-16 min-h-0 sm:min-h-[480px] lg:min-h-[560px] flex items-center bg-sky-900">
     <!-- Hero Swimmer Image (Minimized & Perfectly Scaled on Mobile) -->
-    <img src="assets/img/hero-girl.jpg" alt="Young swimmer smiling underwater" class="absolute inset-0 -z-20 h-full w-full object-cover object-[86%_center] sm:object-[82%_center] lg:object-[86%_center] brightness-105 contrast-105">
+    <img src="assets/img/hero-girl.jpg" alt="Young swimmer smiling underwater" class="hidden sm:block absolute inset-0 -z-20 h-full w-full object-cover object-[86%_center] sm:object-[82%_center] lg:object-[86%_center] brightness-105 contrast-105">
     
     <!-- Smooth Gradient Overlay on Left -->
     <div class="absolute inset-0 -z-10 bg-gradient-to-t sm:bg-gradient-to-r from-sky-950/95 via-sky-950/80 to-sky-950/20 sm:from-sky-950/95 sm:via-sky-950/65 sm:to-transparent sm:w-[65%]"></div>
@@ -217,8 +217,13 @@
               <h4 class="text-[10px] sm:text-xs font-bold text-white leading-tight">Stronger You</h4>
               <p class="text-[8px] sm:text-[10px] text-sky-200 leading-tight">Confidence for Life</p>
             </div>
-          </div>
         </div>
+
+        <!-- Mobile Swimmer Image Box (Minimized & Framed on Mobile) -->
+        <div class="block sm:hidden mt-6 relative aspect-[16/10] rounded-3xl overflow-hidden shadow-xl border border-white/20">
+          <img src="assets/img/hero-girl.jpg" alt="Young swimmer smiling underwater" class="w-full h-full object-cover object-[86%_center] brightness-105 contrast-105">
+        </div>
+
       </div>
     </div>
   </section>
@@ -278,7 +283,7 @@
 
         <a href="programs.html#competitive" class="group rounded-3xl overflow-hidden bg-white dark:bg-slate-900 border-2 border-white/80 dark:border-slate-800 shadow-2xl hover:border-amber-400 card-lift splash-hover-card race-line-track transition-all duration-300 flex flex-col">
           <div class="h-40 sm:h-44 w-full overflow-hidden relative zoom-on-hover">
-            <img src="assets/img/prog-competitive.jpg" alt="Competitive swim training" class="h-full w-full object-cover card-zoom-img">
+            <img src="assets/img/competitive-1.jpg" alt="Competitive swim training" class="h-full w-full object-cover card-zoom-img">
             <span class="absolute top-3 left-3 bg-amber-600/90 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full shadow">Elite Squad</span>
           </div>
           <div class="p-4 sm:p-5 flex items-center justify-between flex-1">
@@ -467,6 +472,101 @@
           </a>
         </div>
 
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Latest Swim Insights & Blog Section -->
+  <section class="py-16 sm:py-20 bg-white dark:bg-slate-900 border-t border-slate-200/80 dark:border-slate-800/80 reveal-fade-up">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-3">
+        <span class="px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-950 text-cyan-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-wider">News &amp; Tips</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-heading">Latest Swim Insights &amp; Guides</h2>
+        <p class="text-sm text-slate-600 dark:text-slate-400">Expert advice on swimming techniques, safety checklists, and athletic conditioning.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Blog Card 1: Bilateral Breathing -->
+        <article class="bg-slate-50 dark:bg-slate-800/50 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group card-lift">
+          <div>
+            <div class="aspect-[16/10] overflow-hidden zoom-on-hover relative">
+              <img src="assets/img/blog-breathing.jpg" alt="Swimmer practicing side bilateral freestyle breathing" class="w-full h-full object-cover card-zoom-img group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 left-3 bg-sky-600/90 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full shadow">Technique</span>
+            </div>
+            <div class="p-6 space-y-2.5">
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white font-heading group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                5 Drills for Bilateral Freestyle Breathing
+              </h3>
+              <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                Step-by-step poolside exercises our coaches use to turn breathing panic and head-lifting into a relaxed stroke rhythm.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0 flex justify-between items-center">
+            <span class="text-[10px] text-slate-400 font-medium">6 min read</span>
+            <a href="blog-details.html" class="inline-flex items-center text-xs font-bold text-sky-600 dark:text-sky-400 hover:text-sky-700 dark:hover:text-sky-300">
+              Read Excerpt <i class="fas fa-arrow-right ml-1.5 rtl:rotate-180 text-[10px]"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Blog Card 2: Packing Checklist -->
+        <article class="bg-slate-50 dark:bg-slate-800/50 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group card-lift">
+          <div>
+            <div class="aspect-[16/10] overflow-hidden zoom-on-hover relative">
+              <img src="assets/img/blog-packing.jpg" alt="Child swim lesson gear checklist" class="w-full h-full object-cover card-zoom-img group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 left-3 bg-cyan-600/90 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full shadow">Parent Guide</span>
+            </div>
+            <div class="p-6 space-y-2.5">
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white font-heading group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                What to Pack for Your Child's First Lesson
+              </h3>
+              <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                A calm, practical checklist covering towels, caps, goggles, thermal wraps, and stress-free arrival at our arena.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0 flex justify-between items-center">
+            <span class="text-[10px] text-slate-400 font-medium">4 min read</span>
+            <a href="blog-detail-packing.html" class="inline-flex items-center text-xs font-bold text-sky-600 dark:text-sky-400 hover:text-sky-700 dark:hover:text-sky-300">
+              Read Excerpt <i class="fas fa-arrow-right ml-1.5 rtl:rotate-180 text-[10px]"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Blog Card 3: Overcoming Adult Anxiety -->
+        <article class="bg-slate-50 dark:bg-slate-800/50 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group card-lift">
+          <div>
+            <div class="aspect-[16/10] overflow-hidden zoom-on-hover relative">
+              <img src="assets/img/blog-adult-confidence.jpg" alt="Adult fitness swimming and confidence" class="w-full h-full object-cover card-zoom-img group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 left-3 bg-purple-600/90 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full shadow">Adult Wellness</span>
+            </div>
+            <div class="p-6 space-y-2.5">
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white font-heading group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                Overcoming Deep Water Anxiety as an Adult
+              </h3>
+              <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                Buoyancy facts, psychological comfort tricks, and step-by-step safety drills to feel confident in any depth.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0 flex justify-between items-center">
+            <span class="text-[10px] text-slate-400 font-medium">5 min read</span>
+            <a href="blog-detail-adult-confidence.html" class="inline-flex items-center text-xs font-bold text-sky-600 dark:text-sky-400 hover:text-sky-700 dark:hover:text-sky-300">
+              Read Excerpt <i class="fas fa-arrow-right ml-1.5 rtl:rotate-180 text-[10px]"></i>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="text-center mt-10 sm:mt-12">
+        <a href="blog.html" class="inline-flex items-center justify-center px-7 py-3.5 rounded-2xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs shadow-md transition-all hover:scale-[1.02]">
+          Explore All Articles <i class="fas fa-arrow-right ml-1.5 rtl:rotate-180"></i>
+        </a>
       </div>
 
     </div>

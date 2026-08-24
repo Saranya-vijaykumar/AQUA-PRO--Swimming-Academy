@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Create Account — Aquarium Pro Swimming Academy</title>
+  <title>Create Account ï¿½ Aquarium Pro Swimming Academy</title>
   <meta name="description" content="Register your family or swimmer account with Aquarium Pro Swimming Academy.">
   
   <link rel="icon" type="image/png" href="assets/img/aquariumpro-logo.jpg">
@@ -50,39 +50,48 @@
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col justify-between">
 
   <!-- Top Navigation Header with Responsive Mobile Hamburger -->
-  <header id="main-header" class="sticky top-0 z-50 glass-nav border-b border-slate-200/80 dark:border-slate-800/80 py-3 transition-all duration-300 backdrop-blur-md bg-white/90 dark:bg-slate-900/90">
+    <!-- Header / Navigation -->
+  <header id="main-header" class="sticky top-0 z-50 glass-nav border-b border-slate-200/80 dark:border-slate-800/80 py-4 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
       
-      <!-- Brand Logo linking to Home -->
+      <!-- Brand Logo -->
       <a href="index.html" class="flex items-center group" title="Aquarium Pro Home">
-        <img src="assets/img/aquariumpro-logo.png" alt="Aquarium Pro Swimming Academy" class="logo-brand-img h-11 sm:h-13 w-auto max-w-[210px] object-contain ">
+        <img src="assets/img/aquariumpro-logo.png" alt="Aquarium Pro Swimming Academy" class="logo-brand-img h-12 sm:h-14 w-auto max-w-[210px] object-contain">
       </a>
 
-      <!-- Desktop Quick Links -->
-      <nav class="hidden md:flex items-center space-x-6 rtl:space-x-reverse text-xs font-bold text-slate-700 dark:text-slate-300">
-        <a href="index.html" class="hover:text-sky-600 dark:hover:text-sky-400">Home</a>
-        <a href="programs.html" class="hover:text-sky-600 dark:hover:text-sky-400">Programs</a>
-        <a href="coaches.html" class="hover:text-sky-600 dark:hover:text-sky-400">Coaches</a>
-        <a href="batch-timings.html" class="hover:text-sky-600 dark:hover:text-sky-400">Batch Timings</a>
-        <a href="facilities.html" class="hover:text-sky-600 dark:hover:text-sky-400">Facilities</a>
-        <a href="pricing.html" class="hover:text-sky-600 dark:hover:text-sky-400">Pricing</a>
-        <a href="contact.html" class="hover:text-sky-600 dark:hover:text-sky-400">Contact</a>
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden lg:flex items-center space-x-7 rtl:space-x-reverse text-sm font-bold text-slate-700 dark:text-slate-200">
+        <div class="relative group">
+          <button class="flex items-center gap-1 py-4 hover:text-sky-600 dark:hover:text-sky-400">Home <i class="fas fa-chevron-down text-[9px]"></i></button>
+          <div class="absolute top-full left-0 rtl:left-auto rtl:right-0 w-52 rounded-2xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+            <a href="index.html" class="block rounded-xl px-3 py-2.5 hover:bg-sky-50 dark:hover:bg-slate-800">Home 1 &middot; Academy</a>
+            <a href="home-agency.html" class="block rounded-xl px-3 py-2.5 hover:bg-sky-50 dark:hover:bg-slate-800">Home 2 &middot; Wellness</a>
+          </div>
+        </div>
+        <a href="about.html" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">About Us</a>
+        <a href="programs.html" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Programs</a>
+        <a href="coaches.html" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Coaches</a>
+        <a href="batch-timings.html" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Batch Timings</a>
+        <a href="facilities.html" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Facilities &amp; Pools</a>
+        <a href="pricing.html" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Pricing</a>
+        <a href="blog.html" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Blog</a>
+        <a href="contact.html" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Contact</a>
       </nav>
 
-      <!-- Right Controls: RTL + Theme Toggle + Mobile Hamburger -->
-      <div class="flex items-center space-x-3 rtl:space-x-reverse">
-        <button class="rtl-toggle-btn p-2 w-9 h-9 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 text-xs font-bold transition-colors" title="Toggle RTL">
-          <span class="rtl-text">RTL</span>
+      <!-- Right Controls: RTL + Dark Mode + CTA -->
+      <div class="flex items-center gap-1.5 sm:gap-2.5 rtl:space-x-reverse shrink-0">
+        <button class="rtl-toggle-btn w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 text-xs font-bold transition-colors" title="Toggle RTL">
+          <span class="rtl-text text-[11px] sm:text-xs">RTL</span>
         </button>
-        <button class="theme-toggle-btn p-2 w-9 h-9 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" title="Toggle Dark Mode">
-          <i class="fas fa-moon moon-icon"></i>
-          <i class="fas fa-sun sun-icon hidden text-amber-400"></i>
+        <button class="theme-toggle-btn w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" title="Toggle Dark Mode" aria-label="Toggle Dark Mode">
+          <i class="fas fa-moon moon-icon text-xs sm:text-sm"></i>
+          <i class="fas fa-sun sun-icon hidden text-amber-400 text-xs sm:text-sm"></i>
         </button>
-        <a href="index.html" class="hidden sm:inline-flex items-center px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-xs font-bold text-slate-700 dark:text-slate-200 transition-colors">
-          <i class="fas fa-arrow-left mr-1.5 rtl:mr-0 rtl:ml-1.5 rtl-flip"></i> Back to Home
-        </a>
-        <button id="mobile-menu-toggle" class="md:hidden p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300" aria-label="Open Mobile Menu">
-          <i class="fas fa-bars text-lg"></i>
+        <button data-open-trial class="hidden sm:inline-flex items-center justify-center px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl bg-sky-500 hover:bg-sky-600 text-white text-xs font-bold shadow-lg shadow-sky-500/25 transition-all transform hover:-translate-y-0.5">
+          Book Free Trial
+        </button>
+        <button id="mobile-menu-toggle" class="lg:hidden w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700">
+          <i class="fas fa-bars text-sm"></i>
         </button>
       </div>
 
@@ -90,6 +99,7 @@
   </header>
 
   <!-- Mobile Menu Drawer (100% Functional Hamburger Navigation) -->
+    <!-- Mobile Menu Drawer -->
   <div id="mobile-menu-backdrop" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
   <aside id="mobile-menu-drawer" class="fixed top-0 right-0 rtl:right-auto rtl:left-0 w-80 max-w-[85vw] h-full bg-white dark:bg-slate-900 z-50 shadow-2xl p-6 flex flex-col justify-between transform translate-x-full rtl:-translate-x-full transition-transform duration-300 overflow-y-auto">
     <div>
@@ -97,28 +107,29 @@
         <a href="index.html" class="flex items-center space-x-2 rtl:space-x-reverse" title="Back to Home">
           <img src="assets/img/aquariumpro-logo.png" alt="Aquarium Pro" class="logo-brand-img h-10 w-auto rounded-lg">
         </a>
-        <button id="mobile-menu-close" class="p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200" aria-label="Close Mobile Menu">
+        <button id="mobile-menu-close" class="p-2 text-slate-400 hover:text-slate-600">
           <i class="fas fa-times text-lg"></i>
         </button>
       </div>
       <div class="py-6 space-y-4 font-bold text-slate-700 dark:text-slate-200 text-sm">
-        <a href="index.html" class="block py-2 hover:text-sky-600"><i class="fas fa-house mr-2 text-sky-500"></i> Home 1 · Academy</a>
-        <a href="home-agency.html" class="block py-2 hover:text-sky-600"><i class="fas fa-spa mr-2 text-cyan-500"></i> Home 2 · Wellness</a>
+        <div class="py-2">
+          <span class="block text-sky-600 text-xs uppercase font-black tracking-wider">Home</span>
+          <a href="index.html" class="block py-1 pl-4 text-xs hover:text-sky-600">Home 1 &middot; Academy</a>
+          <a href="home-agency.html" class="block py-1 pl-4 text-xs hover:text-sky-600">Home 2 &middot; Wellness</a>
+        </div>
         <a href="about.html" class="block py-2 hover:text-sky-600">About Us</a>
-        <a href="programs.html" class="block py-2 hover:text-sky-600">Programs & Curriculums</a>
+        <a href="programs.html" class="block py-2 hover:text-sky-600">Programs &amp; Curriculums</a>
         <a href="coaches.html" class="block py-2 hover:text-sky-600">Certified Coaches</a>
-        <a href="batch-timings.html" class="block py-2 hover:text-sky-600">Batch Timings Schedule</a>
-        <a href="facilities.html" class="block py-2 hover:text-sky-600">Facilities & Pool Specs</a>
-        <a href="pricing.html" class="block py-2 hover:text-sky-600">Pricing & Memberships</a>
-        <a href="blog.html" class="block py-2 hover:text-sky-600">News & Guides</a>
-        <a href="contact.html" class="block py-2 hover:text-sky-600">Enrollment & Contact</a>
-        <a href="login.html" class="block py-2 text-sky-500 font-extrabold"><i class="fas fa-arrow-right-to-bracket mr-2"></i> Existing Member Login</a>
+        <a href="batch-timings.html" class="block py-2 hover:text-sky-600">Batch Timings</a>
+        <a href="facilities.html" class="block py-2 hover:text-sky-600">Facilities &amp; Pool Specs</a>
+        <a href="pricing.html" class="block py-2 hover:text-sky-600">Pricing &amp; Memberships</a>
+        <a href="blog.html" class="block py-2 hover:text-sky-600">News &amp; Guides</a>
+        <a href="contact.html" class="block py-2 hover:text-sky-600">Enrollment &amp; Contact</a>
+        <a href="login.html" class="block py-2 text-sky-500 font-extrabold"><i class="fas fa-user mr-1.5"></i> Member Login</a>
       </div>
     </div>
-    <div class="pt-6 border-t border-slate-100 dark:border-slate-800 space-y-2">
-      <a href="index.html" class="block w-full py-3 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs shadow-md text-center">
-        Return to Home Page
-      </a>
+    <div class="pt-6 border-t border-slate-100 dark:border-slate-800">
+      <button data-open-trial class="w-full py-3 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs shadow-md">Book Free Assessment</button>
     </div>
   </aside>
 
@@ -148,11 +159,11 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
             <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Password</label>
-            <input name="password" type="password" required minlength="6" placeholder="••••••••" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500 transition-colors">
+            <input name="password" type="password" required minlength="6" placeholder="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500 transition-colors">
           </div>
           <div>
             <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Confirm</label>
-            <input name="confirm_password" type="password" required minlength="6" placeholder="••••••••" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500 transition-colors">
+            <input name="confirm_password" type="password" required minlength="6" placeholder="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500 transition-colors">
           </div>
         </div>
 
@@ -177,13 +188,54 @@
           <span>Aquarium Pro Swimming Academy</span>
         </a>
       </div>
-      <p class="text-[11px] text-slate-500">© 2026 Aquarium Pro Swimming Academy. All rights reserved.</p>
+      <p class="text-[11px] text-slate-500">ï¿½ 2026 Aquarium Pro Swimming Academy. All rights reserved.</p>
     </div>
   </footer>
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/forms.js"></script>
   <script src="assets/js/nav-active.js"></script>
+
+  <!-- Free Trial Modal (100% Functional) -->
+  <div id="trial-modal" class="modal-container fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+    <div id="trial-backdrop" class="fixed inset-0 bg-slate-900/75 backdrop-blur-sm"></div>
+    <div class="relative bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 max-w-lg w-full shadow-2xl border border-slate-200 dark:border-slate-800 z-10">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800">
+        <div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white font-heading">Book Free Swimmer Assessment</h3>
+          <p class="text-xs text-slate-500">1-on-1 assessment with certified coach in heated pool.</p>
+        </div>
+        <button id="trial-close" class="p-2 text-slate-400 hover:text-slate-600"><i class="fas fa-times"></i></button>
+      </div>
+
+      <form data-aquapro-form class="mt-4 space-y-3">
+        <input name="coach_note" type="hidden" id="modal-coach-note" value="">
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Swimmer / Parent Name</label>
+          <input name="full_name" type="text" required placeholder="Rachel Adams" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500">
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Phone Number</label>
+            <input name="phone" type="tel" required placeholder="+1 (800) 555-0199" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Age Group</label>
+            <select name="age_group" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500">
+              <option>Toddlers &amp; Kids (Ages 2-12)</option>
+              <option>Teens (Ages 13-18)</option>
+              <option>Adults (18+)</option>
+              <option>Competitive Athletes</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="w-full py-3.5 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs shadow-md transition-colors mt-2">
+          Confirm Free Trial Session
+        </button>
+      </form>
+    </div>
+  </div>
 </body>
 </html>
 
