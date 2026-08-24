@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AquaPro — Premier Swimming Academy & Aquatic Center</title>
+  <meta name="description" content="State-of-the-art swimming academy featuring 50m Olympic pools, certified FINA coaches, heated learner pools, and progressive programs for kids, teens, and adults.">
+  
+  <meta property="og:title" content="AquaPro — Premier Swimming Academy & Aquatic Center">
+  <meta property="og:description" content="State-of-the-art swimming academy with 50m Olympic pools, certified coaches, and programs for all ages.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="assets/img/og.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/img/aquariumpro-logo.jpg">
+
+  <!-- Tailwind CSS CDN + Config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            },
+            accent: {
+              400: '#22d3ee',
+              500: '#06b6d4',
+              600: '#0891b2',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            heading: ['"Outfit"', 'sans-serif'],
+            rtl: ['"Cairo"', '"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-gradient-to-r from-sky-600 via-cyan-600 to-sky-700 text-white text-xs font-semibold py-2.5 px-4">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center space-x-2.5 rtl:space-x-reverse">
+        <span class="bg-white/20 px-2 py-0.5 rounded-full text-[10px] uppercase font-bold tracking-wider">Summer 2026</span>
+        <span>🏊 Admissions Open! Claim a Free 1-Day Swimmer Skill Assessment</span>
+      </div>
+      <div class="flex items-center space-x-6 rtl:space-x-reverse">
+        <a href="tel:+18005550299" class="hover:text-cyan-200 transition-colors flex items-center gap-1.5"><i class="fas fa-phone text-[10px]"></i> +1 (800) 555-0299</a>
+        <a href="batch-timings.html" class="hover:underline font-bold text-cyan-200 flex items-center gap-1"><i class="far fa-clock"></i> View Schedule</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header id="main-header" class="sticky top-0 z-50 glass-nav border-b border-slate-200/80 dark:border-slate-800/80 py-4 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center group" title="Aquarium Pro Home">
+        <img src="assets/img/aquariumpro-logo.png" alt="Aquarium Pro Swimming Academy" class="logo-brand-img h-12 sm:h-14 w-auto max-w-[210px] object-contain">
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden lg:flex items-center space-x-8 rtl:space-x-reverse text-sm font-bold text-slate-700 dark:text-slate-200"><div class="relative group"><button class="flex items-center gap-1 py-4 hover:text-sky-600 dark:hover:text-sky-400">Home <i class="fas fa-chevron-down text-[9px]"></i></button><div class="absolute top-full left-0 rtl:left-auto rtl:right-0 w-52 rounded-2xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"><a href="index.html" class="block rounded-xl px-3 py-2.5 hover:bg-sky-50 dark:hover:bg-slate-800">Home 1 · Academy</a><a href="home-agency.html" class="block rounded-xl px-3 py-2.5 hover:bg-sky-50 dark:hover:bg-slate-800">Home 2 · Wellness</a></div></div><a href="about.html" class="hover:text-sky-600 dark:hover:text-sky-400">About Us</a><a href="programs.html" class="hover:text-sky-600 dark:hover:text-sky-400">Programs</a><a href="coaches.html" class="hover:text-sky-600 dark:hover:text-sky-400">Coaches</a><a href="batch-timings.html" class="hover:text-sky-600 dark:hover:text-sky-400">Batch Timings</a><a href="facilities.html" class="hover:text-sky-600 dark:hover:text-sky-400">Facilities & Pools</a><a href="contact.html" class="hover:text-sky-600 dark:hover:text-sky-400">Contact</a></nav>
+
+      <!-- Right Controls: RTL + Dark Mode + CTA -->
+      <div class="flex items-center gap-1.5 sm:gap-2.5 rtl:space-x-reverse shrink-0">
+        <button class="rtl-toggle-btn w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 text-xs font-bold transition-colors" title="Toggle RTL">
+          <span class="rtl-text text-[11px] sm:text-xs">RTL</span>
+        </button>
+        <button class="theme-toggle-btn w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" title="Toggle Dark Mode" aria-label="Toggle Dark Mode">
+          <i class="fas fa-moon moon-icon text-xs sm:text-sm"></i>
+          <i class="fas fa-sun sun-icon hidden text-amber-400 text-xs sm:text-sm"></i>
+        </button>
+        <a href="login.html" class="hidden sm:inline-flex items-center justify-center px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl bg-sky-500 hover:bg-sky-600 text-white text-xs font-bold shadow-lg shadow-sky-500/25 transition-all transform hover:-translate-y-0.5">
+          <span>Login</span>
+          <i class="fas fa-arrow-right ml-1.5 rtl:ml-0 rtl:mr-1.5 rtl-flip text-[10px]"></i>
+        </a>
+        <button id="mobile-menu-toggle" class="lg:hidden w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700">
+          <i class="fas fa-bars text-sm"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Menu Drawer -->
+  <div id="mobile-menu-backdrop" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  <aside id="mobile-menu-drawer" class="fixed top-0 right-0 rtl:right-auto rtl:left-0 w-80 max-w-[85vw] h-full bg-white dark:bg-slate-900 z-50 shadow-2xl p-6 flex flex-col justify-between transform translate-x-full rtl:-translate-x-full transition-transform duration-300 overflow-y-auto">
+    <div>
+      <div class="flex items-center justify-between pb-6 border-b border-slate-100 dark:border-slate-800">
+        <a href="index.html" class="flex items-center" title="Back to Home">
+          <img src="assets/img/aquariumpro-logo.png" alt="Aquarium Pro Swimming Academy" class="logo-brand-img h-10 w-auto">
+        </a>
+        <button id="mobile-menu-close" class="p-2 text-slate-400 hover:text-slate-600">
+          <i class="fas fa-times text-lg"></i>
+        </button>
+      </div>
+      <div class="py-6 space-y-4 font-bold text-slate-700 dark:text-slate-200 text-sm">
+        <div class="py-2"><span class="block text-sky-600">Home</span><a href="index.html" class="block py-1 pl-4 text-xs hover:text-sky-600">Home 1 · Academy</a><a href="home-agency.html" class="block py-1 pl-4 text-xs hover:text-sky-600">Home 2 · Wellness</a></div>
+        <a href="about.html" class="block py-2 hover:text-sky-600">About Us</a>
+        <a href="programs.html" class="block py-2 hover:text-sky-600">Programs & Curriculums</a>
+        <a href="coaches.html" class="block py-2 hover:text-sky-600">Certified Coaches</a>
+        <a href="batch-timings.html" class="block py-2 hover:text-sky-600">Batch Timings</a>
+        <a href="facilities.html" class="block py-2 hover:text-sky-600">Facilities & Pool Specs</a>
+        <a href="contact.html" class="block py-2 hover:text-sky-600">Enrollment & Contact</a>
+      </div>
+    </div>
+    <div class="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-3">
+      <div class="flex items-center justify-between px-1">
+        <span class="text-xs font-bold text-slate-500 dark:text-slate-400">Theme Mode</span>
+        <div class="flex items-center gap-2">
+          <button class="rtl-toggle-btn px-2.5 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold">
+            <span class="rtl-text">RTL</span>
+          </button>
+          <button class="theme-toggle-btn px-2.5 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold flex items-center gap-1.5" title="Toggle Theme">
+            <i class="fas fa-moon moon-icon text-xs"></i>
+            <i class="fas fa-sun sun-icon hidden text-amber-400 text-xs"></i>
+            <span class="text-[11px] theme-label font-bold">Dark</span>
+          </button>
+        </div>
+      </div>
+      <button data-open-trial class="w-full py-3 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs shadow-md">Book Free Swimmer Assessment</button>
+    </div>
+  </aside>
+
+  <!-- Hero Banner with Content & Pillars on Left, Swimmer Image on Right -->
+  <section class="relative isolate overflow-hidden py-6 sm:py-12 lg:py-16 min-h-0 sm:min-h-[480px] lg:min-h-[560px] flex items-center bg-sky-900">
+    <!-- Hero Swimmer Image (Minimized & Perfectly Scaled on Mobile) -->
+    <img src="assets/img/hero-girl.jpg" alt="Young swimmer smiling underwater" class="absolute inset-0 -z-20 h-full w-full object-cover object-[86%_center] sm:object-[82%_center] lg:object-[86%_center] brightness-105 contrast-105">
+    
+    <!-- Smooth Gradient Overlay on Left -->
+    <div class="absolute inset-0 -z-10 bg-gradient-to-t sm:bg-gradient-to-r from-sky-950/95 via-sky-950/80 to-sky-950/20 sm:from-sky-950/95 sm:via-sky-950/65 sm:to-transparent sm:w-[65%]"></div>
+    <div class="absolute inset-0 -z-10 bg-sky-950/20"></div>
+    
+    <!-- 🌊 Concentric Water Ripple Rings -->
+    <div class="hero-ripple-container">
+      <div class="hero-ripple-ring"></div>
+      <div class="hero-ripple-ring"></div>
+      <div class="hero-ripple-ring"></div>
+    </div>
+
+    <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl text-left rtl:text-right">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-cyan-400/20 text-cyan-300 border border-cyan-400/30 text-[10px] sm:text-[11px] font-black uppercase tracking-widest backdrop-blur-sm shadow-sm">
+          <i class="fas fa-water text-[9px]"></i> Stronger · Healthier · Safer
+        </span>
+        <h1 class="mt-2 sm:mt-3 text-2xl sm:text-4xl lg:text-6xl font-black text-white leading-[1.12] sm:leading-[1.02] font-heading tracking-tight drop-shadow-[0_4px_20px_rgba(2,44,68,.85)]">
+          Dive Into a<br><span class="text-cyan-300">Healthier</span> Tomorrow
+        </h1>
+        <p class="mt-2 sm:mt-3 text-xs sm:text-sm lg:text-base font-medium leading-relaxed text-sky-100 max-w-lg drop-shadow-md">
+          Join Aquarium Pro Swimming Academy — where confidence, fitness and fun come together in the water.
+        </p>
+        <div class="mt-4 sm:mt-6 flex flex-wrap items-center gap-2.5 sm:gap-3">
+          <a href="programs.html" class="px-5 py-2.5 sm:px-6 sm:py-3.5 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-extrabold shadow-xl shadow-blue-900/25 text-xs sm:text-sm transition-all hover:scale-[1.02]">
+            Explore Programs <i class="fas fa-arrow-right ml-1.5 rtl:ml-0 rtl:mr-1.5"></i>
+          </a>
+          <button data-open-trial class="btn-water-ripple px-5 py-2.5 sm:px-6 sm:py-3.5 rounded-2xl bg-white/95 hover:bg-white backdrop-blur border border-white text-slate-900 font-extrabold shadow-lg text-xs sm:text-sm transition-all hover:scale-[1.02]">
+            <i class="fas fa-calendar-check text-sky-600 text-xs sm:text-sm mr-1.5 rtl:mr-0 rtl:ml-1.5"></i>Book Free Assessment
+          </button>
+        </div>
+
+        <!-- 4 Key Academy Pillars on Left -->
+        <div class="mt-5 sm:mt-7 pt-3.5 sm:pt-5 border-t border-white/15 grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4">
+          <div class="flex items-center gap-2">
+            <div class="w-6 h-6 sm:w-8 sm:h-8 rounded-xl bg-sky-400/20 text-cyan-300 border border-cyan-400/30 flex items-center justify-center shrink-0 text-[10px] sm:text-xs">
+              <i class="fas fa-shield-heart"></i>
+            </div>
+            <div>
+              <h4 class="text-[10px] sm:text-xs font-bold text-white leading-tight">Certified Coaches</h4>
+              <p class="text-[8px] sm:text-[10px] text-sky-200 leading-tight">FINA & Red Cross</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="w-6 h-6 sm:w-8 sm:h-8 rounded-xl bg-sky-400/20 text-cyan-300 border border-cyan-400/30 flex items-center justify-center shrink-0 text-[10px] sm:text-xs">
+              <i class="fas fa-person-swimming"></i>
+            </div>
+            <div>
+              <h4 class="text-[10px] sm:text-xs font-bold text-white leading-tight">All Age Groups</h4>
+              <p class="text-[8px] sm:text-[10px] text-sky-200 leading-tight">Kids to Adults</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="w-6 h-6 sm:w-8 sm:h-8 rounded-xl bg-sky-400/20 text-cyan-300 border border-cyan-400/30 flex items-center justify-center shrink-0 text-[10px] sm:text-xs">
+              <i class="fas fa-water"></i>
+            </div>
+            <div>
+              <h4 class="text-[10px] sm:text-xs font-bold text-white leading-tight">Olympic Pools</h4>
+              <p class="text-[8px] sm:text-[10px] text-sky-200 leading-tight">32°C & 50m</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="w-6 h-6 sm:w-8 sm:h-8 rounded-xl bg-amber-400/20 text-amber-300 border border-amber-400/30 flex items-center justify-center shrink-0 text-[10px] sm:text-xs">
+              <i class="far fa-heart"></i>
+            </div>
+            <div>
+              <h4 class="text-[10px] sm:text-xs font-bold text-white leading-tight">Stronger You</h4>
+              <p class="text-[8px] sm:text-[10px] text-sky-200 leading-tight">Confidence for Life</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 Core Programs Clean Strip (Zero Overlap on Mobile) -->
+  <section class="relative z-20 py-8 sm:py-10 bg-slate-100/70 dark:bg-slate-900/60 border-y border-slate-200/60 dark:border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-5">
+        
+        <a href="programs.html#kids" class="group rounded-3xl overflow-hidden bg-white dark:bg-slate-900 border-2 border-white/80 dark:border-slate-800 shadow-xl hover:border-sky-400 card-lift splash-hover-card transition-all duration-300 flex flex-col">
+          <div class="h-40 sm:h-44 w-full overflow-hidden relative zoom-on-hover">
+            <img src="assets/img/prog-kids.jpg" alt="Kids swimming program" class="h-full w-full object-cover card-zoom-img">
+            <span class="absolute top-3 left-3 bg-sky-600/90 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full shadow">Ages 4–12</span>
+          </div>
+          <div class="p-4 sm:p-5 flex items-center justify-between flex-1">
+            <div>
+              <h3 class="font-extrabold text-slate-900 dark:text-white text-sm sm:text-base">Kids Program</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Water Safety & Foundation</p>
+            </div>
+            <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 flex items-center justify-center group-hover:bg-sky-500 group-hover:text-white transition-colors">
+              <i class="fas fa-arrow-right rtl:rotate-180 text-xs"></i>
+            </div>
+          </div>
+        </a>
+
+        <a href="programs.html#teens" class="group rounded-3xl overflow-hidden bg-white dark:bg-slate-900 border-2 border-white/80 dark:border-slate-800 shadow-2xl hover:border-cyan-400 card-lift splash-hover-card transition-all duration-300 flex flex-col">
+          <div class="h-40 sm:h-44 w-full overflow-hidden relative zoom-on-hover">
+            <img src="assets/img/teens-1.jpg" alt="Teens swimming program" class="h-full w-full object-cover card-zoom-img">
+            <span class="absolute top-3 left-3 bg-cyan-600/90 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full shadow">Ages 13–18</span>
+          </div>
+          <div class="p-4 sm:p-5 flex items-center justify-between flex-1">
+            <div>
+              <h3 class="font-extrabold text-slate-900 dark:text-white text-sm sm:text-base">Teens Program</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">4-Stroke & Endurance</p>
+            </div>
+            <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-cyan-50 dark:bg-cyan-950/60 text-cyan-600 dark:text-cyan-400 flex items-center justify-center group-hover:bg-cyan-500 group-hover:text-white transition-colors">
+              <i class="fas fa-arrow-right rtl:rotate-180 text-xs"></i>
+            </div>
+          </div>
+        </a>
+
+        <a href="programs.html#adults" class="group rounded-3xl overflow-hidden bg-white dark:bg-slate-900 border-2 border-white/80 dark:border-slate-800 shadow-2xl hover:border-indigo-400 card-lift splash-hover-card transition-all duration-300 flex flex-col">
+          <div class="h-40 sm:h-44 w-full overflow-hidden relative zoom-on-hover">
+            <img src="assets/img/prog-adults.jpg" alt="Adult swimming program" class="h-full w-full object-cover card-zoom-img">
+            <span class="absolute top-3 left-3 bg-indigo-600/90 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full shadow">Ages 19+</span>
+          </div>
+          <div class="p-4 sm:p-5 flex items-center justify-between flex-1">
+            <div>
+              <h3 class="font-extrabold text-slate-900 dark:text-white text-sm sm:text-base">Adults Program</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Fear-Free & Fitness Laps</p>
+            </div>
+            <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center group-hover:bg-indigo-500 group-hover:text-white transition-colors">
+              <i class="fas fa-arrow-right rtl:rotate-180 text-xs"></i>
+            </div>
+          </div>
+        </a>
+
+        <a href="programs.html#competitive" class="group rounded-3xl overflow-hidden bg-white dark:bg-slate-900 border-2 border-white/80 dark:border-slate-800 shadow-2xl hover:border-amber-400 card-lift splash-hover-card race-line-track transition-all duration-300 flex flex-col">
+          <div class="h-40 sm:h-44 w-full overflow-hidden relative zoom-on-hover">
+            <img src="assets/img/prog-competitive.jpg" alt="Competitive swim training" class="h-full w-full object-cover card-zoom-img">
+            <span class="absolute top-3 left-3 bg-amber-600/90 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full shadow">Elite Squad</span>
+          </div>
+          <div class="p-4 sm:p-5 flex items-center justify-between flex-1">
+            <div>
+              <h3 class="font-extrabold text-slate-900 dark:text-white text-sm sm:text-base">Competitive Training</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Race Pace & Biomechanics</p>
+            </div>
+            <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center group-hover:bg-amber-500 group-hover:text-white transition-colors">
+              <i class="fas fa-arrow-right rtl:rotate-180 text-xs"></i>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Highlights Section with Photos -->
+  <section class="py-16 sm:py-20 bg-white dark:bg-slate-900 reveal-fade-up">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-3">
+        <span class="px-3 py-1 rounded-full bg-sky-50 dark:bg-sky-950 text-sky-600 dark:text-sky-400 text-xs font-bold uppercase tracking-wider">Curriculum Highlights</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-heading">Programs Calibrated For Every Swimmer</h2>
+        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400">Structured by age group and skill level with dedicated coach-to-student ratios.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        
+        <!-- Highlight 1: Beginners & Toddlers (Water Safety & Floating Confidence) -->
+        <div class="bg-slate-50 dark:bg-slate-800/90 rounded-3xl overflow-hidden border border-slate-200/90 dark:border-slate-700/70 flex flex-col justify-between hover:shadow-2xl hover:border-cyan-400 dark:hover:border-cyan-500 card-lift splash-hover-card transition-all duration-300">
+          <div>
+            <div class="aspect-[16/10] overflow-hidden zoom-on-hover relative">
+              <img src="assets/img/prog-toddlers.jpg" alt="Toddlers 2-3 age water safety and floating confidence class" class="w-full h-full object-cover card-zoom-img">
+              <span class="absolute top-3 left-3 bg-cyan-600/95 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-md">Ages 2–3 (Toddlers)</span>
+            </div>
+            <div class="p-6 sm:p-7">
+              <span class="inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-wider text-cyan-600 dark:text-cyan-400 bg-cyan-50 dark:bg-cyan-950/80 px-2.5 py-1 rounded-md">
+                <i class="fas fa-shield-halved text-[9px]"></i> Water Safety & Floating (Ages 2–3)
+              </span>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-3 mb-2 font-heading">Water Safety & Floating Confidence</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+                Warm 32°C shallow water environment, gentle floating aids, rhythmic breathing games, and foundational water safety with 4:1 coach supervision.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 sm:p-7 pt-0 border-t border-slate-200/60 dark:border-slate-700/60 flex items-center justify-between">
+            <span class="text-sm font-extrabold text-slate-900 dark:text-white">$149 <span class="text-xs font-normal text-slate-500">/mo</span></span>
+            <a href="programs.html#kids" class="inline-flex items-center gap-1 text-xs font-bold text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300">Learn More <i class="fas fa-arrow-right text-[10px] rtl:rotate-180"></i></a>
+          </div>
+        </div>
+
+        <!-- Highlight 2: Intermediate (4-Stroke Mastery & Endurance) -->
+        <div class="bg-slate-50 dark:bg-slate-800/90 rounded-3xl overflow-hidden border border-slate-200/90 dark:border-slate-700/70 flex flex-col justify-between hover:shadow-2xl hover:border-sky-400 dark:hover:border-sky-500 card-lift splash-hover-card transition-all duration-300">
+          <div>
+            <div class="aspect-[16/10] overflow-hidden zoom-on-hover relative">
+              <img src="assets/img/teens-2.jpg" alt="Swimmer practicing 4-stroke technique and endurance" class="w-full h-full object-cover card-zoom-img">
+              <span class="absolute top-3 left-3 bg-sky-600/95 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-md">Kids & Teens (Ages 7–16)</span>
+            </div>
+            <div class="p-6 sm:p-7">
+              <span class="inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-wider text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-950/80 px-2.5 py-1 rounded-md">
+                <i class="fas fa-person-swimming text-[9px]"></i> 4-Stroke Technique & Stamina
+              </span>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-3 mb-2 font-heading">4-Stroke Mastery & Endurance</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+                Complete mechanics for Freestyle, Backstroke, Breaststroke, and Butterfly, plus flip-turns and 50-meter lap stamina.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 sm:p-7 pt-0 border-t border-slate-200/60 dark:border-slate-700/60 flex items-center justify-between">
+            <span class="text-sm font-extrabold text-slate-900 dark:text-white">$199 <span class="text-xs font-normal text-slate-500">/mo</span></span>
+            <a href="programs.html#teens" class="inline-flex items-center gap-1 text-xs font-bold text-sky-600 dark:text-sky-400 hover:text-sky-700 dark:hover:text-sky-300">Learn More <i class="fas fa-arrow-right text-[10px] rtl:rotate-180"></i></a>
+          </div>
+        </div>
+
+        <!-- Highlight 3: Competitive Racing Squad (Competitive Racing & High Performance) -->
+        <div class="bg-slate-50 dark:bg-slate-800/90 rounded-3xl overflow-hidden border border-slate-200/90 dark:border-slate-700/70 flex flex-col justify-between hover:shadow-2xl hover:border-indigo-400 dark:hover:border-indigo-500 card-lift splash-hover-card race-line-track transition-all duration-300">
+          <div>
+            <div class="aspect-[16/10] overflow-hidden zoom-on-hover relative">
+              <img src="assets/img/facility-dive-blocks.jpg" alt="Competitive race dive block starts and tournament training" class="w-full h-full object-cover card-zoom-img">
+              <span class="absolute top-3 left-3 bg-indigo-600/95 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-md">Elite Squad & Masters</span>
+            </div>
+            <div class="p-6 sm:p-7">
+              <span class="inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-wider text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/80 px-2.5 py-1 rounded-md">
+                <i class="fas fa-trophy text-[9px]"></i> Dive Blocks & Race Speed
+              </span>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-3 mb-2 font-heading">Competitive Racing & High Performance</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+                High-intensity interval training, dive block reaction practice, video stroke biomechanics, and national tournament prep.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 sm:p-7 pt-0 border-t border-slate-200/60 dark:border-slate-700/60 flex items-center justify-between">
+            <span class="text-sm font-extrabold text-slate-900 dark:text-white">$279 <span class="text-xs font-normal text-slate-500">/mo</span></span>
+            <a href="programs.html#competitive" class="inline-flex items-center gap-1 text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300">Learn More <i class="fas fa-arrow-right text-[10px] rtl:rotate-180"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-10 sm:mt-12">
+        <a href="programs.html" class="inline-flex items-center justify-center px-7 py-3.5 rounded-2xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs shadow-md transition-all hover:scale-[1.02]">
+          View All Organized Programs & Schedules <i class="fas fa-arrow-right ml-2 rtl:ml-0 rtl:mr-2 rtl-flip"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 📊 Animated Stats Counter Section with Smooth Spacing -->
+  <section class="py-14 sm:py-16 bg-gradient-to-r from-sky-900 via-sky-800 to-cyan-900 text-white relative overflow-hidden reveal-fade-up">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 text-center">
+        <div class="p-5 sm:p-7 rounded-3xl bg-white/10 backdrop-blur-md border border-white/15 shadow-xl hover:bg-white/15 transition-all">
+          <div class="text-3xl sm:text-5xl font-black text-cyan-300 font-heading"><span data-counter-target="15000" class="counter-num">15000</span>+</div>
+          <p class="text-xs sm:text-sm font-bold text-sky-100 mt-2">Swimmers Graduated</p>
+        </div>
+        <div class="p-5 sm:p-7 rounded-3xl bg-white/10 backdrop-blur-md border border-white/15 shadow-xl hover:bg-white/15 transition-all">
+          <div class="text-3xl sm:text-5xl font-black text-cyan-300 font-heading"><span data-counter-target="18" class="counter-num">18</span>+</div>
+          <p class="text-xs sm:text-sm font-bold text-sky-100 mt-2">Years Excellence</p>
+        </div>
+        <div class="p-5 sm:p-7 rounded-3xl bg-white/10 backdrop-blur-md border border-white/15 shadow-xl hover:bg-white/15 transition-all">
+          <div class="text-3xl sm:text-5xl font-black text-cyan-300 font-heading"><span data-counter-target="98" class="counter-num">98</span>.4%</div>
+          <p class="text-xs sm:text-sm font-bold text-sky-100 mt-2">Water Safety Rate</p>
+        </div>
+        <div class="p-5 sm:p-7 rounded-3xl bg-white/10 backdrop-blur-md border border-white/15 shadow-xl hover:bg-white/15 transition-all">
+          <div class="text-3xl sm:text-5xl font-black text-cyan-300 font-heading"><span data-counter-target="10" class="counter-num">10</span></div>
+          <p class="text-xs sm:text-sm font-bold text-sky-100 mt-2">Olympic Racing Lanes</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coaches Showcase with HD Portraits -->
+  <section class="py-16 sm:py-20 bg-slate-50 dark:bg-slate-950 reveal-fade-up">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-3">
+        <span class="px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-950 text-cyan-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-wider">Faculty & Mentors</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-heading">Learn From National & Olympic Coaches</h2>
+        <p class="text-sm text-slate-600 dark:text-slate-400">Our faculty holds international FINA and Red Cross certifications with decades of athlete coaching experience.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        
+        <!-- Coach 1 -->
+        <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-7 border border-slate-200/80 dark:border-slate-800 text-center flex flex-col items-center shadow-sm hover:shadow-lg card-lift transition-all">
+          <img src="assets/img/coach1.jpg" alt="Dmitri Kozlov" class="w-24 h-24 rounded-full object-cover mb-4 shadow-md ring-4 ring-sky-100 dark:ring-sky-950">
+          <h3 class="text-base font-bold text-slate-900 dark:text-white font-heading">Dmitri Kozlov</h3>
+          <p class="text-xs font-bold text-sky-600 dark:text-sky-400 mb-1">Head Coach & FINA Master</p>
+          <p class="text-xs text-slate-500 mb-3">Former Olympic 100m Butterfly Finalist</p>
+          <a href="coach-dmitri-kozlov.html"    class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-sky-500 hover:text-white text-xs font-bold transition-colors">
+            Book 1-on-1 Session
+          </a>
+        </div>
+
+        <!-- Coach 2 -->
+        <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-7 border border-slate-200/80 dark:border-slate-800 text-center flex flex-col items-center shadow-sm hover:shadow-lg card-lift transition-all">
+          <img src="assets/img/coach2.jpg" alt="Elena Chen" class="w-24 h-24 rounded-full object-cover mb-4 shadow-md ring-4 ring-cyan-100 dark:ring-cyan-950">
+          <h3 class="text-base font-bold text-slate-900 dark:text-white font-heading">Elena Chen</h3>
+          <p class="text-xs font-bold text-cyan-600 dark:text-cyan-400 mb-1">Lead Junior Specialist</p>
+          <p class="text-xs text-slate-500 mb-3">Red Cross WSI Master Trainer</p>
+          <a href="coach-elena-chen.html"    class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-sky-500 hover:text-white text-xs font-bold transition-colors">
+            Book 1-on-1 Session
+          </a>
+        </div>
+
+        <!-- Coach 3 -->
+        <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-7 border border-slate-200/80 dark:border-slate-800 text-center flex flex-col items-center shadow-sm hover:shadow-lg card-lift transition-all">
+          <img src="assets/img/coach3.jpg" alt="Julian Alvarez" class="w-24 h-24 rounded-full object-cover mb-4 shadow-md ring-4 ring-blue-100 dark:ring-blue-950">
+          <h3 class="text-base font-bold text-slate-900 dark:text-white font-heading">Julian Alvarez</h3>
+          <p class="text-xs font-bold text-indigo-600 dark:text-indigo-400 mb-1">Triathlon & Biomechanics</p>
+          <p class="text-xs text-slate-500 mb-3">Ironman Certified Coach</p>
+          <a href="coach-julian-alvarez.html"    class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-sky-500 hover:text-white text-xs font-bold transition-colors">
+            Book 1-on-1 Session
+          </a>
+        </div>
+
+        <!-- Coach 4 -->
+        <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-7 border border-slate-200/80 dark:border-slate-800 text-center flex flex-col items-center shadow-sm hover:shadow-lg card-lift transition-all">
+          <img src="assets/img/coach4.jpg" alt="Sophia Novak" class="w-24 h-24 rounded-full object-cover mb-4 shadow-md ring-4 ring-purple-100 dark:ring-purple-950">
+          <h3 class="text-base font-bold text-slate-900 dark:text-white font-heading">Sophia Novak</h3>
+          <p class="text-xs font-bold text-purple-600 dark:text-purple-400 mb-1">Adult Fear-Free Lead</p>
+          <p class="text-xs text-slate-500 mb-3">USMS Certified Level 2 Coach</p>
+          <a href="coach-sophia-novak.html"    class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-sky-500 hover:text-white text-xs font-bold transition-colors">
+            Book 1-on-1 Session
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA Trial Banner -->
+  <section class="py-14 sm:py-16 bg-gradient-to-r from-sky-600 via-cyan-600 to-sky-700 text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 relative z-10">
+      <div class="space-y-2 text-center md:text-left rtl:md:text-right">
+        <h2 class="text-2xl sm:text-3xl font-black font-heading">Ready for Your Child's First Splash or Race?</h2>
+        <p class="text-xs sm:text-sm text-cyan-100 max-w-xl">Claim a 100% free swimmer skill assessment session with our head coaches at the arena.</p>
+      </div>
+      <button data-open-trial class="btn-water-ripple px-8 py-4 rounded-2xl bg-white text-sky-700 font-extrabold text-sm shadow-xl hover:bg-cyan-50 transition-all flex-shrink-0">
+        Claim Free Assessment Pass
+      </button>
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+<footer class="site-footer bg-slate-950 text-slate-400 pt-16 pb-10 border-t border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-slate-800">
+      <div>
+        <a href="index.html" title="Aquarium Pro Home">
+          <img src="assets/img/aquariumpro-logo.png" alt="Aquarium Pro Swimming Academy" class="logo-brand-img h-14 w-auto object-contain">
+        </a>
+        <p class="text-xs leading-6 mt-4 max-w-xs">World-class aquatic coaching, learn-to-swim curriculum, and competitive athlete training in a safe and supportive environment.</p>
+        <div class="flex items-center gap-3 mt-5 text-base">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook" class="hover:text-sky-400"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" class="hover:text-sky-400"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube" class="hover:text-sky-400"><i class="fab fa-youtube"></i></a>
+          <a href="https://wa.me/18005550298" target="_blank" rel="noopener" aria-label="WhatsApp" class="hover:text-emerald-400"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div><h4 class="text-xs font-black uppercase tracking-widest text-white mb-4">Academy Directory</h4><div class="space-y-2 text-xs"><a class="block hover:text-sky-400" href="programs.html">Programs by Skill & Age</a><a class="block hover:text-sky-400" href="coaches.html">Certified Faculty</a><a class="block hover:text-sky-400" href="batch-timings.html">Batch Timings Schedule</a><a class="block hover:text-sky-400" href="facilities.html">Pool Specs & Facilities</a></div></div>
+      <div><h4 class="text-xs font-black uppercase tracking-widest text-white mb-4">Arena Timings</h4><div class="space-y-2 text-xs leading-relaxed"><p>Mon–Fri: 05:00 AM – 09:30 PM</p><p>Saturday: 06:00 AM – 08:00 PM</p><p>Sunday: 07:00 AM – 06:00 PM</p><a href="batch-timings.html" class="inline-block mt-2 text-sky-400 hover:text-sky-300">View full schedule →</a></div></div>
+      <div><h4 class="text-xs font-black uppercase tracking-widest text-white mb-4">Facility Location</h4><div class="space-y-3 text-xs"><a href="https://www.google.com/maps/search/?api=1&query=742+Marina+Aquatic+Way+CA+90210" target="_blank" rel="noopener" class="flex gap-2 hover:text-sky-400"><i class="fas fa-location-dot text-sky-400 mt-0.5"></i><span>742 Marina Aquatic Way, CA 90210</span></a><a href="tel:+18005550299" class="flex gap-2 hover:text-sky-400"><i class="fas fa-phone text-sky-400 mt-0.5"></i><span>+1 (800) 555-0299</span></a><a href="mailto:admissions@aquapro-academy.com" class="flex gap-2 hover:text-sky-400"><i class="fas fa-envelope text-sky-400 mt-0.5"></i><span>Email the academy</span></a></div></div>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row gap-3 justify-between text-[11px] text-slate-500"><span>© 2026 Aquarium Pro Swimming Academy. All rights reserved.</span><span>Safe water · Better coaching · Stronger swimmers</span></div>
+  </div>
+</footer>
+
+  <!-- Free Trial Modal (100% Functional) -->
+  <div id="trial-modal" class="modal-container fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+    <div id="trial-backdrop" class="fixed inset-0 bg-slate-900/75 backdrop-blur-sm"></div>
+    <div class="relative bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 max-w-lg w-full shadow-2xl border border-slate-200 dark:border-slate-800 z-10">
+      
+      <div class="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800">
+        <div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white font-heading">Book Free Swimmer Assessment</h3>
+          <p class="text-xs text-slate-500">1-on-1 assessment with certified coach in heated pool.</p>
+        </div>
+        <button id="trial-close" class="p-2 text-slate-400 hover:text-slate-600"><i class="fas fa-times"></i></button>
+      </div>
+
+      <form data-aquapro-form class="mt-4 space-y-3">
+        <input name="coach_note" type="hidden" id="modal-coach-note" value="">
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Swimmer / Parent Name</label>
+          <input name="full_name" type="text" required placeholder="Rachel Adams" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500">
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Phone Number</label>
+            <input name="phone" type="tel" required placeholder="+1 (800) 555-0199" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Age Group</label>
+            <select name="age_group" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500">
+              <option>Toddlers (Ages 2-4)</option>
+              <option>Kids Junior (Ages 5-11)</option>
+              <option>Teens (Ages 12-17)</option>
+              <option>Adults (18+)</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Target Program / Skill Level</label>
+          <select name="program" id="modal-program-select" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500">
+            <option value="beginners">Toddler & Beginner Water Safety</option>
+            <option value="freestyle">Junior Foundation (Freestyle & Backstroke)</option>
+            <option value="intermediate">Intermediate (4-Stroke Mastery)</option>
+            <option value="competitive">Competitive High Performance Squad</option>
+            <option value="adults">Adult Fear-Free & Fitness</option>
+          </select>
+        </div>
+        <button type="submit" class="w-full py-3.5 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs shadow-md transition-colors mt-2">
+          Confirm Free Trial Session
+        </button>
+      </form>
+    </div>
+  </div>
+
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/forms.js"></script>
+<script src="assets/js/nav-active.js"></script>
+</body>
+</html>
+
+

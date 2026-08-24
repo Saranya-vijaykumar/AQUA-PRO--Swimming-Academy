@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Under Scheduled Maintenance — Aquarium Pro</title>
+  <link rel="icon" type="image/png" href="assets/img/aquariumpro-logo.jpg">
+
+  <!-- Tailwind CSS CDN + Config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            heading: ['"Outfit"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col justify-between">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 glass-nav border-b border-slate-200/80 dark:border-slate-800/80 py-3 backdrop-blur-md bg-white/90 dark:bg-slate-900/90">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <a href="index.html" class="flex items-center group" title="Aquarium Pro Home">
+        <img src="assets/img/aquariumpro-logo.png" alt="Aquarium Pro Swimming Academy" class="logo-brand-img h-11 sm:h-13 w-auto max-w-[210px] object-contain ">
+      </a>
+      <div class="flex items-center space-x-3 rtl:space-x-reverse">
+        <button class="theme-toggle-btn p-2 w-9 h-9 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" title="Toggle Dark Mode">
+          <i class="fas fa-moon moon-icon"></i>
+          <i class="fas fa-sun sun-icon hidden text-amber-400"></i>
+        </button>
+        <a href="index.html" class="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs shadow-md">Home</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Maintenance Card -->
+  <main class="flex-grow flex items-center justify-center p-6 my-12">
+    <div class="bg-white dark:bg-slate-900 rounded-3xl p-8 sm:p-12 border border-slate-200/80 dark:border-slate-800 shadow-2xl max-w-lg w-full text-center space-y-6">
+      <div class="w-16 h-16 rounded-2xl bg-sky-100 dark:bg-sky-950 text-sky-600 dark:text-sky-400 flex items-center justify-center text-3xl mx-auto shadow-inner">
+        <i class="fas fa-water"></i>
+      </div>
+      <div class="space-y-2">
+        <h1 class="text-3xl font-black text-slate-900 dark:text-white font-heading">Making A Few Waves</h1>
+        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">
+          We're refreshing the Aquarium Pro experience and scheduled pool maintenance. We will be back online shortly.
+        </p>
+      </div>
+      <form data-aquapro-form class="space-y-3">
+        <input type="email" required placeholder="Enter your email for opening updates" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500">
+        <button type="submit" class="w-full py-3.5 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs shadow-md transition-colors">
+          Notify Me When Open
+        </button>
+      </form>
+      <p class="text-xs text-slate-400">Urgent questions? Call <a href="tel:+18005550299" class="text-sky-500 font-bold">+1 (800) 555-0299</a></p>
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer bg-slate-950 text-slate-400 pt-14 pb-8 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-slate-800">
+        <div>
+          <a href="index.html" title="Aquarium Pro Home">
+            <img src="assets/img/aquariumpro-logo.png" alt="Aquarium Pro Swimming Academy" class="logo-brand-img h-14 w-auto object-contain">
+          </a>
+          <p class="text-xs leading-6 mt-4 max-w-xs">World-class aquatic coaching, learn-to-swim curriculum, and competitive athlete training in a safe and supportive environment.</p>
+        </div>
+        <div><h4 class="text-xs font-black uppercase tracking-widest text-white mb-4">Academy Directory</h4><div class="space-y-2 text-xs"><a class="block hover:text-sky-400" href="programs.html">Programs by Skill & Age</a><a class="block hover:text-sky-400" href="coaches.html">Certified Faculty</a><a class="block hover:text-sky-400" href="batch-timings.html">Batch Timings Schedule</a><a class="block hover:text-sky-400" href="facilities.html">Pool Specs & Facilities</a></div></div>
+        <div><h4 class="text-xs font-black uppercase tracking-widest text-white mb-4">Arena Timings</h4><div class="space-y-2 text-xs leading-relaxed"><p>Mon–Fri: 05:00 AM – 09:30 PM</p><p>Saturday: 06:00 AM – 08:00 PM</p><p>Sunday: 07:00 AM – 06:00 PM</p></div></div>
+        <div><h4 class="text-xs font-black uppercase tracking-widest text-white mb-4">Facility Location</h4><div class="space-y-3 text-xs"><p class="flex gap-2"><i class="fas fa-location-dot text-sky-400 mt-0.5"></i><span>742 Marina Aquatic Way, CA 90210</span></p><p class="flex gap-2"><i class="fas fa-phone text-sky-400 mt-0.5"></i><span>+1 (800) 555-0299</span></p></div></div>
+      </div>
+      <div class="pt-6 flex flex-col sm:flex-row gap-3 justify-between text-[11px] text-slate-500"><span>© 2026 Aquarium Pro Swimming Academy. All rights reserved.</span><span>Safe water · Better coaching · Stronger swimmers</span></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/forms.js"></script>
+</body>
+</html>
+

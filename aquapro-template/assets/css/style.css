@@ -1,0 +1,673 @@
+/* ===================================================================
+   AquaPro - Swimming Academy & Aquatic Sports Center HTML5 Template
+   Author: ThemeCraft Studio
+   Version: 2.0.0
+   Theme: High-Performance Aquatic Elegance with Water-Wave, Bubbles, Counters & Micro-Animations
+=================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --font-heading: 'Outfit', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-rtl: 'Cairo', 'Plus Jakarta Sans', sans-serif;
+  --aqua-primary: #0284c7;
+  --aqua-cyan: #06b6d4;
+  --aqua-deep: #0369a1;
+}
+
+/* Custom Water Droplet Cursor (Pure Droplet, No Circle Ring) */
+html, body {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Cdefs%3E%3ClinearGradient id='dG' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2338bdf8'/%3E%3Cstop offset='100%25' stop-color='%230284c7'/%3E%3C/linearGradient%3E%3Cfilter id='dS' x='-20%25' y='-20%25' width='140%25' height='140%25'%3E%3CfeDropShadow dx='0' dy='1.5' stdDeviation='1.2' flood-color='%230369a1' flood-opacity='0.4'/%3E%3C/filter%3E%3C/defs%3E%3Cpath d='M13 1 C13 1, 5 11, 5 17 A8 8 0 0 0 21 17 C21 11, 13 1, 13 1 Z' fill='url(%23dG)' filter='url(%23dS)'/%3E%3Cellipse cx='10' cy='14' rx='2' ry='4' transform='rotate(-20 10 14)' fill='white' opacity='0.85'/%3E%3C/svg%3E") 13 1, auto;
+}
+
+a, button, [role="button"], input[type="submit"], input[type="button"], select, .card-lift {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cdefs%3E%3ClinearGradient id='hG' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2322d3ee'/%3E%3Cstop offset='50%25' stop-color='%2306b6d4'/%3E%3Cstop offset='100%25' stop-color='%230284c7'/%3E%3C/linearGradient%3E%3Cfilter id='hS' x='-30%25' y='-30%25' width='160%25' height='160%25'%3E%3CfeDropShadow dx='0' dy='2' stdDeviation='1.8' flood-color='%2306b6d4' flood-opacity='0.6'/%3E%3C/filter%3E%3C/defs%3E%3Cpath d='M14 1 C14 1, 5 12, 5 18 A9 9 0 0 0 23 18 C23 12, 14 1, 14 1 Z' fill='url(%23hG)' filter='url(%23hS)'/%3E%3Cellipse cx='10.5' cy='14.5' rx='2.2' ry='4.5' transform='rotate(-20 10.5 14.5)' fill='white' opacity='0.9'/%3E%3C/svg%3E") 14 1, pointer;
+}
+
+/* 🌊 Click Ripple Splash Trail */
+.water-droplet-trail {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.5) 0%, rgba(2, 132, 199, 0) 70%);
+  transform: translate(-50%, -50%) scale(1);
+  animation: dropletSplashFade 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes dropletSplashFade {
+  0% {
+    transform: translate(-50%, -50%) scale(0.6);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.2);
+    opacity: 0;
+  }
+}
+
+html {
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+}
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  font-family: var(--font-rtl);
+  text-align: right;
+}
+
+[dir="rtl"] h1, 
+[dir="rtl"] h2, 
+[dir="rtl"] h3, 
+[dir="rtl"] h4 {
+  font-family: var(--font-rtl);
+}
+
+[dir="rtl"] .rtl-flip {
+  transform: scaleX(-1);
+}
+
+/* Glassmorphism Navigation */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: padding 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark .glass-nav {
+  background: rgba(11, 23, 39, 0.90);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Aquatic Water Texture Gradient */
+.water-gradient {
+  background: radial-gradient(circle at 50% 0%, rgba(6, 182, 212, 0.18) 0%, rgba(2, 132, 199, 0.08) 50%, transparent 80%);
+}
+
+.dark .water-gradient {
+  background: radial-gradient(circle at 50% 0%, rgba(6, 182, 212, 0.22) 0%, rgba(2, 132, 199, 0.12) 50%, transparent 80%);
+}
+
+/* 1. Floating Water Bubbles Container & Particles */
+.bubble-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -60px;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.45), rgba(56, 189, 248, 0.18));
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.15), inset 0 2px 4px rgba(255, 255, 255, 0.6);
+  animation: floatUpward linear infinite;
+  will-change: transform, opacity;
+}
+
+.dark .bubble {
+  background: radial-gradient(circle at 30% 30%, rgba(56, 189, 248, 0.22), rgba(14, 165, 233, 0.06));
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.12), inset 0 1px 3px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes floatUpward {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.85);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.55;
+  }
+  85% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: translateY(-110vh) translateX(30px) scale(1.15);
+    opacity: 0;
+  }
+}
+
+/* 2. 🌊 Hero Water Ripple Effect */
+.hero-ripple-container {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: -5;
+}
+
+.hero-ripple-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 2px solid rgba(56, 189, 248, 0.45);
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.3), inset 0 0 15px rgba(56, 189, 248, 0.2);
+  pointer-events: none;
+  animation: expandRipple 4.5s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
+  will-change: transform, opacity;
+}
+
+.hero-ripple-ring:nth-child(2) {
+  animation-delay: 1.5s;
+}
+
+.hero-ripple-ring:nth-child(3) {
+  animation-delay: 3s;
+}
+
+@keyframes expandRipple {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 0.85;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    width: 650px;
+    height: 650px;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.6);
+  }
+}
+
+@keyframes floatingHero {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-floating {
+  animation: floatingHero 6s ease-in-out infinite;
+}
+
+/* 3. 🏊 Swimmer Images Slow Hover + Zoom */
+.zoom-on-hover {
+  overflow: hidden;
+}
+
+.zoom-on-hover img,
+.card-zoom-img {
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+  will-change: transform;
+}
+
+.zoom-on-hover:hover img,
+.group:hover .card-zoom-img,
+.group:hover img {
+  transform: scale(1.05);
+}
+
+/* 4. 💦 Programs Splash Hover Effect */
+.splash-hover-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+}
+
+.splash-hover-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.28) 0%, rgba(6, 182, 212, 0.12) 30%, transparent 65%);
+  opacity: 0;
+  transform: scale(0.4);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.splash-hover-card:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 5. 🏁 Competitive Race-Line Animation */
+.race-line-track {
+  position: relative;
+  overflow: hidden;
+}
+
+.race-line-track::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #38bdf8, #0ea5e9, #f59e0b, transparent);
+  animation: raceLineStreak 2.5s infinite linear;
+  z-index: 10;
+}
+
+@keyframes raceLineStreak {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+
+/* 6. 🖼️ Gallery Water Ripple Hover */
+.gallery-ripple-hover {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gallery-ripple-hover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.4) 0%, rgba(14, 165, 233, 0.25) 45%, transparent 75%);
+  opacity: 0;
+  transform: scale(0.2);
+  transition: transform 0.55s ease-out, opacity 0.45s ease-out;
+  pointer-events: none;
+}
+
+.gallery-ripple-hover:hover::after {
+  opacity: 1;
+  transform: scale(1.3);
+}
+
+/* 7. 🌊 CTA Water Ripple Button */
+.btn-water-ripple {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-water-ripple::before,
+.btn-water-ripple::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.5) 10%, rgba(56, 189, 248, 0.2) 40%, transparent 70%);
+  opacity: 0;
+  z-index: -1;
+  animation: buttonRipplePulse 3s infinite cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.btn-water-ripple::after {
+  animation-delay: 1.5s;
+}
+
+@keyframes buttonRipplePulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+/* 5. ✨ Logo Standalone Sticker Styling (No Box, No Border, Clean Floating Sticker) */
+.logo-brand-img,
+header img[src*="logo"],
+footer img[src*="logo"],
+aside img[src*="logo"],
+.site-logo-sticker {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0.75rem !important;
+  filter: drop-shadow(0 2px 6px rgba(2, 132, 199, 0.22));
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.35s ease;
+}
+
+/* 5b. 🚀 Navbar Header Logo Enlarged & Vertically Centered */
+header .logo-brand-img,
+header a img[src*="logo"] {
+  height: 3.4rem !important; /* 54px on mobile */
+  width: auto !important;
+  max-width: 230px !important;
+  object-fit: contain !important;
+  display: block;
+}
+
+@media (min-width: 640px) {
+  header .logo-brand-img,
+  header a img[src*="logo"] {
+    height: 4.2rem !important; /* 67px on tablet & desktop */
+    max-width: 280px !important;
+  }
+}
+
+.logo-brand-img:hover,
+a:hover .logo-brand-img,
+a:hover header img[src*="logo"],
+a:hover footer img[src*="logo"] {
+  transform: translateY(-2px) scale(1.04);
+  filter: drop-shadow(0 4px 14px rgba(6, 182, 212, 0.45));
+}
+
+/* 6. 📜 Scroll Fade-Up Reveal Animation */
+.reveal-fade-up {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-fade-up.js-reveal-ready:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.reveal-fade-up.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* 7. 🎯 Program & Facility Cards Hover Lift */
+.card-lift {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+  will-change: transform;
+}
+
+.card-lift:hover {
+  transform: translateY(-6px);
+}
+
+/* 8. 🏆 Competitive Parallax Swimmer Glow */
+.swimmer-parallax-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.swimmer-parallax-card::before {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, transparent 65%);
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+}
+
+.swimmer-parallax-card:hover::before {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* 9. Animated Counter Badge Style */
+.counter-num {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f9ff;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #0b1727;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7dd3fc;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #0369a1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0284c7;
+}
+
+/* Form focus ring */
+.input-focus {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-focus:focus {
+  border-color: var(--aqua-primary);
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.2);
+}
+
+/* Toast Container */
+#toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 420px;
+}
+
+[dir="rtl"] #toast-container {
+  right: auto;
+  left: 24px;
+}
+
+/* Responsive & Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .bubble-container {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .bubble-container .bubble:nth-child(n+5) {
+    display: none;
+  }
+}
+
+/* ===================================================================
+   🌊 Interactive Sliding Fluid Waves Animation Suite
+   =================================================================== */
+
+.ocean-waves-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.waves-svg {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  min-height: 60px;
+  max-height: 110px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .waves-svg {
+    height: 50px;
+    min-height: 40px;
+  }
+}
+
+/* Wave parallax sliding motion */
+.parallax-waves > use {
+  animation: moveWavesForever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+
+.parallax-waves > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+
+.parallax-waves > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+
+.parallax-waves > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+
+.parallax-waves > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+
+@keyframes moveWavesForever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+/* Light / Dark dynamic wave fill colors */
+.wave-layer-1 {
+  fill: rgba(56, 189, 248, 0.25);
+}
+.wave-layer-2 {
+  fill: rgba(14, 165, 233, 0.45);
+}
+.wave-layer-3 {
+  fill: rgba(2, 132, 199, 0.65);
+}
+.wave-layer-4 {
+  fill: #f8fafc;
+}
+
+.dark .wave-layer-1 {
+  fill: rgba(14, 165, 233, 0.15);
+}
+.dark .wave-layer-2 {
+  fill: rgba(2, 132, 199, 0.28);
+}
+.dark .wave-layer-3 {
+  fill: rgba(3, 105, 161, 0.45);
+}
+.dark .wave-layer-4 {
+  fill: #020617;
+}
+
+/* Sliding Wave Shimmer for Hero Badges & Cards */
+@keyframes slideWaveShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.wave-slide-shimmer {
+  background: linear-gradient(90deg, #0284c7, #06b6d4, #38bdf8, #0284c7);
+  background-size: 300% 300%;
+  animation: slideWaveShimmer 8s ease infinite;
+}
+
+/* 10. 🌊 Floating Wave Gentle Animation */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float {
+  animation: floatGentle 4s ease-in-out infinite;
+}
+
+/* 11. ✨ Glass Reflex Shimmer Animation */
+@keyframes glassShimmerSweep {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(250%) skewX(-20deg);
+  }
+}
+
+.glass-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: translateX(-150%) skewX(-20deg);
+  pointer-events: none;
+}
+
+.glass-shimmer:hover::after {
+  animation: glassShimmerSweep 1.2s ease-out;
+}
+
+/* 12. 💧 Interactive Click Wave Ripple */
+.interactive-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.interactive-ripple-wave {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(0);
+  animation: clickRippleAnim 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes clickRippleAnim {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
