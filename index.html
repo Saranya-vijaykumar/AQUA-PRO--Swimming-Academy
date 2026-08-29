@@ -177,84 +177,96 @@
     </div>
   </aside>
 
-  <!-- Hero Banner with Content & Pillars on Left, Swimmer Image on Right -->
-  <section class="relative isolate overflow-hidden py-6 sm:py-12 lg:py-16 min-h-0 sm:min-h-[480px] lg:min-h-[560px] flex items-center bg-sky-900">
-    <!-- Hero Swimmer Image (Minimized & Perfectly Scaled on Mobile) -->
-    <img src="assets/img/hero-girl.jpg" alt="Young swimmer smiling underwater" class="hidden sm:block absolute inset-0 -z-20 h-full w-full object-cover object-[86%_center] sm:object-[82%_center] lg:object-[86%_center] brightness-105 contrast-105">
+    <!-- Hero Banner: Seamless Unified Aquatic Hero (Zero Isolated Boxes, 100% Responsive) -->
+  <section class="relative isolate overflow-hidden py-10 sm:py-14 lg:py-20 min-h-[500px] sm:min-h-[520px] lg:min-h-[580px] flex items-center bg-sky-950">
     
-    <!-- Smooth Gradient Overlay on Left -->
-    <div class="absolute inset-0 -z-10 bg-gradient-to-t sm:bg-gradient-to-r from-sky-950/95 via-sky-950/80 to-sky-950/20 sm:from-sky-950/95 sm:via-sky-950/65 sm:to-transparent sm:w-[65%]"></div>
-    <div class="absolute inset-0 -z-10 bg-sky-950/20"></div>
+    <!-- Hero Swimmer Image: Seamless Full-Bleed Background across Mobile and Desktop -->
+    <img src="assets/img/hero-girl.jpg" alt="Young swimmer smiling underwater" class="absolute inset-0 -z-20 h-full w-full object-cover object-[78%_center] sm:object-[82%_center] lg:object-[86%_center] brightness-100 sm:brightness-105 contrast-105">
+    
+    <!-- Directional & Atmospheric Gradient Overlays (Never Isolated, Perfect Contrast) -->
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-sky-950/92 via-sky-950/80 to-sky-950/95 sm:hidden"></div>
+    <div class="hidden sm:block absolute inset-0 -z-10 bg-gradient-to-r from-sky-950 via-sky-950/85 to-transparent w-[70%] lg:w-[62%]"></div>
+    <div class="hidden sm:block absolute inset-0 -z-10 bg-sky-950/25"></div>
     
     <!-- 🌊 Concentric Water Ripple Rings -->
-    <div class="hero-ripple-container">
+    <div class="hero-ripple-container pointer-events-none">
       <div class="hero-ripple-ring"></div>
       <div class="hero-ripple-ring"></div>
       <div class="hero-ripple-ring"></div>
     </div>
 
+    <!-- Hero Content Container -->
     <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-2xl text-left rtl:text-right">
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-cyan-400/20 text-cyan-300 border border-cyan-400/30 text-[10px] sm:text-[11px] font-black uppercase tracking-widest backdrop-blur-sm shadow-sm">
-          <i class="fas fa-water text-[9px]"></i> Stronger · Healthier · Safer
+      <div class="max-w-2xl text-left rtl:text-right space-y-4 sm:space-y-6">
+        
+        <!-- Eyebrow Badge -->
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-400/20 text-cyan-300 border border-cyan-400/30 text-[10px] sm:text-xs font-black uppercase tracking-widest backdrop-blur-md shadow-sm">
+          <i class="fas fa-water text-[9px] sm:text-[10px]"></i> Stronger · Healthier · Safer
         </span>
-        <h1 class="mt-2 sm:mt-3 text-2xl sm:text-4xl lg:text-6xl font-black text-white leading-[1.12] sm:leading-[1.02] font-heading tracking-tight drop-shadow-[0_4px_20px_rgba(2,44,68,.85)]">
+        
+        <!-- Main Heading -->
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.12] sm:leading-[1.04] font-heading tracking-tight drop-shadow-[0_4px_24px_rgba(2,44,68,.95)]">
           Dive Into a<br><span class="text-cyan-300">Healthier</span> Tomorrow
         </h1>
-        <p class="mt-2 sm:mt-3 text-xs sm:text-sm lg:text-base font-medium leading-relaxed text-sky-100 max-w-lg drop-shadow-md">
-          Join Aquarium Pro Swimming Academy — where confidence, fitness and fun come together in the water.
+        
+        <!-- Subtitle -->
+        <p class="text-xs sm:text-sm lg:text-base font-medium leading-relaxed text-sky-100 max-w-xl drop-shadow-md">
+          Join Aquarium Pro Swimming Academy — where confidence, Olympic-standard technique, and water safety come together in heated crystal-clear pools.
         </p>
-        <div class="mt-4 sm:mt-6 flex flex-wrap items-center gap-2.5 sm:gap-3">
-          <a href="programs.html" class="px-5 py-2.5 sm:px-6 sm:py-3.5 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-extrabold shadow-xl shadow-blue-900/25 text-xs sm:text-sm transition-all hover:scale-[1.02]">
-            Explore Programs <i class="fas fa-arrow-right ml-1.5 rtl:ml-0 rtl:mr-1.5"></i>
+        
+        <!-- CTA Action Buttons -->
+        <div class="flex flex-wrap items-center gap-3 pt-1">
+          <a href="programs.html" class="px-5 py-3 sm:px-6 sm:py-3.5 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-extrabold shadow-xl shadow-blue-900/30 text-xs sm:text-sm transition-all hover:scale-[1.02]">
+            Explore Programs <i class="fas fa-arrow-right ml-1.5 rtl:ml-0 rtl:mr-1.5 text-xs"></i>
           </a>
-          <button data-open-trial class="btn-water-ripple px-5 py-2.5 sm:px-6 sm:py-3.5 rounded-2xl bg-white/95 hover:bg-white backdrop-blur border border-white text-slate-900 font-extrabold shadow-lg text-xs sm:text-sm transition-all hover:scale-[1.02]">
-            <i class="fas fa-calendar-check text-sky-600 text-xs sm:text-sm mr-1.5 rtl:mr-0 rtl:ml-1.5"></i>Book Free Assessment
+          <button data-open-trial class="btn-water-ripple px-5 py-3 sm:px-6 sm:py-3.5 rounded-2xl bg-white/95 hover:bg-white text-slate-900 font-extrabold shadow-lg text-xs sm:text-sm transition-all hover:scale-[1.02] flex items-center">
+            <i class="fas fa-calendar-check text-sky-600 mr-2 rtl:mr-0 rtl:ml-2 text-xs sm:text-sm"></i> Book Free Assessment
           </button>
         </div>
 
-        <!-- 4 Key Academy Pillars on Left -->
-        <div class="mt-5 sm:mt-7 pt-3.5 sm:pt-5 border-t border-white/15 grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4">
-          <div class="flex items-center gap-2">
-            <div class="w-6 h-6 sm:w-8 sm:h-8 rounded-xl bg-sky-400/20 text-cyan-300 border border-cyan-400/30 flex items-center justify-center shrink-0 text-[10px] sm:text-xs">
+        <!-- 4 Key Academy Pillars (Clean Glassmorphic Cards) -->
+        <div class="pt-4 sm:pt-6 border-t border-white/20 grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3.5">
+          
+          <div class="flex items-center gap-2.5 p-2.5 rounded-2xl bg-white/10 dark:bg-slate-900/40 backdrop-blur-md border border-white/15 shadow-sm">
+            <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-sky-400/20 text-cyan-300 border border-cyan-400/30 flex items-center justify-center shrink-0 text-xs">
               <i class="fas fa-shield-heart"></i>
             </div>
             <div>
-              <h4 class="text-[10px] sm:text-xs font-bold text-white leading-tight">Certified Coaches</h4>
-              <p class="text-[8px] sm:text-[10px] text-sky-200 leading-tight">FINA & Red Cross</p>
+              <h4 class="text-[11px] sm:text-xs font-bold text-white leading-tight">Certified Coaches</h4>
+              <p class="text-[9px] sm:text-[10px] text-sky-200/90 leading-tight">FINA &amp; Red Cross</p>
             </div>
           </div>
-          <div class="flex items-center gap-2">
-            <div class="w-6 h-6 sm:w-8 sm:h-8 rounded-xl bg-sky-400/20 text-cyan-300 border border-cyan-400/30 flex items-center justify-center shrink-0 text-[10px] sm:text-xs">
+
+          <div class="flex items-center gap-2.5 p-2.5 rounded-2xl bg-white/10 dark:bg-slate-900/40 backdrop-blur-md border border-white/15 shadow-sm">
+            <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-sky-400/20 text-cyan-300 border border-cyan-400/30 flex items-center justify-center shrink-0 text-xs">
               <i class="fas fa-person-swimming"></i>
             </div>
             <div>
-              <h4 class="text-[10px] sm:text-xs font-bold text-white leading-tight">All Age Groups</h4>
-              <p class="text-[8px] sm:text-[10px] text-sky-200 leading-tight">Kids to Adults</p>
+              <h4 class="text-[11px] sm:text-xs font-bold text-white leading-tight">All Age Groups</h4>
+              <p class="text-[9px] sm:text-[10px] text-sky-200/90 leading-tight">Toddlers to Adults</p>
             </div>
           </div>
-          <div class="flex items-center gap-2">
-            <div class="w-6 h-6 sm:w-8 sm:h-8 rounded-xl bg-sky-400/20 text-cyan-300 border border-cyan-400/30 flex items-center justify-center shrink-0 text-[10px] sm:text-xs">
+
+          <div class="flex items-center gap-2.5 p-2.5 rounded-2xl bg-white/10 dark:bg-slate-900/40 backdrop-blur-md border border-white/15 shadow-sm">
+            <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-sky-400/20 text-cyan-300 border border-cyan-400/30 flex items-center justify-center shrink-0 text-xs">
               <i class="fas fa-water"></i>
             </div>
             <div>
-              <h4 class="text-[10px] sm:text-xs font-bold text-white leading-tight">Olympic Pools</h4>
-              <p class="text-[8px] sm:text-[10px] text-sky-200 leading-tight">32°C & 50m</p>
+              <h4 class="text-[11px] sm:text-xs font-bold text-white leading-tight">Olympic Pools</h4>
+              <p class="text-[9px] sm:text-[10px] text-sky-200/90 leading-tight">32°C &amp; 50m Arena</p>
             </div>
           </div>
-          <div class="flex items-center gap-2">
-            <div class="w-6 h-6 sm:w-8 sm:h-8 rounded-xl bg-amber-400/20 text-amber-300 border border-amber-400/30 flex items-center justify-center shrink-0 text-[10px] sm:text-xs">
+
+          <div class="flex items-center gap-2.5 p-2.5 rounded-2xl bg-white/10 dark:bg-slate-900/40 backdrop-blur-md border border-white/15 shadow-sm">
+            <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-amber-400/20 text-amber-300 border border-amber-400/30 flex items-center justify-center shrink-0 text-xs">
               <i class="far fa-heart"></i>
             </div>
             <div>
-              <h4 class="text-[10px] sm:text-xs font-bold text-white leading-tight">Stronger You</h4>
-              <p class="text-[8px] sm:text-[10px] text-sky-200 leading-tight">Confidence for Life</p>
+              <h4 class="text-[11px] sm:text-xs font-bold text-white leading-tight">Stronger You</h4>
+              <p class="text-[9px] sm:text-[10px] text-sky-200/90 leading-tight">Confidence for Life</p>
             </div>
-        </div>
+          </div>
 
-        <!-- Mobile Swimmer Image Box (Minimized & Framed on Mobile) -->
-        <div class="block sm:hidden mt-6 relative aspect-[16/10] rounded-3xl overflow-hidden shadow-xl border border-white/20">
-          <img src="assets/img/hero-girl.jpg" alt="Young swimmer smiling underwater" class="w-full h-full object-cover object-[86%_center] brightness-105 contrast-105">
         </div>
 
       </div>
