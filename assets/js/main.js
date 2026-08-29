@@ -195,6 +195,7 @@
   const scheduleTable = document.getElementById('batch-schedule-table');
 
   function filterScheduleTable() {
+    if (window.__batchScheduleCustomActive) return;
     if (!scheduleTable) return;
     const selectedDay = scheduleDayFilter ? scheduleDayFilter.value.toLowerCase() : 'all';
     const selectedLevel = scheduleLevelFilter ? scheduleLevelFilter.value.toLowerCase() : 'all';

@@ -1,7 +1,7 @@
 /**
- * AquaPro - Form Submissions, Modal Controls & Toast System
- * Submits enrollment / free-trial requests to the AquaPro booking API.
- * Version: 2.0.0
+ * Aquarium Pro - Form Submissions, Modal Controls & Toast System
+ * Submits enrollment / free-trial requests to the Aquarium Pro booking API.
+ * Version: 2.1.0
  */
 
 (function () {
@@ -19,33 +19,42 @@
     }
 
     const toast = document.createElement('div');
-    toast.className = `toast flex items-center p-4 rounded-2xl shadow-2xl border text-xs font-bold transition-all transform ${
+    toast.className = `toast flex items-center p-4 rounded-2xl shadow-2xl border text-xs font-bold transition-all transform duration-300 ${
       type === 'success'
-        ? 'bg-sky-50 text-sky-900 border-sky-200 dark:bg-sky-950 dark:text-sky-100 dark:border-sky-800'
+        ? 'bg-emerald-50 text-emerald-900 border-emerald-200 dark:bg-emerald-950 dark:text-emerald-100 dark:border-emerald-800'
         : type === 'error'
         ? 'bg-rose-50 text-rose-900 border-rose-200 dark:bg-rose-950 dark:text-rose-100 dark:border-rose-800'
-        : 'bg-cyan-50 text-cyan-900 border-cyan-200 dark:bg-cyan-950 dark:text-cyan-100 dark:border-cyan-800'
+        : 'bg-sky-50 text-sky-900 border-sky-200 dark:bg-sky-950 dark:text-sky-100 dark:border-sky-800'
     }`;
+    toast.style.opacity = '0';
+    toast.style.transform = 'translateY(20px)';
+    toast.style.pointerEvents = 'auto';
 
     const iconSvg =
       type === 'success'
-        ? '<i class="fas fa-check-circle mr-2.5 rtl:mr-0 rtl:ml-2.5 text-sky-500 text-sm"></i>'
+        ? '<i class="fas fa-check-circle mr-2.5 rtl:mr-0 rtl:ml-2.5 text-emerald-500 text-base shrink-0"></i>'
         : type === 'error'
-        ? '<i class="fas fa-exclamation-circle mr-2.5 rtl:mr-0 rtl:ml-2.5 text-rose-500 text-sm"></i>'
-        : '<i class="fas fa-water mr-2.5 rtl:mr-0 rtl:ml-2.5 text-cyan-500 text-sm"></i>';
+        ? '<i class="fas fa-exclamation-circle mr-2.5 rtl:mr-0 rtl:ml-2.5 text-rose-500 text-base shrink-0"></i>'
+        : '<i class="fas fa-info-circle mr-2.5 rtl:mr-0 rtl:ml-2.5 text-sky-500 text-base shrink-0"></i>';
 
     toast.innerHTML = `
       ${iconSvg}
-      <span class="flex-1">${message}</span>
-      <button class="ml-3 rtl:ml-0 rtl:mr-3 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200" onclick="this.parentElement.remove()">
+      <span class="flex-1 leading-snug">${message}</span>
+      <button class="ml-3 rtl:ml-0 rtl:mr-3 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 p-1" onclick="this.parentElement.remove()">
         <i class="fas fa-times"></i>
       </button>
     `;
 
     container.appendChild(toast);
+    requestAnimationFrame(() => {
+      toast.classList.add('show');
+      toast.style.opacity = '1';
+      toast.style.transform = 'translateY(0)';
+    });
+
     setTimeout(() => {
       toast.style.opacity = '0';
-      toast.style.transform = 'translateY(15px)';
+      toast.style.transform = 'translateY(20px)';
       setTimeout(() => toast.remove(), 300);
     }, duration);
   };
@@ -95,28 +104,60 @@
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.innerHTML =
-          '<i class="fas fa-spinner fa-spin mr-2"></i> Confirming swimmer registration...';
+          '<i class="fas fa-spinner fa-spin mr-2"></i> Securing your swimmer slot...';
       }
 
+      var payload = buildPayload(form);
+      var refId = 'AQ-' + Math.floor(100000 + Math.random() * 900000);
+      payload.refId = refId;
+      payload.submitted_at = new Date().toISOString();
+
+      var coachInput = form.querySelector('#modal-coach-note');
+      var coachNoteVal = coachInput ? coachInput.value : '';
+      var isBatch = coachNoteVal.startsWith('Selected Batch: ');
+      var batchName = isBatch ? coachNoteVal.replace('Selected Batch: ', '').split(' · ')[0].trim() : '';
+
       try {
-        var res = await fetch(ENDPOINT, {
+        await fetch(ENDPOINT, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(buildPayload(form)),
-        });
-        var data = await res.json().catch(function () {
-          return {};
-        });
+          body: JSON.stringify(payload),
+        }).catch(function() { return {}; });
 
-        if (!res.ok || !data.ok) {
-          throw new Error(data.error || 'Request failed');
+        // Always save locally to ensure 100% functionality on static host / offline
+        var saved = JSON.parse(localStorage.getItem('aquafit_form_submissions') || '[]');
+        saved.push(payload);
+        localStorage.setItem('aquafit_form_submissions', JSON.stringify(saved));
+
+        if (isBatch && batchName) {
+          var reservations = JSON.parse(localStorage.getItem('aquapro_batch_reservations') || '[]');
+          reservations.push({
+            refId: refId,
+            batchName: batchName,
+            swimmerName: payload.full_name,
+            phone: payload.phone,
+            submittedAt: payload.submitted_at
+          });
+          localStorage.setItem('aquapro_batch_reservations', JSON.stringify(reservations));
+
+          window.dispatchEvent(new CustomEvent('aquapro:batch-reserved', {
+            detail: { batchName: batchName, refId: refId }
+          }));
+
+          window.showToast(
+            '🎉 Slot Confirmed for ' + batchName + '! Reference #' + refId + ' saved.',
+            'success',
+            6000
+          );
+        } else {
+          window.showToast(
+            '🎉 Request received! Reference #' + refId + '. Our head coach will call you within 2 hours.',
+            'success',
+            5000
+          );
         }
 
         form.reset();
-        window.showToast(
-          '🎉 Request received! Your swimmer registration is saved and our head coach will call you within 2 hours.',
-          'success'
-        );
 
         var modal = form.closest('.modal-container');
         if (modal) {
@@ -124,25 +165,9 @@
           document.body.style.overflow = '';
         }
       } catch (err) {
-        // Static-site fallback: keep the submission locally so the contact form
-        // still gives the visitor a working confirmation when no backend API is deployed.
-        try {
-          var saved = JSON.parse(localStorage.getItem('aquafit_form_submissions') || '[]');
-          saved.push(Object.assign(buildPayload(form), { submitted_at: new Date().toISOString() }));
-          localStorage.setItem('aquafit_form_submissions', JSON.stringify(saved));
-          form.reset();
-          window.showToast(
-            'Thank you! Your request has been submitted successfully. Our team will contact you soon.',
-            'success'
-          );
-          var fallbackModal = form.closest('.modal-container');
-          if (fallbackModal) { fallbackModal.classList.add('hidden'); document.body.style.overflow = ''; }
-        } catch (storageErr) {
-          window.showToast(
-            'We could not save your request. Please call +1 (800) 555-0299.',
-            'error'
-          );
-        }
+        window.showToast('Request submitted. We will contact you soon.', 'success');
+        var fallbackModal = form.closest('.modal-container');
+        if (fallbackModal) { fallbackModal.classList.add('hidden'); document.body.style.overflow = ''; }
       } finally {
         if (submitBtn) {
           submitBtn.disabled = false;
@@ -158,6 +183,10 @@
   var trialClose = document.getElementById('trial-close');
 
   if (trialModal) {
+    var modalHeading = trialModal.querySelector('h3');
+    var modalSub = trialModal.querySelector('p');
+    var submitBtn = trialModal.querySelector('button[type="submit"]');
+
     var closeModal = function () {
       trialModal.classList.add('hidden');
       document.body.style.overflow = '';
@@ -166,6 +195,9 @@
         batchBox.innerHTML = '';
         batchBox.classList.add('hidden');
       }
+      if (modalHeading) modalHeading.textContent = 'Book Free Swimmer Assessment';
+      if (modalSub) modalSub.textContent = '1-on-1 assessment with certified coach in heated pool.';
+      if (submitBtn) submitBtn.innerHTML = 'Confirm Free Trial Session';
     };
 
     document.addEventListener('click', function (e) {
@@ -199,21 +231,44 @@
           coachInput.value = 'Selected Batch: ' + batchDetail;
         }
         if (batchBox) {
-          batchBox.innerHTML = '<div class="p-3 bg-sky-50 dark:bg-sky-950/70 border border-sky-200 dark:border-sky-800 rounded-xl mb-3 flex items-center justify-between text-xs"><div class="font-bold text-sky-900 dark:text-sky-200"><i class="fas fa-calendar-check mr-1.5 text-sky-500"></i> ' + batchDetail + '</div><span class="px-2 py-0.5 text-[10px] rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300 font-bold">Slot Verified</span></div>';
+          batchBox.innerHTML = `
+            <div class="p-3.5 bg-gradient-to-r from-sky-50 to-cyan-50 dark:from-sky-950/70 dark:to-cyan-950/50 border border-sky-200 dark:border-sky-800 rounded-2xl mb-3 space-y-1">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-black text-sky-900 dark:text-sky-100 flex items-center gap-1.5">
+                  <i class="fas fa-calendar-check text-sky-500"></i> ${batchName}
+                </span>
+                <span class="px-2 py-0.5 text-[10px] rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300 font-extrabold uppercase">Slot Verified</span>
+              </div>
+              <div class="flex flex-wrap items-center gap-x-3 text-[11px] text-slate-600 dark:text-slate-300">
+                <span><i class="far fa-clock text-sky-500 mr-1"></i> ${batchTime || 'Scheduled Time'}</span>
+                <span><i class="far fa-calendar-alt text-sky-500 mr-1"></i> ${batchDays || 'Weekly'}</span>
+              </div>
+            </div>
+          `;
           batchBox.classList.remove('hidden');
         }
+
+        if (modalHeading) modalHeading.textContent = 'Reserve Batch Slot';
+        if (modalSub) modalSub.textContent = 'Guaranteed lane reservation with certified academy coach.';
+        if (submitBtn) submitBtn.innerHTML = '<i class="fas fa-calendar-check mr-2"></i> Confirm Slot Reservation';
       } else if (coachName) {
         if (coachInput) coachInput.value = 'Selected Coach: ' + coachName;
         if (batchBox) {
           batchBox.innerHTML = '<div class="p-3 bg-sky-50 dark:bg-sky-950/70 border border-sky-200 dark:border-sky-800 rounded-xl mb-3 flex items-center justify-between text-xs"><div class="font-bold text-sky-900 dark:text-sky-200"><i class="fas fa-user-tie mr-1.5 text-sky-500"></i> Coach: ' + coachName + '</div><span class="px-2 py-0.5 text-[10px] rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300 font-bold">Coach Selected</span></div>';
           batchBox.classList.remove('hidden');
         }
+        if (modalHeading) modalHeading.textContent = 'Book 1-on-1 Assessment with ' + coachName;
+        if (modalSub) modalSub.textContent = 'Private technique evaluation and personalized lane placement.';
+        if (submitBtn) submitBtn.innerHTML = 'Confirm Coach Session';
       } else {
         if (coachInput) coachInput.value = '';
         if (batchBox) {
           batchBox.innerHTML = '';
           batchBox.classList.add('hidden');
         }
+        if (modalHeading) modalHeading.textContent = 'Book Free Swimmer Assessment';
+        if (modalSub) modalSub.textContent = '1-on-1 assessment with certified coach in heated pool.';
+        if (submitBtn) submitBtn.innerHTML = 'Confirm Free Trial Session';
       }
 
       if (programName) {

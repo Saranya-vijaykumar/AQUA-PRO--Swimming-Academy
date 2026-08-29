@@ -177,30 +177,67 @@
     </div>
   </section>
 
-  <!-- Schedule Filter Controls (100% Functional Table Filtering) -->
-  <section class="py-6 bg-white dark:bg-slate-900 border-b border-slate-200/80 dark:border-slate-800 sticky top-[73px] z-40 shadow-sm backdrop-blur-md bg-white/90 dark:bg-slate-900/90">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <!-- Schedule Filter Controls (100% Functional Table Filtering) -->
+  <section class="py-5 bg-white dark:bg-slate-900 border-b border-slate-200/80 dark:border-slate-800 sticky top-[73px] z-40 shadow-sm backdrop-blur-md bg-white/95 dark:bg-slate-900/95">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3">
       
-      <div class="flex items-center space-x-3 rtl:space-x-reverse w-full sm:w-auto">
-        <label class="text-xs font-bold text-slate-700 dark:text-slate-300 whitespace-nowrap">Filter By Days:</label>
-        <select id="schedule-day-filter" class="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs font-bold text-slate-800 dark:text-slate-200 focus:outline-none focus:border-sky-500">
-          <option value="all">All Days (Mon - Sun)</option>
-          <option value="mon">Monday, Wednesday, Friday</option>
-          <option value="tue">Tuesday, Thursday, Saturday</option>
-          <option value="weekend">Weekend Intensive (Sat & Sun)</option>
-        </select>
+      <div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-3">
+        
+        <!-- Dropdown Filters Group -->
+        <div class="flex flex-wrap items-center gap-3">
+          <div class="flex items-center space-x-2 rtl:space-x-reverse">
+            <label for="schedule-day-filter" class="text-xs font-bold text-slate-700 dark:text-slate-300 whitespace-nowrap"><i class="far fa-calendar-alt text-sky-500 mr-1"></i> Days:</label>
+            <select id="schedule-day-filter" class="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs font-bold text-slate-800 dark:text-slate-200 focus:outline-none focus:border-sky-500 shadow-sm cursor-pointer">
+              <option value="all">All Days (Mon - Sun)</option>
+              <option value="mon">Monday, Wednesday, Friday</option>
+              <option value="tue">Tuesday, Thursday, Saturday</option>
+              <option value="weekend">Weekend Intensive (Sat &amp; Sun)</option>
+            </select>
+          </div>
+
+          <div class="flex items-center space-x-2 rtl:space-x-reverse">
+            <label for="schedule-level-filter" class="text-xs font-bold text-slate-700 dark:text-slate-300 whitespace-nowrap"><i class="fas fa-layer-group text-sky-500 mr-1"></i> Skill Level:</label>
+            <select id="schedule-level-filter" class="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs font-bold text-slate-800 dark:text-slate-200 focus:outline-none focus:border-sky-500 shadow-sm cursor-pointer">
+              <option value="all">All Levels (15 Batches)</option>
+              <option value="toddler">Toddler &amp; Beginner (Ages 2-4)</option>
+              <option value="junior">Junior Foundation (Ages 5-11)</option>
+              <option value="intermediate">Intermediate 4-Stroke (Ages 12-17)</option>
+              <option value="competitive">Competitive Pro Squad</option>
+              <option value="adult">Adults &amp; Masters (18+)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Search Box & Reset Group -->
+        <div class="flex items-center gap-2">
+          <div class="relative flex-1 sm:w-64">
+            <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs rtl:left-auto rtl:right-3"></i>
+            <input id="schedule-search-input" type="text" placeholder="Search coach, time, batch..." class="w-full pl-8 pr-3 rtl:pl-3 rtl:pr-8 py-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl text-xs font-medium text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-sky-500 shadow-sm">
+          </div>
+          <button id="schedule-reset-btn" title="Reset all filters" class="px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-bold transition-colors flex items-center gap-1.5 shadow-sm cursor-pointer shrink-0">
+            <i class="fas fa-rotate-left text-[10px]"></i> Reset
+          </button>
+        </div>
+
       </div>
 
-      <div class="flex items-center space-x-3 rtl:space-x-reverse w-full sm:w-auto">
-        <label class="text-xs font-bold text-slate-700 dark:text-slate-300 whitespace-nowrap">Skill Level:</label>
-        <select id="schedule-level-filter" class="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs font-bold text-slate-800 dark:text-slate-200 focus:outline-none focus:border-sky-500">
-          <option value="all">All Levels</option>
-          <option value="toddler">Toddler & Beginner</option>
-          <option value="junior">Junior Foundation</option>
-          <option value="intermediate">Intermediate 4-Stroke</option>
-          <option value="competitive">Competitive Racing Squad</option>
-          <option value="adult">Adults & Masters</option>
-        </select>
+      <!-- Quick Filter Pills & Live Counter -->
+      <div class="flex flex-wrap items-center justify-between gap-2 pt-1 border-t border-slate-100 dark:border-slate-800/80">
+        <div class="flex flex-wrap items-center gap-1.5 text-[11px] font-bold">
+          <span class="text-slate-400 mr-1 text-[10px] uppercase tracking-wider">Quick:</span>
+          <button data-quick-filter="all" class="schedule-pill px-2.5 py-1 rounded-lg bg-sky-500 text-white font-bold transition-all shadow-sm">All</button>
+          <button data-quick-filter="mon" class="schedule-pill px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-semibold transition-all">Mon/Wed/Fri</button>
+          <button data-quick-filter="tue" class="schedule-pill px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-semibold transition-all">Tue/Thu/Sat</button>
+          <button data-quick-filter="weekend" class="schedule-pill px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-semibold transition-all">Weekend</button>
+          <button data-quick-level="toddler" class="schedule-pill px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-semibold transition-all">Toddlers</button>
+          <button data-quick-level="junior" class="schedule-pill px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-semibold transition-all">Juniors</button>
+          <button data-quick-level="intermediate" class="schedule-pill px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-semibold transition-all">Teens</button>
+          <button data-quick-level="competitive" class="schedule-pill px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-semibold transition-all">Pro Squad</button>
+          <button data-quick-level="adult" class="schedule-pill px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-semibold transition-all">Adults</button>
+        </div>
+        <div id="schedule-counter" class="text-xs font-bold text-sky-600 dark:text-sky-400">
+          Showing all 15 available batches
+        </div>
       </div>
 
     </div>
@@ -420,6 +457,17 @@
               </td>
             </tr>
 
+                      <!-- Empty state when filters return 0 matches -->
+            <tr id="no-batches-row" class="hidden">
+              <td colspan="7" class="py-12 text-center text-slate-500 dark:text-slate-400">
+                <i class="fas fa-calendar-xmark text-4xl text-slate-300 dark:text-slate-600 mb-3 block"></i>
+                <p class="font-bold text-sm text-slate-800 dark:text-slate-200">No batches match your selected criteria.</p>
+                <p class="text-xs mt-1 text-slate-500">Try selecting different days or clear your filters.</p>
+                <button id="empty-reset-btn" class="mt-4 px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs transition-colors shadow-sm">
+                  Reset All Filters
+                </button>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -502,6 +550,7 @@
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/forms.js"></script>
+  <script src="assets/js/batch-schedule.js"></script>
 <script src="assets/js/nav-active.js"></script>
 </body>
 </html>
