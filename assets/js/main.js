@@ -381,21 +381,21 @@
     if (event.key === 'Escape') closeVideoModal();
   });
 
-    // --- 8. Background Bubbles Generator ---
+      // --- 8. Background Bubbles Generator ---
   function initBubbles() {
     if (document.querySelector('.bubble-container')) return;
     const container = document.createElement('div');
     container.className = 'bubble-container';
     const isMobile = window.innerWidth < 768;
-    const bubbleCount = isMobile ? 8 : 18;
+    const bubbleCount = isMobile ? 12 : 24;
     
     for (let i = 0; i < bubbleCount; i++) {
       const bubble = document.createElement('div');
       bubble.className = 'bubble';
-      const size = Math.random() * 18 + 8; // 8px to 26px
+      const size = Math.random() * 24 + 12; // 12px to 36px (very noticeable and crisp)
       const left = Math.random() * 96 + 2; // 2% to 98%
-      const duration = Math.random() * 12 + 10; // 10s to 22s
-      const delay = Math.random() * 12; // 0s to 12s
+      const duration = Math.random() * 10 + 9; // 9s to 19s
+      const delay = Math.random() * 10; // 0s to 10s
       
       bubble.style.width = `${size}px`;
       bubble.style.height = `${size}px`;
