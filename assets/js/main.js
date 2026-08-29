@@ -88,7 +88,17 @@
     });
   }
 
-  document.querySelectorAll('.rtl-toggle-btn').forEach(btn => btn.addEventListener('click', toggleRTL));
+  document.addEventListener('click', (e) => {
+    const rtlBtn = e.target.closest('.rtl-toggle-btn');
+    if (rtlBtn) {
+      e.preventDefault();
+      toggleRTL();
+    }
+  });
+
+  // Run theme and RTL initializers immediately
+  initTheme();
+  initRTL();
 
   // --- 3. Mobile Navigation Drawer ---
   const mobileMenuToggle = document.getElementById('mobile-menu-toggle');

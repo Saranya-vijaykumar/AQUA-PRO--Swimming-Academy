@@ -152,8 +152,7 @@
     });
   });
 
-  // --- 3. Modal Handlers (Trial Pass Modal & Coach Booking Modal) ---
-  var trialTriggers = document.querySelectorAll('[data-open-trial]');
+  // --- 3. Modal Handlers (Trial Pass Modal & Batch Booking Modal) ---
   var trialModal = document.getElementById('trial-modal');
   var trialBackdrop = document.getElementById('trial-backdrop');
   var trialClose = document.getElementById('trial-close');
@@ -162,26 +161,68 @@
     var closeModal = function () {
       trialModal.classList.add('hidden');
       document.body.style.overflow = '';
+      var batchBox = trialModal.querySelector('#modal-batch-selected-box');
+      if (batchBox) {
+        batchBox.innerHTML = '';
+        batchBox.classList.add('hidden');
+      }
     };
 
-    trialTriggers.forEach(function (btn) {
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
+    document.addEventListener('click', function (e) {
+      var btn = e.target.closest('[data-open-trial], [data-open-batch]');
+      if (!btn) return;
+      e.preventDefault();
 
-        var coachName = btn.getAttribute('data-coach-name');
-        var programName = btn.getAttribute('data-program-name');
-        var coachInput = trialModal.querySelector('#modal-coach-note');
-        if (coachInput && coachName) {
-          coachInput.value = 'Selected Coach: ' + coachName;
-        }
-        if (programName) {
-          var programSelect = trialModal.querySelector('#modal-program-select');
-          if (programSelect) programSelect.value = programName;
-        }
+      var coachName = btn.getAttribute('data-coach-name');
+      var programName = btn.getAttribute('data-program-name');
+      var batchName = btn.getAttribute('data-batch-name');
+      var batchTime = btn.getAttribute('data-batch-time');
+      var batchDays = btn.getAttribute('data-batch-days');
 
-        trialModal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-      });
+      var coachInput = trialModal.querySelector('#modal-coach-note');
+      var batchBox = trialModal.querySelector('#modal-batch-selected-box');
+
+      // Create batchBox if not already in modal
+      if (!batchBox) {
+        var formElem = trialModal.querySelector('form');
+        if (formElem) {
+          batchBox = document.createElement('div');
+          batchBox.id = 'modal-batch-selected-box';
+          batchBox.className = 'hidden';
+          formElem.insertBefore(batchBox, formElem.firstChild);
+        }
+      }
+
+      if (batchName) {
+        var batchDetail = batchName + (batchTime ? ' · ' + batchTime : '') + (batchDays ? ' (' + batchDays + ')' : '');
+        if (coachInput) {
+          coachInput.value = 'Selected Batch: ' + batchDetail;
+        }
+        if (batchBox) {
+          batchBox.innerHTML = '<div class="p-3 bg-sky-50 dark:bg-sky-950/70 border border-sky-200 dark:border-sky-800 rounded-xl mb-3 flex items-center justify-between text-xs"><div class="font-bold text-sky-900 dark:text-sky-200"><i class="fas fa-calendar-check mr-1.5 text-sky-500"></i> ' + batchDetail + '</div><span class="px-2 py-0.5 text-[10px] rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300 font-bold">Slot Verified</span></div>';
+          batchBox.classList.remove('hidden');
+        }
+      } else if (coachName) {
+        if (coachInput) coachInput.value = 'Selected Coach: ' + coachName;
+        if (batchBox) {
+          batchBox.innerHTML = '<div class="p-3 bg-sky-50 dark:bg-sky-950/70 border border-sky-200 dark:border-sky-800 rounded-xl mb-3 flex items-center justify-between text-xs"><div class="font-bold text-sky-900 dark:text-sky-200"><i class="fas fa-user-tie mr-1.5 text-sky-500"></i> Coach: ' + coachName + '</div><span class="px-2 py-0.5 text-[10px] rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300 font-bold">Coach Selected</span></div>';
+          batchBox.classList.remove('hidden');
+        }
+      } else {
+        if (coachInput) coachInput.value = '';
+        if (batchBox) {
+          batchBox.innerHTML = '';
+          batchBox.classList.add('hidden');
+        }
+      }
+
+      if (programName) {
+        var programSelect = trialModal.querySelector('#modal-program-select');
+        if (programSelect) programSelect.value = programName;
+      }
+
+      trialModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
     });
 
     if (trialBackdrop) trialBackdrop.addEventListener('click', closeModal);

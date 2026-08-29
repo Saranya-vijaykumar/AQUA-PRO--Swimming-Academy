@@ -3,10 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Batch Timings & Weekly Schedule � Aquarium Pro Swimming Academy</title>
+  <title>Batch Timings &amp; Weekly Schedule — Aquarium Pro Swimming Academy</title>
   <meta name="description" content="View weekly swim batch schedules, lane availability, coach assignments, and open enrollment slots at Aquarium Pro Swimming Academy.">
   
   <link rel="icon" type="image/png" href="assets/img/aquariumpro-logo.jpg">
+
+  <!-- Early Theme & Direction Persistence Handler -->
+  <script>
+    (function() {
+      var t = localStorage.getItem('aquapro_theme');
+      if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      var d = localStorage.getItem('aquapro_direction');
+      if (d === 'rtl') {
+        document.documentElement.setAttribute('dir', 'rtl');
+      } else {
+        document.documentElement.setAttribute('dir', 'ltr');
+      }
+    })();
+  </script>
 
   <!-- Tailwind CSS CDN + Config -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -200,88 +218,205 @@
               <th class="py-4 px-6">Age / Level</th>
               <th class="py-4 px-6">Schedule Days</th>
               <th class="py-4 px-6">Time Slot</th>
-              <th class="py-4 px-6">Pool & Coach</th>
+              <th class="py-4 px-6">Pool &amp; Coach</th>
               <th class="py-4 px-6">Open Slots</th>
               <th class="py-4 px-6 text-right rtl:text-left">Enrollment</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-slate-200 dark:divide-slate-800 text-slate-700 dark:text-slate-300">
             
-            <!-- Row 1 -->
+            <!-- Row 1: Competitive Mon/Wed/Fri -->
             <tr data-day="mon,wed,fri" data-level="competitive" class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-              <td class="py-4 px-6 font-bold text-slate-900 dark:text-white">Dawn Patrol Elite Racing</td>
-              <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-300 font-bold">Teens & Competitive</span></td>
+              <td class="py-4 px-6 font-bold text-slate-900 dark:text-white">Dawn Patrol Pro Racing</td>
+              <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-300 font-bold">Teens &amp; Pro Squad</span></td>
               <td class="py-4 px-6 font-semibold">Mon, Wed, Fri</td>
               <td class="py-4 px-6 font-bold text-sky-600">05:30 AM - 07:00 AM</td>
-              <td class="py-4 px-6">50m Arena � Dmitri Kozlov</td>
+              <td class="py-4 px-6">50m Arena &middot; Dmitri Kozlov</td>
               <td class="py-4 px-6 text-emerald-600 font-bold"><i class="fas fa-circle text-[8px] mr-1"></i> 3 Slots Left</td>
               <td class="py-4 px-6 text-right rtl:text-left">
-                <button data-open-trial data-program-name="competitive" class="px-3.5 py-1.5 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold transition-colors">Reserve</button>
+                <button data-open-trial data-batch-name="Dawn Patrol Pro Racing" data-batch-time="05:30 AM - 07:00 AM" data-batch-days="Mon, Wed, Fri" data-program-name="competitive" class="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs transition-colors shadow-sm">Book Now</button>
               </td>
             </tr>
 
-            <!-- Row 2 -->
+            <!-- Row 2: Competitive Tue/Thu/Sat -->
+            <tr data-day="tue,thu,sat" data-level="competitive" class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+              <td class="py-4 px-6 font-bold text-slate-900 dark:text-white">Pro Squad Biomechanics &amp; Sprints</td>
+              <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-300 font-bold">Pro Squad Athletes</span></td>
+              <td class="py-4 px-6 font-semibold">Tue, Thu, Sat</td>
+              <td class="py-4 px-6 font-bold text-sky-600">05:30 PM - 07:15 PM</td>
+              <td class="py-4 px-6">50m Arena &middot; Dmitri Kozlov</td>
+              <td class="py-4 px-6 text-emerald-600 font-bold"><i class="fas fa-circle text-[8px] mr-1"></i> 2 Slots Left</td>
+              <td class="py-4 px-6 text-right rtl:text-left">
+                <button data-open-trial data-batch-name="Pro Squad Biomechanics &amp; Sprints" data-batch-time="05:30 PM - 07:15 PM" data-batch-days="Tue, Thu, Sat" data-program-name="competitive" class="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs transition-colors shadow-sm">Book Now</button>
+              </td>
+            </tr>
+
+            <!-- Row 3: Competitive Weekend -->
+            <tr data-day="weekend" data-level="competitive" class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+              <td class="py-4 px-6 font-bold text-slate-900 dark:text-white">Tournament Race Pace Simulation</td>
+              <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-300 font-bold">Pro Squad &amp; Masters</span></td>
+              <td class="py-4 px-6 font-semibold">Saturday &amp; Sunday</td>
+              <td class="py-4 px-6 font-bold text-sky-600">07:00 AM - 08:45 AM</td>
+              <td class="py-4 px-6">50m Arena &middot; Dmitri Kozlov</td>
+              <td class="py-4 px-6 text-emerald-600 font-bold"><i class="fas fa-circle text-[8px] mr-1"></i> 4 Slots Left</td>
+              <td class="py-4 px-6 text-right rtl:text-left">
+                <button data-open-trial data-batch-name="Tournament Race Pace Simulation" data-batch-time="07:00 AM - 08:45 AM" data-batch-days="Sat &amp; Sun" data-program-name="competitive" class="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs transition-colors shadow-sm">Book Now</button>
+              </td>
+            </tr>
+
+            <!-- Row 4: Toddlers Tue/Thu/Sat -->
             <tr data-day="tue,thu,sat" data-level="toddler" class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
               <td class="py-4 px-6 font-bold text-slate-900 dark:text-white">Little Tadpoles Splash</td>
               <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-full bg-cyan-100 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 font-bold">Toddlers (Ages 2-4)</span></td>
               <td class="py-4 px-6 font-semibold">Tue, Thu, Sat</td>
               <td class="py-4 px-6 font-bold text-sky-600">09:30 AM - 10:15 AM</td>
-              <td class="py-4 px-6">25m Heated � Elena Chen</td>
+              <td class="py-4 px-6">25m Heated &middot; Elena Chen</td>
               <td class="py-4 px-6 text-emerald-600 font-bold"><i class="fas fa-circle text-[8px] mr-1"></i> 5 Slots Left</td>
               <td class="py-4 px-6 text-right rtl:text-left">
-                <button data-open-trial data-program-name="beginners" class="px-3.5 py-1.5 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold transition-colors">Reserve</button>
+                <button data-open-trial data-batch-name="Little Tadpoles Splash" data-batch-time="09:30 AM - 10:15 AM" data-batch-days="Tue, Thu, Sat" data-program-name="beginners" class="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs transition-colors shadow-sm">Book Now</button>
               </td>
             </tr>
 
-            <!-- Row 3 -->
+            <!-- Row 5: Toddlers Mon/Wed/Fri -->
+            <tr data-day="mon,wed,fri" data-level="toddler" class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+              <td class="py-4 px-6 font-bold text-slate-900 dark:text-white">Baby Otters Gentle Water Play</td>
+              <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-full bg-cyan-100 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 font-bold">Toddlers (Ages 2-4)</span></td>
+              <td class="py-4 px-6 font-semibold">Mon, Wed, Fri</td>
+              <td class="py-4 px-6 font-bold text-sky-600">10:30 AM - 11:15 AM</td>
+              <td class="py-4 px-6">25m Heated &middot; Elena Chen</td>
+              <td class="py-4 px-6 text-emerald-600 font-bold"><i class="fas fa-circle text-[8px] mr-1"></i> 4 Slots Left</td>
+              <td class="py-4 px-6 text-right rtl:text-left">
+                <button data-open-trial data-batch-name="Baby Otters Gentle Water Play" data-batch-time="10:30 AM - 11:15 AM" data-batch-days="Mon, Wed, Fri" data-program-name="beginners" class="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs transition-colors shadow-sm">Book Now</button>
+              </td>
+            </tr>
+
+            <!-- Row 6: Toddlers Weekend -->
+            <tr data-day="weekend" data-level="toddler" class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+              <td class="py-4 px-6 font-bold text-slate-900 dark:text-white">Weekend Toddler Water Confidence</td>
+              <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-full bg-cyan-100 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 font-bold">Toddlers (Ages 2-4)</span></td>
+              <td class="py-4 px-6 font-semibold">Saturday &amp; Sunday</td>
+              <td class="py-4 px-6 font-bold text-sky-600">09:00 AM - 09:45 AM</td>
+              <td class="py-4 px-6">25m Heated &middot; Elena Chen</td>
+              <td class="py-4 px-6 text-emerald-600 font-bold"><i class="fas fa-circle text-[8px] mr-1"></i> 3 Slots Left</td>
+              <td class="py-4 px-6 text-right rtl:text-left">
+                <button data-open-trial data-batch-name="Weekend Toddler Water Confidence" data-batch-time="09:00 AM - 09:45 AM" data-batch-days="Sat &amp; Sun" data-program-name="beginners" class="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs transition-colors shadow-sm">Book Now</button>
+              </td>
+            </tr>
+
+            <!-- Row 7: Junior Mon/Wed/Fri -->
             <tr data-day="mon,wed,fri" data-level="junior" class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
               <td class="py-4 px-6 font-bold text-slate-900 dark:text-white">Junior Foundation Freestyle</td>
               <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-full bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 font-bold">Kids (Ages 5-11)</span></td>
               <td class="py-4 px-6 font-semibold">Mon, Wed, Fri</td>
               <td class="py-4 px-6 font-bold text-sky-600">04:30 PM - 05:30 PM</td>
-              <td class="py-4 px-6">25m Learner � Elena Chen</td>
+              <td class="py-4 px-6">25m Learner &middot; Elena Chen</td>
               <td class="py-4 px-6 text-amber-600 font-bold"><i class="fas fa-circle text-[8px] mr-1"></i> 1 Slot Left</td>
               <td class="py-4 px-6 text-right rtl:text-left">
-                <button data-open-trial data-program-name="freestyle" class="px-3.5 py-1.5 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold transition-colors">Reserve</button>
+                <button data-open-trial data-batch-name="Junior Foundation Freestyle" data-batch-time="04:30 PM - 05:30 PM" data-batch-days="Mon, Wed, Fri" data-program-name="freestyle" class="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs transition-colors shadow-sm">Book Now</button>
               </td>
             </tr>
 
-            <!-- Row 4 -->
+            <!-- Row 8: Junior Tue/Thu/Sat -->
+            <tr data-day="tue,thu,sat" data-level="junior" class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+              <td class="py-4 px-6 font-bold text-slate-900 dark:text-white">Junior 4-Stroke Development</td>
+              <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-full bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 font-bold">Kids (Ages 5-11)</span></td>
+              <td class="py-4 px-6 font-semibold">Tue, Thu, Sat</td>
+              <td class="py-4 px-6 font-bold text-sky-600">04:00 PM - 05:00 PM</td>
+              <td class="py-4 px-6">25m Learner &middot; Sophia Novak</td>
+              <td class="py-4 px-6 text-emerald-600 font-bold"><i class="fas fa-circle text-[8px] mr-1"></i> 4 Slots Left</td>
+              <td class="py-4 px-6 text-right rtl:text-left">
+                <button data-open-trial data-batch-name="Junior 4-Stroke Development" data-batch-time="04:00 PM - 05:00 PM" data-batch-days="Tue, Thu, Sat" data-program-name="freestyle" class="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs transition-colors shadow-sm">Book Now</button>
+              </td>
+            </tr>
+
+            <!-- Row 9: Junior Weekend -->
+            <tr data-day="weekend" data-level="junior" class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+              <td class="py-4 px-6 font-bold text-slate-900 dark:text-white">Weekend Junior Swimmer Club</td>
+              <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-full bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 font-bold">Kids (Ages 5-11)</span></td>
+              <td class="py-4 px-6 font-semibold">Saturday &amp; Sunday</td>
+              <td class="py-4 px-6 font-bold text-sky-600">10:00 AM - 11:00 AM</td>
+              <td class="py-4 px-6">25m Learner &middot; Elena Chen</td>
+              <td class="py-4 px-6 text-emerald-600 font-bold"><i class="fas fa-circle text-[8px] mr-1"></i> 3 Slots Left</td>
+              <td class="py-4 px-6 text-right rtl:text-left">
+                <button data-open-trial data-batch-name="Weekend Junior Swimmer Club" data-batch-time="10:00 AM - 11:00 AM" data-batch-days="Sat &amp; Sun" data-program-name="freestyle" class="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs transition-colors shadow-sm">Book Now</button>
+              </td>
+            </tr>
+
+            <!-- Row 10: Intermediate Tue/Thu/Sat -->
             <tr data-day="tue,thu,sat" data-level="intermediate" class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-              <td class="py-4 px-6 font-bold text-slate-900 dark:text-white">Youth 4-Stroke & Flip Turns</td>
+              <td class="py-4 px-6 font-bold text-slate-900 dark:text-white">Youth 4-Stroke &amp; Flip Turns</td>
               <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 font-bold">Youth (Ages 8-15)</span></td>
               <td class="py-4 px-6 font-semibold">Tue, Thu, Sat</td>
               <td class="py-4 px-6 font-bold text-sky-600">05:30 PM - 06:45 PM</td>
-              <td class="py-4 px-6">50m Arena � Julian Alvarez</td>
+              <td class="py-4 px-6">50m Arena &middot; Julian Alvarez</td>
               <td class="py-4 px-6 text-emerald-600 font-bold"><i class="fas fa-circle text-[8px] mr-1"></i> 4 Slots Left</td>
               <td class="py-4 px-6 text-right rtl:text-left">
-                <button data-open-trial data-program-name="intermediate" class="px-3.5 py-1.5 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold transition-colors">Reserve</button>
+                <button data-open-trial data-batch-name="Youth 4-Stroke &amp; Flip Turns" data-batch-time="05:30 PM - 06:45 PM" data-batch-days="Tue, Thu, Sat" data-program-name="intermediate" class="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs transition-colors shadow-sm">Book Now</button>
               </td>
             </tr>
 
-            <!-- Row 5 -->
+            <!-- Row 11: Intermediate Mon/Wed/Fri -->
+            <tr data-day="mon,wed,fri" data-level="intermediate" class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+              <td class="py-4 px-6 font-bold text-slate-900 dark:text-white">Teen Stamina &amp; Aerobic Conditioning</td>
+              <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 font-bold">Teens (Ages 12-17)</span></td>
+              <td class="py-4 px-6 font-semibold">Mon, Wed, Fri</td>
+              <td class="py-4 px-6 font-bold text-sky-600">05:45 PM - 07:00 PM</td>
+              <td class="py-4 px-6">50m Arena &middot; Julian Alvarez</td>
+              <td class="py-4 px-6 text-emerald-600 font-bold"><i class="fas fa-circle text-[8px] mr-1"></i> 3 Slots Left</td>
+              <td class="py-4 px-6 text-right rtl:text-left">
+                <button data-open-trial data-batch-name="Teen Stamina &amp; Aerobic Conditioning" data-batch-time="05:45 PM - 07:00 PM" data-batch-days="Mon, Wed, Fri" data-program-name="intermediate" class="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs transition-colors shadow-sm">Book Now</button>
+              </td>
+            </tr>
+
+            <!-- Row 12: Intermediate Weekend -->
+            <tr data-day="weekend" data-level="intermediate" class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+              <td class="py-4 px-6 font-bold text-slate-900 dark:text-white">Weekend Youth Intensive</td>
+              <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-full bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 font-bold">Kids &amp; Teens</span></td>
+              <td class="py-4 px-6 font-semibold">Saturday &amp; Sunday</td>
+              <td class="py-4 px-6 font-bold text-sky-600">10:00 AM - 11:30 AM</td>
+              <td class="py-4 px-6">50m Arena &middot; Julian Alvarez</td>
+              <td class="py-4 px-6 text-emerald-600 font-bold"><i class="fas fa-circle text-[8px] mr-1"></i> 2 Slots Left</td>
+              <td class="py-4 px-6 text-right rtl:text-left">
+                <button data-open-trial data-batch-name="Weekend Youth Intensive" data-batch-time="10:00 AM - 11:30 AM" data-batch-days="Sat &amp; Sun" data-program-name="intermediate" class="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs transition-colors shadow-sm">Book Now</button>
+              </td>
+            </tr>
+
+            <!-- Row 13: Adult Mon/Wed/Fri -->
             <tr data-day="mon,wed,fri" data-level="adult" class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-              <td class="py-4 px-6 font-bold text-slate-900 dark:text-white">Adult Fear-Free & Fitness</td>
+              <td class="py-4 px-6 font-bold text-slate-900 dark:text-white">Adult Fear-Free &amp; Fitness</td>
               <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold">Adults (18+)</span></td>
               <td class="py-4 px-6 font-semibold">Mon, Wed, Fri</td>
               <td class="py-4 px-6 font-bold text-sky-600">07:00 PM - 08:15 PM</td>
-              <td class="py-4 px-6">25m Heated � Sophia Novak</td>
+              <td class="py-4 px-6">25m Heated &middot; Sophia Novak</td>
               <td class="py-4 px-6 text-emerald-600 font-bold"><i class="fas fa-circle text-[8px] mr-1"></i> 6 Slots Left</td>
               <td class="py-4 px-6 text-right rtl:text-left">
-                <button data-open-trial data-program-name="adults" class="px-3.5 py-1.5 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold transition-colors">Reserve</button>
+                <button data-open-trial data-batch-name="Adult Fear-Free &amp; Fitness" data-batch-time="07:00 PM - 08:15 PM" data-batch-days="Mon, Wed, Fri" data-program-name="adults" class="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs transition-colors shadow-sm">Book Now</button>
               </td>
             </tr>
 
-            <!-- Row 6 -->
-            <tr data-day="weekend" data-level="intermediate" class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-              <td class="py-4 px-6 font-bold text-slate-900 dark:text-white">Weekend Youth Intensive</td>
-              <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-full bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 font-bold">Kids & Teens</span></td>
-              <td class="py-4 px-6 font-semibold">Saturday & Sunday</td>
-              <td class="py-4 px-6 font-bold text-sky-600">10:00 AM - 11:30 AM</td>
-              <td class="py-4 px-6">50m Arena � Julian Alvarez</td>
-              <td class="py-4 px-6 text-emerald-600 font-bold"><i class="fas fa-circle text-[8px] mr-1"></i> 2 Slots Left</td>
+            <!-- Row 14: Adult Tue/Thu/Sat -->
+            <tr data-day="tue,thu,sat" data-level="adult" class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+              <td class="py-4 px-6 font-bold text-slate-900 dark:text-white">Adult Morning Cardio &amp; Lap Swim</td>
+              <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold">Adults (18+)</span></td>
+              <td class="py-4 px-6 font-semibold">Tue, Thu, Sat</td>
+              <td class="py-4 px-6 font-bold text-sky-600">06:30 AM - 07:45 AM</td>
+              <td class="py-4 px-6">50m Arena &middot; Julian Alvarez</td>
+              <td class="py-4 px-6 text-emerald-600 font-bold"><i class="fas fa-circle text-[8px] mr-1"></i> 5 Slots Left</td>
               <td class="py-4 px-6 text-right rtl:text-left">
-                <button data-open-trial data-program-name="intermediate" class="px-3.5 py-1.5 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold transition-colors">Reserve</button>
+                <button data-open-trial data-batch-name="Adult Morning Cardio &amp; Lap Swim" data-batch-time="06:30 AM - 07:45 AM" data-batch-days="Tue, Thu, Sat" data-program-name="adults" class="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs transition-colors shadow-sm">Book Now</button>
+              </td>
+            </tr>
+
+            <!-- Row 15: Adult Weekend -->
+            <tr data-day="weekend" data-level="adult" class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+              <td class="py-4 px-6 font-bold text-slate-900 dark:text-white">Weekend Adult Technique &amp; Fitness</td>
+              <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold">Adults (18+)</span></td>
+              <td class="py-4 px-6 font-semibold">Saturday &amp; Sunday</td>
+              <td class="py-4 px-6 font-bold text-sky-600">08:00 AM - 09:15 AM</td>
+              <td class="py-4 px-6">25m Heated &middot; Sophia Novak</td>
+              <td class="py-4 px-6 text-emerald-600 font-bold"><i class="fas fa-circle text-[8px] mr-1"></i> 4 Slots Left</td>
+              <td class="py-4 px-6 text-right rtl:text-left">
+                <button data-open-trial data-batch-name="Weekend Adult Technique &amp; Fitness" data-batch-time="08:00 AM - 09:15 AM" data-batch-days="Sat &amp; Sun" data-program-name="adults" class="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs transition-colors shadow-sm">Book Now</button>
               </td>
             </tr>
 
@@ -306,11 +441,11 @@
           <a href="https://wa.me/18005550298" target="_blank" rel="noopener" aria-label="WhatsApp" class="hover:text-emerald-400"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
-      <div><h4 class="text-xs font-black uppercase tracking-widest text-white mb-4">Academy Directory</h4><div class="space-y-2 text-xs"><a class="block hover:text-sky-400" href="programs.html">Programs by Skill & Age</a><a class="block hover:text-sky-400" href="coaches.html">Certified Faculty</a><a class="block hover:text-sky-400" href="batch-timings.html">Batch Timings Schedule</a><a class="block hover:text-sky-400" href="facilities.html">Pool Specs & Facilities</a></div></div>
-      <div><h4 class="text-xs font-black uppercase tracking-widest text-white mb-4">Arena Timings</h4><div class="space-y-2 text-xs leading-relaxed"><p>Mon�Fri: 05:00 AM � 09:30 PM</p><p>Saturday: 06:00 AM � 08:00 PM</p><p>Sunday: 07:00 AM � 06:00 PM</p><a href="batch-timings.html" class="inline-block mt-2 text-sky-400 hover:text-sky-300">View full schedule ?</a></div></div>
-      <div><h4 class="text-xs font-black uppercase tracking-widest text-white mb-4">Facility Location</h4><div class="space-y-3 text-xs"><a href="https://www.google.com/maps/search/?api=1&query=742+Marina+Aquatic+Way+CA+90210" target="_blank" rel="noopener" class="flex gap-2 hover:text-sky-400"><i class="fas fa-location-dot text-sky-400 mt-0.5"></i><span>742 Marina Aquatic Way, CA 90210</span></a><a href="tel:+18005550299" class="flex gap-2 hover:text-sky-400"><i class="fas fa-phone text-sky-400 mt-0.5"></i><span>+1 (800) 555-0299</span></a><a href="mailto:admissions@aquapro-academy.com" class="flex gap-2 hover:text-sky-400"><i class="fas fa-envelope text-sky-400 mt-0.5"></i><span>Email the academy</span></a></div></div>
+      <div><h4 class="text-xs font-black uppercase tracking-widest text-white mb-4">Academy Directory</h4><div class="space-y-2 text-xs"><a class="block hover:text-sky-400" href="programs.html">Programs by Skill &amp; Age</a><a class="block hover:text-sky-400" href="coaches.html">Certified Faculty</a><a class="block hover:text-sky-400" href="batch-timings.html">Batch Timings Schedule</a><a class="block hover:text-sky-400" href="facilities.html">Pool Specs &amp; Facilities</a></div></div>
+      <div><h4 class="text-xs font-black uppercase tracking-widest text-white mb-4">Arena Timings</h4><div class="space-y-2 text-xs leading-relaxed"><p>Mon&ndash;Fri: 05:00 AM &ndash; 09:30 PM</p><p>Saturday: 06:00 AM &ndash; 08:00 PM</p><p>Sunday: 07:00 AM &ndash; 06:00 PM</p><a href="batch-timings.html" class="inline-block mt-2 text-sky-400 hover:text-sky-300">View full schedule &rarr;</a></div></div>
+      <div><h4 class="text-xs font-black uppercase tracking-widest text-white mb-4">Facility Location</h4><div class="space-y-3 text-xs"><a href="https://www.google.com/maps/search/?api=1&amp;query=742+Marina+Aquatic+Way+CA+90210" target="_blank" rel="noopener" class="flex gap-2 hover:text-sky-400"><i class="fas fa-location-dot text-sky-400 mt-0.5"></i><span>742 Marina Aquatic Way, CA 90210</span></a><a href="tel:+18005550299" class="flex gap-2 hover:text-sky-400"><i class="fas fa-phone text-sky-400 mt-0.5"></i><span>+1 (800) 555-0299</span></a><a href="mailto:admissions@aquapro-academy.com" class="flex gap-2 hover:text-sky-400"><i class="fas fa-envelope text-sky-400 mt-0.5"></i><span>Email the academy</span></a></div></div>
     </div>
-    <div class="pt-6 flex flex-col sm:flex-row gap-3 justify-between text-[11px] text-slate-500"><span>� 2026 Aquarium Pro Swimming Academy. All rights reserved.</span><span>Safe water � Better coaching � Stronger swimmers</span></div>
+    <div class="pt-6 flex flex-col sm:flex-row gap-3 justify-between text-[11px] text-slate-500"><span>&copy; 2026 Aquarium Pro Swimming Academy. All rights reserved.</span><span>Safe water &middot; Better coaching &middot; Stronger swimmers</span></div>
   </div>
 </footer>
 

@@ -3,15 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AquaPro — Premier Swimming Academy & Aquatic Center</title>
+  <title>Aquarium Pro — Premier Swimming Academy & Aquatic Center</title>
   <meta name="description" content="State-of-the-art swimming academy featuring 50m Olympic pools, certified FINA coaches, heated learner pools, and progressive programs for kids, teens, and adults.">
   
-  <meta property="og:title" content="AquaPro — Premier Swimming Academy & Aquatic Center">
+  <meta property="og:title" content="Aquarium Pro — Premier Swimming Academy & Aquatic Center">
   <meta property="og:description" content="State-of-the-art swimming academy with 50m Olympic pools, certified coaches, and programs for all ages.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/img/og.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="assets/img/og.jpg">
+
+  <!-- Early Theme & Direction Persistence Handler -->
+  <script>
+    (function() {
+      var t = localStorage.getItem('aquapro_theme');
+      if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      var d = localStorage.getItem('aquapro_direction');
+      if (d === 'rtl') {
+        document.documentElement.setAttribute('dir', 'rtl');
+      } else {
+        document.documentElement.setAttribute('dir', 'ltr');
+      }
+    })();
+  </script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/img/aquariumpro-logo.jpg">
@@ -251,7 +269,7 @@
         <a href="programs.html#kids" class="group rounded-3xl overflow-hidden bg-white dark:bg-slate-900 border-2 border-white/80 dark:border-slate-800 shadow-xl hover:border-sky-400 card-lift splash-hover-card transition-all duration-300 flex flex-col">
           <div class="h-40 sm:h-44 w-full overflow-hidden relative zoom-on-hover">
             <img src="assets/img/prog-kids.jpg" alt="Kids swimming program" class="h-full w-full object-cover card-zoom-img">
-            <span class="absolute top-3 left-3 bg-sky-600/90 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full shadow">Ages 4–12</span>
+            <span class="absolute top-3 left-3 bg-sky-600/90 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full shadow">Ages 2–11</span>
           </div>
           <div class="p-4 sm:p-5 flex items-center justify-between flex-1">
             <div>
@@ -267,7 +285,7 @@
         <a href="programs.html#teens" class="group rounded-3xl overflow-hidden bg-white dark:bg-slate-900 border-2 border-white/80 dark:border-slate-800 shadow-2xl hover:border-cyan-400 card-lift splash-hover-card transition-all duration-300 flex flex-col">
           <div class="h-40 sm:h-44 w-full overflow-hidden relative zoom-on-hover">
             <img src="assets/img/teens-1.jpg" alt="Teens swimming program" class="h-full w-full object-cover card-zoom-img">
-            <span class="absolute top-3 left-3 bg-cyan-600/90 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full shadow">Ages 13–18</span>
+            <span class="absolute top-3 left-3 bg-cyan-600/90 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full shadow">Ages 12–17</span>
           </div>
           <div class="p-4 sm:p-5 flex items-center justify-between flex-1">
             <div>
@@ -283,7 +301,7 @@
         <a href="programs.html#adults" class="group rounded-3xl overflow-hidden bg-white dark:bg-slate-900 border-2 border-white/80 dark:border-slate-800 shadow-2xl hover:border-indigo-400 card-lift splash-hover-card transition-all duration-300 flex flex-col">
           <div class="h-40 sm:h-44 w-full overflow-hidden relative zoom-on-hover">
             <img src="assets/img/prog-adults.jpg" alt="Adult swimming program" class="h-full w-full object-cover card-zoom-img">
-            <span class="absolute top-3 left-3 bg-indigo-600/90 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full shadow">Ages 19+</span>
+            <span class="absolute top-3 left-3 bg-indigo-600/90 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full shadow">Ages 18+</span>
           </div>
           <div class="p-4 sm:p-5 flex items-center justify-between flex-1">
             <div>
@@ -299,7 +317,7 @@
         <a href="programs.html#competitive" class="group rounded-3xl overflow-hidden bg-white dark:bg-slate-900 border-2 border-white/80 dark:border-slate-800 shadow-2xl hover:border-amber-400 card-lift splash-hover-card race-line-track transition-all duration-300 flex flex-col">
           <div class="h-40 sm:h-44 w-full overflow-hidden relative zoom-on-hover">
             <img src="assets/img/competitive-1.jpg" alt="Competitive swim training" class="h-full w-full object-cover card-zoom-img">
-            <span class="absolute top-3 left-3 bg-amber-600/90 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full shadow">Elite Squad</span>
+            <span class="absolute top-3 left-3 bg-amber-600/90 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full shadow">Pro Squad</span>
           </div>
           <div class="p-4 sm:p-5 flex items-center justify-between flex-1">
             <div>
@@ -331,12 +349,12 @@
         <div class="bg-slate-50 dark:bg-slate-800/90 rounded-3xl overflow-hidden border border-slate-200/90 dark:border-slate-700/70 flex flex-col justify-between hover:shadow-2xl hover:border-cyan-400 dark:hover:border-cyan-500 card-lift splash-hover-card transition-all duration-300">
           <div>
             <div class="aspect-[16/10] overflow-hidden zoom-on-hover relative">
-              <img src="assets/img/prog-toddlers.jpg" alt="Toddlers 2-3 age water safety and floating confidence class" class="w-full h-full object-cover card-zoom-img">
-              <span class="absolute top-3 left-3 bg-cyan-600/95 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-md">Ages 2–3 (Toddlers)</span>
+              <img src="assets/img/prog-toddlers.jpg" alt="Toddlers 2-4 age water safety and floating confidence class" class="w-full h-full object-cover card-zoom-img">
+              <span class="absolute top-3 left-3 bg-cyan-600/95 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-md">Ages 2–4 (Toddlers)</span>
             </div>
             <div class="p-6 sm:p-7">
               <span class="inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-wider text-cyan-600 dark:text-cyan-400 bg-cyan-50 dark:bg-cyan-950/80 px-2.5 py-1 rounded-md">
-                <i class="fas fa-shield-halved text-[9px]"></i> Water Safety & Floating (Ages 2–3)
+                <i class="fas fa-shield-halved text-[9px]"></i> Water Safety & Floating (Ages 2–4)
               </span>
               <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-3 mb-2 font-heading">Water Safety & Floating Confidence</h3>
               <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
@@ -355,20 +373,20 @@
           <div>
             <div class="aspect-[16/10] overflow-hidden zoom-on-hover relative">
               <img src="assets/img/teens-2.jpg" alt="Swimmer practicing 4-stroke technique and endurance" class="w-full h-full object-cover card-zoom-img">
-              <span class="absolute top-3 left-3 bg-sky-600/95 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-md">Kids & Teens (Ages 7–16)</span>
+              <span class="absolute top-3 left-3 bg-sky-600/95 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-md">Kids & Junior (Ages 5–11)</span>
             </div>
             <div class="p-6 sm:p-7">
               <span class="inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-wider text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-950/80 px-2.5 py-1 rounded-md">
-                <i class="fas fa-person-swimming text-[9px]"></i> 4-Stroke Technique & Stamina
+                <i class="fas fa-person-swimming text-[9px]"></i> 4-Stroke Technique & Stamina (Ages 5–11)
               </span>
-              <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-3 mb-2 font-heading">4-Stroke Mastery & Endurance</h3>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-3 mb-2 font-heading">Kids 4-Stroke Mastery & Endurance</h3>
               <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
                 Complete mechanics for Freestyle, Backstroke, Breaststroke, and Butterfly, plus flip-turns and 50-meter lap stamina.
               </p>
             </div>
           </div>
           <div class="p-6 sm:p-7 pt-0 border-t border-slate-200/60 dark:border-slate-700/60 flex items-center justify-between">
-            <span class="text-sm font-extrabold text-slate-900 dark:text-white">$199 <span class="text-xs font-normal text-slate-500">/mo</span></span>
+            <span class="text-sm font-extrabold text-slate-900 dark:text-white">$189 <span class="text-xs font-normal text-slate-500">/mo</span></span>
             <a href="programs.html#teens" class="inline-flex items-center gap-1 text-xs font-bold text-sky-600 dark:text-sky-400 hover:text-sky-700 dark:hover:text-sky-300">Learn More <i class="fas fa-arrow-right text-[10px] rtl:rotate-180"></i></a>
           </div>
         </div>
@@ -378,11 +396,11 @@
           <div>
             <div class="aspect-[16/10] overflow-hidden zoom-on-hover relative">
               <img src="assets/img/facility-dive-blocks.jpg" alt="Competitive race dive block starts and tournament training" class="w-full h-full object-cover card-zoom-img">
-              <span class="absolute top-3 left-3 bg-indigo-600/95 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-md">Elite Squad & Masters</span>
+              <span class="absolute top-3 left-3 bg-indigo-600/95 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-md">Pro Squad & Masters</span>
             </div>
             <div class="p-6 sm:p-7">
               <span class="inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-wider text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/80 px-2.5 py-1 rounded-md">
-                <i class="fas fa-trophy text-[9px]"></i> Dive Blocks & Race Speed
+                <i class="fas fa-trophy text-[9px]"></i> Dive Blocks & Race Speed (Pro Squad)
               </span>
               <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-3 mb-2 font-heading">Competitive Racing & High Performance</h3>
               <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
@@ -391,7 +409,7 @@
             </div>
           </div>
           <div class="p-6 sm:p-7 pt-0 border-t border-slate-200/60 dark:border-slate-700/60 flex items-center justify-between">
-            <span class="text-sm font-extrabold text-slate-900 dark:text-white">$279 <span class="text-xs font-normal text-slate-500">/mo</span></span>
+            <span class="text-sm font-extrabold text-slate-900 dark:text-white">$299 <span class="text-xs font-normal text-slate-500">/mo</span></span>
             <a href="programs.html#competitive" class="inline-flex items-center gap-1 text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300">Learn More <i class="fas fa-arrow-right text-[10px] rtl:rotate-180"></i></a>
           </div>
         </div>

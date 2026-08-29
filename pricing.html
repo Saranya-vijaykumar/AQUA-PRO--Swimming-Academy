@@ -8,6 +8,24 @@
   
   <link rel="icon" type="image/png" href="assets/img/aquariumpro-logo.jpg">
 
+  <!-- Early Theme & Direction Persistence Handler -->
+  <script>
+    (function() {
+      var t = localStorage.getItem('aquapro_theme');
+      if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      var d = localStorage.getItem('aquapro_direction');
+      if (d === 'rtl') {
+        document.documentElement.setAttribute('dir', 'rtl');
+      } else {
+        document.documentElement.setAttribute('dir', 'ltr');
+      }
+    })();
+  </script>
+
   <!-- Tailwind CSS CDN + Config -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -233,7 +251,7 @@
         <div class="bg-white dark:bg-slate-900 rounded-3xl p-7 sm:p-8 border border-slate-200/80 dark:border-slate-800 shadow-lg flex flex-col justify-between hover:shadow-xl hover:border-amber-400 card-lift transition-all">
           <div class="space-y-4">
             <div class="min-h-[72px]">
-              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-300 text-[10px] font-black uppercase tracking-wider mb-2">Elite Squad</span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-300 text-[10px] font-black uppercase tracking-wider mb-2">Pro Squad</span>
               <h3 class="text-2xl font-bold text-slate-900 dark:text-white font-heading">Competitive Squad</h3>
               <p class="text-xs text-slate-500 mt-1">For championship & tournament athletes.</p>
             </div>
@@ -402,13 +420,24 @@
             <input name="phone" type="tel" required placeholder="+1 (800) 555-0199" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500">
           </div>
           <div>
-            <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Target Program</label>
-            <select name="program" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500">
-              <option value="kids">Kids Foundation ($149/mo)</option>
-              <option value="teens">Teens & Adults Progress ($189/mo)</option>
-              <option value="competitive">Competitive Squad ($299/mo)</option>
+            <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Age Group</label>
+            <select name="age_group" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500">
+              <option>Toddlers (Ages 2-4)</option>
+              <option>Kids Junior (Ages 5-11)</option>
+              <option>Teens (Ages 12-17)</option>
+              <option>Adults (18+)</option>
             </select>
           </div>
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Target Program / Skill Level</label>
+          <select name="program" id="modal-program-select" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500">
+            <option value="beginners">Toddler & Beginner Water Safety ($149/mo)</option>
+            <option value="freestyle">Junior Foundation Freestyle ($149/mo)</option>
+            <option value="intermediate">Teens & Youth Progression ($189/mo)</option>
+            <option value="adults">Adult Fear-Free & Fitness ($169/mo)</option>
+            <option value="competitive">Competitive Pro Squad ($299/mo)</option>
+          </select>
         </div>
         <button type="submit" class="w-full py-3.5 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs shadow-md transition-colors mt-2">
           Confirm Free Assessment Pass

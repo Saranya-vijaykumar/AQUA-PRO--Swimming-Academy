@@ -3,10 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>5 Ways to Build Better Freestyle Breathing � Aquarium Pro Journal</title>
+  <title>5 Ways to Build Better Freestyle Breathing &mdash; Aquarium Pro Journal</title>
   <meta name="description" content="Master side bilateral freestyle breathing with coach-approved pool drills from Aquarium Pro.">
   
   <link rel="icon" type="image/png" href="assets/img/aquariumpro-logo.jpg">
+
+  <!-- Early Theme & Direction Persistence Handler -->
+  <script>
+    (function() {
+      var t = localStorage.getItem('aquapro_theme');
+      if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      var d = localStorage.getItem('aquapro_direction');
+      if (d === 'rtl') {
+        document.documentElement.setAttribute('dir', 'rtl');
+      } else {
+        document.documentElement.setAttribute('dir', 'ltr');
+      }
+    })();
+  </script>
 
   <!-- Tailwind CSS CDN + Config -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -164,13 +182,13 @@
           <div class="flex items-center gap-3 text-xs text-slate-500">
             <span class="px-3 py-1 rounded-full bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 font-bold uppercase text-[10px]">Stroke Mechanics</span>
             <span>Published August 2026</span>
-            <span>� 6 min read</span>
+            <span>&mdash; 6 min read</span>
           </div>
           <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-heading">
             5 Simple Drills to Master Side Bilateral Freestyle Breathing
           </h1>
           <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
-            Breathing should power your propulsion�not break your streamline. Here is how our head coaches fix breath-holding panic and teach effortless oxygen intake.
+            Breathing should power your propulsion&mdash;not break your streamline. Here is how our head coaches fix breath-holding panic and teach effortless oxygen intake.
           </p>
         </div>
 
@@ -186,7 +204,7 @@
 
           <h2 class="text-xl font-bold text-slate-900 dark:text-white font-heading">2. One Goggle in the Water Rule</h2>
           <p>
-            When inhaling, rotate your head only enough that one goggle stays submerged in the bow-wave pocket created by your head crown. Never lift your forehead up�lifting drops your hips and causes heavy drag.
+            When inhaling, rotate your head only enough that one goggle stays submerged in the bow-wave pocket created by your head crown. Never lift your forehead up&mdash;lifting drops your hips and causes heavy drag.
           </p>
 
           <h2 class="text-xl font-bold text-slate-900 dark:text-white font-heading">3. Bilateral 3-Stroke Pacing</h2>
@@ -227,10 +245,10 @@
           </div>
         </div>
         <div><h4 class="text-xs font-black uppercase tracking-widest text-white mb-4">Academy Directory</h4><div class="space-y-2 text-xs"><a class="block hover:text-sky-400" href="programs.html">Programs by Skill & Age</a><a class="block hover:text-sky-400" href="coaches.html">Certified Faculty</a><a class="block hover:text-sky-400" href="batch-timings.html">Batch Timings Schedule</a><a class="block hover:text-sky-400" href="facilities.html">Pool Specs & Facilities</a><a class="block hover:text-sky-400" href="pricing.html">Pricing Plans</a></div></div>
-        <div><h4 class="text-xs font-black uppercase tracking-widest text-white mb-4">Arena Timings</h4><div class="space-y-2 text-xs leading-relaxed"><p>Mon�Fri: 05:00 AM � 09:30 PM</p><p>Saturday: 06:00 AM � 08:00 PM</p><p>Sunday: 07:00 AM � 06:00 PM</p><a href="batch-timings.html" class="inline-block mt-2 text-sky-400 hover:text-sky-300">View full schedule ?</a></div></div>
+        <div><h4 class="text-xs font-black uppercase tracking-widest text-white mb-4">Arena Timings</h4><div class="space-y-2 text-xs leading-relaxed"><p>Mon&ndash;Fri: 05:00 AM &ndash; 09:30 PM</p><p>Saturday: 06:00 AM &ndash; 08:00 PM</p><p>Sunday: 07:00 AM &ndash; 06:00 PM</p><a href="batch-timings.html" class="inline-block mt-2 text-sky-400 hover:text-sky-300">View full schedule &rarr;</a></div></div>
         <div><h4 class="text-xs font-black uppercase tracking-widest text-white mb-4">Facility Location</h4><div class="space-y-3 text-xs"><a href="https://www.google.com/maps/search/?api=1&query=742+Marina+Aquatic+Way+CA+90210" target="_blank" rel="noopener" class="flex gap-2 hover:text-sky-400"><i class="fas fa-location-dot text-sky-400 mt-0.5"></i><span>742 Marina Aquatic Way, CA 90210</span></a><a href="tel:+18005550299" class="flex gap-2 hover:text-sky-400"><i class="fas fa-phone text-sky-400 mt-0.5"></i><span>+1 (800) 555-0299</span></a><a href="mailto:admissions@aquapro-academy.com" class="flex gap-2 hover:text-sky-400"><i class="fas fa-envelope text-sky-400 mt-0.5"></i><span>Email the academy</span></a></div></div>
       </div>
-      <div class="pt-6 flex flex-col sm:flex-row gap-3 justify-between text-[11px] text-slate-500"><span>� 2026 Aquarium Pro Swimming Academy. All rights reserved.</span><span>Safe water � Better coaching � Stronger swimmers</span></div>
+      <div class="pt-6 flex flex-col sm:flex-row gap-3 justify-between text-[11px] text-slate-500"><span>&copy; 2026 Aquarium Pro Swimming Academy. All rights reserved.</span><span>Safe water &middot; Better coaching &middot; Stronger swimmers</span></div>
     </div>
   </footer>
 
@@ -261,10 +279,10 @@
           <div>
             <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Age Group</label>
             <select name="age_group" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500">
-              <option>Toddlers & Kids (Ages 2-12)</option>
-              <option>Teens (Ages 13-18)</option>
+              <option>Toddlers (Ages 2-4)</option>
+              <option>Kids Junior (Ages 5-11)</option>
+              <option>Teens (Ages 12-17)</option>
               <option>Adults (18+)</option>
-              <option>Competitive Athletes</option>
             </select>
           </div>
         </div>

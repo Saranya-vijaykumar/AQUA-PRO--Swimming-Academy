@@ -3,10 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Learn to Swim Program Details � Aquarium Pro Swimming Academy</title>
+  <title>Learn to Swim Program Details &mdash; Aquarium Pro Swimming Academy</title>
   <meta name="description" content="Detailed curriculum, milestone badges, schedule and pricing for our Learn to Swim junior program.">
   
   <link rel="icon" type="image/png" href="assets/img/aquariumpro-logo.jpg">
+
+  <!-- Early Theme & Direction Persistence Handler -->
+  <script>
+    (function() {
+      var t = localStorage.getItem('aquapro_theme');
+      if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      var d = localStorage.getItem('aquapro_direction');
+      if (d === 'rtl') {
+        document.documentElement.setAttribute('dir', 'rtl');
+      } else {
+        document.documentElement.setAttribute('dir', 'ltr');
+      }
+    })();
+  </script>
 
   <!-- Tailwind CSS CDN + Config -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -136,7 +154,7 @@
   <!-- Page Banner -->
   <section class="pt-14 pb-0 bg-gradient-to-b from-sky-100/60 to-transparent dark:from-slate-900 dark:to-transparent border-b border-slate-200/80 dark:border-slate-800 relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
-      <span class="px-3 py-1 rounded-full bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 text-xs font-bold uppercase tracking-wider">Ages 4�12 � Foundation Level</span>
+      <span class="px-3 py-1 rounded-full bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 text-xs font-bold uppercase tracking-wider">Ages 4&mdash;12 &mdash; Foundation Level</span>
       <h1 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white font-heading">Learn to Swim Junior Program</h1>
       <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
         A joyful, structured pathway that teaches water safety, strong fundamentals, and confidence one measurable milestone at a time.
@@ -216,7 +234,7 @@
               </div>
               <div class="flex justify-between pb-3 border-b border-slate-200 dark:border-slate-700">
                 <span class="text-slate-500">Pool Environment:</span>
-                <span class="font-bold text-sky-600">32�C Heated Pool</span>
+                <span class="font-bold text-sky-600">32&mdash;C Heated Pool</span>
               </div>
               <div class="flex justify-between pb-3 border-b border-slate-200 dark:border-slate-700">
                 <span class="text-slate-500">Membership:</span>
@@ -254,10 +272,10 @@
           </div>
         </div>
         <div><h4 class="text-xs font-black uppercase tracking-widest text-white mb-4">Academy Directory</h4><div class="space-y-2 text-xs"><a class="block hover:text-sky-400" href="programs.html">Programs by Skill & Age</a><a class="block hover:text-sky-400" href="coaches.html">Certified Faculty</a><a class="block hover:text-sky-400" href="batch-timings.html">Batch Timings Schedule</a><a class="block hover:text-sky-400" href="facilities.html">Pool Specs & Facilities</a><a class="block hover:text-sky-400" href="pricing.html">Pricing Plans</a></div></div>
-        <div><h4 class="text-xs font-black uppercase tracking-widest text-white mb-4">Arena Timings</h4><div class="space-y-2 text-xs leading-relaxed"><p>Mon�Fri: 05:00 AM � 09:30 PM</p><p>Saturday: 06:00 AM � 08:00 PM</p><p>Sunday: 07:00 AM � 06:00 PM</p><a href="batch-timings.html" class="inline-block mt-2 text-sky-400 hover:text-sky-300">View full schedule ?</a></div></div>
+        <div><h4 class="text-xs font-black uppercase tracking-widest text-white mb-4">Arena Timings</h4><div class="space-y-2 text-xs leading-relaxed"><p>Mon&ndash;Fri: 05:00 AM &ndash; 09:30 PM</p><p>Saturday: 06:00 AM &ndash; 08:00 PM</p><p>Sunday: 07:00 AM &ndash; 06:00 PM</p><a href="batch-timings.html" class="inline-block mt-2 text-sky-400 hover:text-sky-300">View full schedule &rarr;</a></div></div>
         <div><h4 class="text-xs font-black uppercase tracking-widest text-white mb-4">Facility Location</h4><div class="space-y-3 text-xs"><a href="https://www.google.com/maps/search/?api=1&query=742+Marina+Aquatic+Way+CA+90210" target="_blank" rel="noopener" class="flex gap-2 hover:text-sky-400"><i class="fas fa-location-dot text-sky-400 mt-0.5"></i><span>742 Marina Aquatic Way, CA 90210</span></a><a href="tel:+18005550299" class="flex gap-2 hover:text-sky-400"><i class="fas fa-phone text-sky-400 mt-0.5"></i><span>+1 (800) 555-0299</span></a><a href="mailto:admissions@aquapro-academy.com" class="flex gap-2 hover:text-sky-400"><i class="fas fa-envelope text-sky-400 mt-0.5"></i><span>Email the academy</span></a></div></div>
       </div>
-      <div class="pt-6 flex flex-col sm:flex-row gap-3 justify-between text-[11px] text-slate-500"><span>� 2026 Aquarium Pro Swimming Academy. All rights reserved.</span><span>Safe water � Better coaching � Stronger swimmers</span></div>
+      <div class="pt-6 flex flex-col sm:flex-row gap-3 justify-between text-[11px] text-slate-500"><span>&copy; 2026 Aquarium Pro Swimming Academy. All rights reserved.</span><span>Safe water &middot; Better coaching &middot; Stronger swimmers</span></div>
     </div>
   </footer>
 
@@ -288,10 +306,10 @@
           <div>
             <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Age Group</label>
             <select name="age_group" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500">
-              <option>Toddlers & Kids (Ages 2-12)</option>
-              <option>Teens (Ages 13-18)</option>
+              <option>Toddlers (Ages 2-4)</option>
+              <option>Kids Junior (Ages 5-11)</option>
+              <option>Teens (Ages 12-17)</option>
               <option>Adults (18+)</option>
-              <option>Competitive Athletes</option>
             </select>
           </div>
         </div>
