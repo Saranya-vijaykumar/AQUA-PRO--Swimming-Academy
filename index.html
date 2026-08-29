@@ -177,26 +177,29 @@
     </div>
   </aside>
 
-      <!-- Hero Banner: Modern 2-Column Split Layout (ZERO text overlap on Girl Baby across Mobile & Desktop) -->
-  <section class="relative isolate overflow-hidden py-10 sm:py-14 lg:py-20 bg-gradient-to-b from-sky-950 via-slate-950 to-sky-950 text-white">
+        <!-- Hero Banner: Full-Bleed Cover on Desktop (Flipped Girl Baby on Right, Zero Text Overlap) & Clean Separated Mobile View -->
+  <section class="relative isolate overflow-hidden py-10 sm:py-14 lg:py-24 min-h-[540px] lg:min-h-[640px] flex items-center bg-sky-950 text-white">
     
-    <!-- Ambient Aquatic Glow in Background -->
-    <div class="absolute top-0 right-10 w-96 h-96 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute bottom-0 left-10 w-96 h-96 bg-sky-500/15 rounded-full blur-3xl pointer-events-none"></div>
+    <!-- DESKTOP BACKGROUND COVER (Hidden on mobile to ensure ZERO text overlap on baby; Full Cover on lg:) -->
+    <img src="assets/img/hero-girl.jpg" alt="Young swimmer smiling underwater at Aquarium Pro" class="hidden lg:block absolute inset-0 -z-20 h-full w-full object-cover object-[82%_center] brightness-105 contrast-105">
+    
+    <!-- Desktop Left Gradient Overlay (Smoothly fades from dark text-backdrop on left to transparent on right where the baby is) -->
+    <div class="hidden lg:block absolute inset-0 -z-10 bg-gradient-to-r from-sky-950 via-sky-950/85 to-transparent w-[58%] pointer-events-none"></div>
+    <div class="hidden lg:block absolute inset-0 -z-10 bg-sky-950/20 pointer-events-none"></div>
 
-    <!-- 🌊 Concentric Water Ripple Rings -->
-    <div class="hero-ripple-container pointer-events-none">
+    <!-- 🌊 Concentric Water Ripple Rings (Desktop Subtle Ambient) -->
+    <div class="hidden lg:block hero-ripple-container pointer-events-none">
       <div class="hero-ripple-ring"></div>
       <div class="hero-ripple-ring"></div>
       <div class="hero-ripple-ring"></div>
     </div>
 
-    <!-- Hero Content Container (2-Column Grid on Desktop, Clean Stacked on Mobile) -->
+    <!-- Hero Content Container -->
     <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
-        <!-- Left Column (Desktop: 7 Cols): Content, Headings, Buttons, Pillars -->
-        <div class="lg:col-span-7 text-left rtl:text-right space-y-4 sm:space-y-6">
+        <!-- Left Column (Text & Controls: Stays on the clear left side on desktop, stacked on mobile) -->
+        <div class="lg:col-span-7 text-left rtl:text-right space-y-4 sm:space-y-6 max-w-2xl">
           
           <!-- Eyebrow Badge -->
           <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-400/20 text-cyan-300 border border-cyan-400/30 text-[10px] sm:text-xs font-black uppercase tracking-widest backdrop-blur-md shadow-sm">
@@ -221,6 +224,17 @@
             <button data-open-trial class="btn-water-ripple px-5 py-3 sm:px-6 sm:py-3.5 rounded-2xl bg-white/95 hover:bg-white text-slate-900 font-extrabold shadow-lg text-xs sm:text-sm transition-all hover:scale-[1.02] flex items-center">
               <i class="fas fa-calendar-check text-sky-600 mr-2 rtl:mr-0 rtl:ml-2 text-xs sm:text-sm"></i> Book Free Assessment
             </button>
+          </div>
+
+          <!-- MOBILE ONLY: Dedicated Girl Baby Image Card (Ensures ZERO content overlaps her face on mobile!) -->
+          <div class="block lg:hidden my-6">
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-white/20 aspect-[16/10] bg-slate-900">
+              <img src="assets/img/hero-girl.jpg" alt="Young girl swimmer smiling underwater at Aquarium Pro" class="w-full h-full object-cover object-[75%_center]">
+              <div class="absolute bottom-3 left-3 right-3 p-2.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/15 flex items-center justify-between text-xs">
+                <span class="text-white font-bold text-[11px]"><i class="fas fa-water text-cyan-400 mr-1.5"></i> Learn-to-Swim Foundation</span>
+                <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-extrabold uppercase">Enrolling</span>
+              </div>
+            </div>
           </div>
 
           <!-- 4 Key Academy Pillars (Clean Glassmorphic Cards) -->
@@ -270,37 +284,9 @@
 
         </div>
 
-        <!-- Right Column (Desktop: 5 Cols, Mobile: Pristine Unobstructed Showcase): Girl Baby Swimmer Image (ZERO TEXT OVERLAP) -->
-        <div class="lg:col-span-5 relative mt-4 lg:mt-0">
-          <div class="relative w-full max-w-md mx-auto lg:max-w-none">
-            <!-- Subtle Ambient Cyan Backlight -->
-            <div class="absolute -inset-2 bg-gradient-to-r from-cyan-500/25 to-sky-500/25 rounded-3xl blur-2xl opacity-60"></div>
-
-            <!-- The Girl Baby Photo Card: 100% Clear, Crisp, Unobstructed -->
-            <div class="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-white/25 dark:border-slate-700 aspect-[4/3] sm:aspect-[16/11] lg:aspect-[4/5] zoom-on-hover bg-slate-900">
-              <img src="assets/img/hero-girl.jpg" alt="Young girl swimmer smiling underwater at Aquarium Pro" class="w-full h-full object-cover object-center card-zoom-img">
-              
-              <!-- Subtle bottom gradient only at very bottom for badge readability -->
-              <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent pointer-events-none"></div>
-
-              <!-- Sleek Corner Badge (Positioned at bottom corner so baby face is 100% visible) -->
-              <div class="absolute bottom-3 left-3 right-3 p-3 rounded-2xl bg-slate-900/85 backdrop-blur-md border border-white/20 flex items-center justify-between text-xs shadow-lg">
-                <div class="flex items-center gap-2.5">
-                  <span class="w-7 h-7 rounded-xl bg-cyan-500 text-white flex items-center justify-center font-bold text-xs shrink-0">
-                    <i class="fas fa-water"></i>
-                  </span>
-                  <div>
-                    <div class="font-extrabold text-white text-xs leading-tight">Learn-to-Swim Foundation</div>
-                    <div class="text-[10px] text-cyan-300 leading-tight">Ages 2&ndash;11 &middot; 32&deg;C Heated Pool</div>
-                  </div>
-                </div>
-                <span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-extrabold text-[10px] uppercase shrink-0">
-                  Enrolling
-                </span>
-              </div>
-
-            </div>
-          </div>
+        <!-- Right Side on Desktop: Empty Spacer (Ensures the Girl Baby on the Right is 100% Unobstructed!) -->
+        <div class="hidden lg:block lg:col-span-5 pointer-events-none">
+          <!-- The right side of the screen allows the flipped girl baby background cover to shine through with zero obstruction -->
         </div>
 
       </div>
