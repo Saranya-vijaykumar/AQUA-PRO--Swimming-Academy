@@ -52,8 +52,29 @@ html {
   scroll-behavior: smooth;
 }
 
+/* 🌊 Global Luxury Aquatic Background Mesh & Water Lines */
 body {
+  background-color: #f8fafc;
+  background-image: 
+    radial-gradient(at 15% 15%, rgba(14, 165, 233, 0.09) 0px, transparent 55%),
+    radial-gradient(at 85% 35%, rgba(6, 182, 212, 0.09) 0px, transparent 50%),
+    radial-gradient(at 30% 70%, rgba(2, 132, 199, 0.07) 0px, transparent 50%),
+    radial-gradient(at 80% 90%, rgba(56, 189, 248, 0.08) 0px, transparent 50%),
+    url("data:image/svg+xml,%3Csvg width='60' height='20' viewBox='0 0 60 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q 15 2, 30 10 T 60 10' fill='none' stroke='%230284c7' stroke-width='1' stroke-opacity='0.045'/%3E%3C/svg%3E");
+  background-attachment: fixed;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark body,
+html.dark body {
+  background-color: #030712;
+  background-image: 
+    radial-gradient(at 15% 15%, rgba(14, 165, 233, 0.15) 0px, transparent 55%),
+    radial-gradient(at 85% 35%, rgba(6, 182, 212, 0.12) 0px, transparent 50%),
+    radial-gradient(at 30% 70%, rgba(3, 105, 161, 0.13) 0px, transparent 50%),
+    radial-gradient(at 80% 90%, rgba(14, 165, 233, 0.11) 0px, transparent 50%),
+    url("data:image/svg+xml,%3Csvg width='60' height='20' viewBox='0 0 60 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q 15 2, 30 10 T 60 10' fill='none' stroke='%2338bdf8' stroke-width='1' stroke-opacity='0.06'/%3E%3C/svg%3E");
+  background-attachment: fixed;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -100,37 +121,53 @@ h1, h2, h3, h4, h5, h6 {
   background: radial-gradient(circle at 50% 0%, rgba(6, 182, 212, 0.22) 0%, rgba(2, 132, 199, 0.12) 50%, transparent 80%);
 }
 
-/* 1. Floating Water Bubbles Container & Particles */
+/* 1. Floating Water Bubbles Container & Particles (Layered & Visible) */
 .bubble-container {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 0;
+  z-index: 25;
   overflow: hidden;
 }
 
 .bubble {
   position: absolute;
-  bottom: -60px;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.45), rgba(56, 189, 248, 0.18));
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  bottom: -50px;
+  background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.85), rgba(56, 189, 248, 0.28) 45%, rgba(2, 132, 199, 0.10) 80%, transparent);
+  border: 1px solid rgba(255, 255, 255, 0.45);
   border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.15), inset 0 2px 4px rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.18), inset 0 2px 4px rgba(255, 255, 255, 0.7);
   animation: floatUpward linear infinite;
   will-change: transform, opacity;
+  pointer-events: none;
 }
 
 .dark .bubble {
-  background: radial-gradient(circle at 30% 30%, rgba(56, 189, 248, 0.22), rgba(14, 165, 233, 0.06));
-  border: 1px solid rgba(56, 189, 248, 0.25);
-  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.12), inset 0 1px 3px rgba(255, 255, 255, 0.3);
+  background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.55), rgba(56, 189, 248, 0.22) 45%, rgba(6, 182, 212, 0.08) 80%, transparent);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  box-shadow: 0 4px 14px rgba(6, 182, 212, 0.16), inset 0 1px 3px rgba(255, 255, 255, 0.4);
 }
 
 @keyframes floatUpward {
   0% {
-    transform: translateY(0) translateX(0) scale(0.85);
+    transform: translateY(0) translateX(0) scale(0.8);
     opacity: 0;
   }
+  12% {
+    opacity: 0.65;
+  }
+  50% {
+    transform: translateY(-55vh) translateX(18px) scale(1);
+    opacity: 0.65;
+  }
+  88% {
+    opacity: 0.65;
+  }
+  100% {
+    transform: translateY(-112vh) translateX(-15px) scale(1.15);
+    opacity: 0;
+  }
+}
   15% {
     opacity: 0.55;
   }
@@ -671,3 +708,56 @@ a:hover footer img[src*="logo"] {
   }
 }
 
+
+/* 🌊 Ambient Aquatic Glow & Caustic Water Reflections */
+.aquatic-section-glow {
+  position: relative;
+}
+
+.aquatic-section-glow::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, rgba(6, 182, 212, 0.04) 50%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(50px);
+  z-index: 0;
+}
+
+.aquatic-section-glow::after {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  left: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.10) 0%, rgba(2, 132, 199, 0.03) 50%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(60px);
+  z-index: 0;
+}
+
+.dark .aquatic-section-glow::before {
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.16) 0%, rgba(6, 182, 212, 0.06) 50%, transparent 70%);
+}
+
+.dark .aquatic-section-glow::after {
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.14) 0%, rgba(2, 132, 199, 0.05) 50%, transparent 70%);
+}
+
+/* Semi-translucent sections allowing background ripples to breathe */
+.bg-translucent-white {
+  background-color: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(8px);
+}
+
+.dark .bg-translucent-white,
+.dark .dark\:bg-translucent-dark {
+  background-color: rgba(15, 23, 42, 0.90);
+  backdrop-filter: blur(8px);
+}

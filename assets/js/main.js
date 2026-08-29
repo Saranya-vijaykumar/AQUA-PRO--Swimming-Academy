@@ -283,7 +283,8 @@
   document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     initRTL();
-    initBubbles();
+    initBubbles(); // early call
+  setTimeout(initBubbles, 200);
     initScrollReveal();
     initCounters();
     initInteractiveWaterRipples();
@@ -380,20 +381,21 @@
     if (event.key === 'Escape') closeVideoModal();
   });
 
-  // --- 8. Background Bubbles Generator ---
+    // --- 8. Background Bubbles Generator ---
   function initBubbles() {
     if (document.querySelector('.bubble-container')) return;
     const container = document.createElement('div');
     container.className = 'bubble-container';
-    const bubbleCount = window.innerWidth < 768 ? 6 : 14;
+    const isMobile = window.innerWidth < 768;
+    const bubbleCount = isMobile ? 8 : 18;
     
     for (let i = 0; i < bubbleCount; i++) {
       const bubble = document.createElement('div');
       bubble.className = 'bubble';
       const size = Math.random() * 18 + 8; // 8px to 26px
-      const left = Math.random() * 100; // 0% to 100%
+      const left = Math.random() * 96 + 2; // 2% to 98%
       const duration = Math.random() * 12 + 10; // 10s to 22s
-      const delay = Math.random() * 10; // 0s to 10s
+      const delay = Math.random() * 12; // 0s to 12s
       
       bubble.style.width = `${size}px`;
       bubble.style.height = `${size}px`;
