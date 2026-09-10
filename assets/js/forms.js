@@ -177,33 +177,39 @@
     });
   });
 
-  // --- 3. Modal Handlers (Trial Pass Modal & Batch Booking Modal) ---
-  var trialModal = document.getElementById('trial-modal');
-  var trialBackdrop = document.getElementById('trial-backdrop');
-  var trialClose = document.getElementById('trial-close');
+  // --- 3. Robust Modal Handlers (Trial Pass Modal & Batch Booking Modal) ---
+  function getModal() {
+    return document.getElementById('trial-modal');
+  }
 
-  if (trialModal) {
-    var modalHeading = trialModal.querySelector('h3');
-    var modalSub = trialModal.querySelector('p');
-    var submitBtn = trialModal.querySelector('button[type="submit"]');
+  function closeModal() {
+    var modal = getModal();
+    if (!modal) return;
+    modal.classList.add('hidden');
+    document.body.style.overflow = '';
+    var batchBox = modal.querySelector('#modal-batch-selected-box');
+    if (batchBox) {
+      batchBox.innerHTML = '';
+      batchBox.classList.add('hidden');
+    }
+    var modalHeading = modal.querySelector('h3');
+    var modalSub = modal.querySelector('p');
+    var submitBtn = modal.querySelector('button[type="submit"]');
+    if (modalHeading) modalHeading.textContent = 'Book Free Swimmer Assessment';
+    if (modalSub) modalSub.textContent = '1-on-1 assessment with certified coach in heated pool.';
+    if (submitBtn) submitBtn.innerHTML = 'Confirm Free Trial Session';
+  }
 
-    var closeModal = function () {
-      trialModal.classList.add('hidden');
-      document.body.style.overflow = '';
-      var batchBox = trialModal.querySelector('#modal-batch-selected-box');
-      if (batchBox) {
-        batchBox.innerHTML = '';
-        batchBox.classList.add('hidden');
-      }
-      if (modalHeading) modalHeading.textContent = 'Book Free Swimmer Assessment';
-      if (modalSub) modalSub.textContent = '1-on-1 assessment with certified coach in heated pool.';
-      if (submitBtn) submitBtn.innerHTML = 'Confirm Free Trial Session';
-    };
-
-    document.addEventListener('click', function (e) {
-      var btn = e.target.closest('[data-open-trial], [data-open-batch]');
-      if (!btn) return;
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-open-trial], [data-open-batch]');
+    if (btn) {
       e.preventDefault();
+      var modal = getModal();
+      if (!modal) return;
+
+      var modalHeading = modal.querySelector('h3');
+      var modalSub = modal.querySelector('p');
+      var submitBtn = modal.querySelector('button[type="submit"]');
 
       var coachName = btn.getAttribute('data-coach-name');
       var programName = btn.getAttribute('data-program-name');
@@ -211,12 +217,12 @@
       var batchTime = btn.getAttribute('data-batch-time');
       var batchDays = btn.getAttribute('data-batch-days');
 
-      var coachInput = trialModal.querySelector('#modal-coach-note');
-      var batchBox = trialModal.querySelector('#modal-batch-selected-box');
+      var coachInput = modal.querySelector('#modal-coach-note');
+      var batchBox = modal.querySelector('#modal-batch-selected-box');
 
       // Create batchBox if not already in modal
       if (!batchBox) {
-        var formElem = trialModal.querySelector('form');
+        var formElem = modal.querySelector('form');
         if (formElem) {
           batchBox = document.createElement('div');
           batchBox.id = 'modal-batch-selected-box';
@@ -227,9 +233,7 @@
 
       if (batchName) {
         var batchDetail = batchName + (batchTime ? ' · ' + batchTime : '') + (batchDays ? ' (' + batchDays + ')' : '');
-        if (coachInput) {
-          coachInput.value = 'Selected Batch: ' + batchDetail;
-        }
+        if (coachInput) coachInput.value = 'Selected Batch: ' + batchDetail;
         if (batchBox) {
           batchBox.innerHTML = `
             <div class="p-3.5 bg-gradient-to-r from-sky-50 to-cyan-50 dark:from-sky-950/70 dark:to-cyan-950/50 border border-sky-200 dark:border-sky-800 rounded-2xl mb-3 space-y-1">
@@ -272,18 +276,26 @@
       }
 
       if (programName) {
-        var programSelect = trialModal.querySelector('#modal-program-select');
+        var programSelect = modal.querySelector('#modal-program-select');
         if (programSelect) programSelect.value = programName;
       }
 
-      trialModal.classList.remove('hidden');
+      modal.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
-    });
+      return;
+    }
 
-    if (trialBackdrop) trialBackdrop.addEventListener('click', closeModal);
-    if (trialClose) trialClose.addEventListener('click', closeModal);
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && !trialModal.classList.contains('hidden')) closeModal();
-    });
-  }
+    if (e.target && (e.target.id === 'trial-close' || e.target.closest('#trial-close') || e.target.id === 'trial-backdrop')) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      var modal = getModal();
+      if (modal && !modal.classList.contains('hidden')) {
+        closeModal();
+      }
+    }
+  });
 })();

@@ -283,8 +283,6 @@
   document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     initRTL();
-    initBubbles(); // early call
-  setTimeout(initBubbles, 200);
     initScrollReveal();
     initCounters();
     initInteractiveWaterRipples();
@@ -380,33 +378,6 @@
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') closeVideoModal();
   });
-
-      // --- 8. Background Bubbles Generator ---
-  function initBubbles() {
-    if (document.querySelector('.bubble-container')) return;
-    const container = document.createElement('div');
-    container.className = 'bubble-container';
-    const isMobile = window.innerWidth < 768;
-    const bubbleCount = isMobile ? 6 : 12;
-    
-    for (let i = 0; i < bubbleCount; i++) {
-      const bubble = document.createElement('div');
-      bubble.className = 'bubble';
-      const size = Math.random() * 14 + 8; // 8px to 22px (subtle & elegant)
-      const left = Math.random() * 94 + 3; // 3% to 97%
-      const duration = Math.random() * 12 + 14; // 14s to 26s (gentle rise)
-      const delay = Math.random() * 12; // 0s to 12s
-      
-      bubble.style.width = `${size}px`;
-      bubble.style.height = `${size}px`;
-      bubble.style.left = `${left}%`;
-      bubble.style.animationDuration = `${duration}s`;
-      bubble.style.animationDelay = `${delay}s`;
-      
-      container.appendChild(bubble);
-    }
-    document.body.appendChild(container);
-  }
 
   // --- 9. Scroll Reveal Observer ---
   function initScrollReveal() {
