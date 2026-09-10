@@ -78,7 +78,7 @@
       </a>
 
       <!-- Desktop Navigation Menu -->
-      <nav class="hidden lg:flex items-center space-x-7 rtl:space-x-reverse text-sm font-bold text-slate-700 dark:text-slate-200">
+      <nav class="hidden lg:flex items-center space-x-3.5 xl:space-x-6 rtl:space-x-reverse text-xs xl:text-sm font-bold text-slate-700 dark:text-slate-200">
         <div class="relative group">
           <button class="flex items-center gap-1 py-4 hover:text-sky-600 dark:hover:text-sky-400">Home <i class="fas fa-chevron-down text-[9px]"></i></button>
           <div class="absolute top-full left-0 rtl:left-auto rtl:right-0 w-52 rounded-2xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
@@ -210,123 +210,164 @@
     </div>
   </section>
 
-  <!-- Main Enrollment Form & Map Section -->
+  <!-- Main Swimmer Enrollment Form Section -->
   <section class="py-16 bg-slate-50 dark:bg-slate-950">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-        
-        <!-- Left: Form -->
-        <div class="lg:col-span-7 bg-white dark:bg-slate-900 rounded-3xl p-8 sm:p-10 shadow-xl border border-slate-200/80 dark:border-slate-800">
-          <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-2 font-heading">Swimmer Enrollment & Trial Application</h2>
-          <p class="text-xs text-slate-500 mb-8">Fill out the swimmer details and our coaches will confirm your slot within 2 hours.</p>
-
-          <form data-aquapro-form class="space-y-4">
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Parent / Swimmer Full Name</label>
-                <input name="full_name" type="text" required placeholder="e.g. Rachel Adams" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500">
-              </div>
-              <div>
-                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Contact Phone Number</label>
-                <input name="phone" type="tel" required placeholder="+1 (800) 555-0199" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500">
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Email Address</label>
-                <input name="email" type="email" required placeholder="rachel@example.com" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500">
-              </div>
-              <div>
-                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Age Group</label>
-                <select name="age_group" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500">
-                  <option>Toddlers (Ages 2-4)</option>
-                  <option>Kids Junior (Ages 5-11)</option>
-                  <option>Teens & Youth (Ages 12-17)</option>
-                  <option>Adults (18+)</option>
-                  <option>Masters / Triathlon</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Current Skill Level</label>
-                <select name="skill_level" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500">
-                  <option>Complete Beginner (Water Acclimation)</option>
-                  <option>Water Comfortable (Basic Floating)</option>
-                  <option>Intermediate (Freestyle 25m Lap)</option>
-                  <option>Advanced (4-Stroke Technique)</option>
-                  <option>Competitive Racing Experience</option>
-                </select>
-              </div>
-              <div>
-                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Preferred Time Window</label>
-                <select name="preferred_batch" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500">
-                  <option>Early Dawn Squad (05:30 AM - 07:00 AM)</option>
-                  <option>Morning Toddlers (09:30 AM - 10:15 AM)</option>
-                  <option>After-School Kids (04:30 PM - 05:30 PM)</option>
-                  <option>Youth Evening (05:30 PM - 06:45 PM)</option>
-                  <option>Adult Night (07:00 PM - 08:15 PM)</option>
-                  <option>Weekend Intensive</option>
-                </select>
-              </div>
-            </div>
-
-            <div>
-              <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Special Goals or Health Notes</label>
-              <textarea name="message" rows="3" placeholder="Tell us if your child has water anxiety, specific competition goals, or medical notes..." class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500"></textarea>
-            </div>
-
-            <div class="flex items-center">
-              <input name="wants_free_trial" id="trial-check" type="checkbox" checked class="h-4 w-4 text-sky-600 focus:ring-sky-500 rounded">
-              <label for="trial-check" class="ml-2 rtl:ml-0 rtl:mr-2 text-xs font-semibold text-slate-700 dark:text-slate-300">Apply for 1-Day Free Swimmer Assessment Pass</label>
-            </div>
-
-            <button type="submit" class="w-full py-3.5 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs shadow-lg shadow-sky-500/25 transition-colors">
-              Submit Enrollment Application
-            </button>
-
-          </form>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Enrollment Form Card -->
+      <div class="bg-white dark:bg-slate-900 rounded-3xl p-8 sm:p-12 shadow-xl border border-slate-200/80 dark:border-slate-800">
+        <div class="text-center max-w-2xl mx-auto mb-8">
+          <span class="px-3 py-1 rounded-full bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 text-xs font-bold uppercase tracking-wider">Fast-Track Enrollment</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-2 mb-2 font-heading">Swimmer Enrollment &amp; Trial Application</h2>
+          <p class="text-xs sm:text-sm text-slate-500">Fill out the swimmer details and our coaching desk will confirm your reserved assessment slot within 2 hours.</p>
         </div>
 
-        <!-- Right: Arena Map & Hours -->
-        <div class="lg:col-span-5 space-y-6">
+        <form data-aquapro-form class="space-y-4">
           
-          <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 shadow-xl border border-slate-200/80 dark:border-slate-800 space-y-4">
-            <h3 class="text-base font-bold text-slate-900 dark:text-white font-heading">Marina Aquatic Complex Map</h3>
-            
-            <div class="w-full h-56 rounded-2xl bg-gradient-to-tr from-sky-200 to-cyan-100 dark:from-slate-800 dark:to-slate-900 flex items-center justify-center relative overflow-hidden border border-slate-200 dark:border-slate-700 text-center p-4">
-              <div class="space-y-1 z-10">
-                <div class="w-10 h-10 rounded-full bg-white ring-1 ring-sky-100 text-white flex items-center justify-center mx-auto shadow-lg animate-bounce">
-                  <img src="assets/img/aquariumpro-logo.png" alt="Aquarium Pro logo" class="w-6 h-6 object-contain">
-                </div>
-                <div class="text-xs font-bold text-slate-800 dark:text-slate-200 font-heading">Aquarium Pro Olympic Aquatic Arena</div>
-                <div class="text-[10px] text-slate-500">Marina Boulevard, CA 90210</div>
-              </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Parent / Swimmer Full Name</label>
+              <input name="full_name" type="text" required placeholder="e.g. Rachel Adams" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500">
             </div>
-
-            <div class="pt-2 space-y-2 text-xs text-slate-600 dark:text-slate-400">
-              <div class="flex justify-between py-1 border-b border-slate-100 dark:border-slate-800">
-                <span>Monday - Friday:</span>
-                <span class="font-bold text-slate-900 dark:text-white">05:00 AM - 09:30 PM</span>
-              </div>
-              <div class="flex justify-between py-1 border-b border-slate-100 dark:border-slate-800">
-                <span>Saturday:</span>
-                <span class="font-bold text-slate-900 dark:text-white">06:00 AM - 08:00 PM</span>
-              </div>
-              <div class="flex justify-between py-1">
-                <span>Sunday:</span>
-                <span class="font-bold text-slate-900 dark:text-white">07:00 AM - 06:00 PM</span>
-              </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Contact Phone Number</label>
+              <input name="phone" type="tel" required placeholder="+1 (800) 555-0199" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500">
             </div>
-
           </div>
 
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Email Address</label>
+              <input name="email" type="email" required placeholder="rachel@example.com" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Age Group</label>
+              <select name="age_group" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500">
+                <option>Toddlers (Ages 2-4)</option>
+                <option>Kids Junior (Ages 5-11)</option>
+                <option>Teens &amp; Youth (Ages 12-17)</option>
+                <option>Adults (18+)</option>
+                <option>Masters / Triathlon</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Current Skill Level</label>
+              <select name="skill_level" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500">
+                <option>Complete Beginner (Water Acclimation)</option>
+                <option>Water Comfortable (Basic Floating)</option>
+                <option>Intermediate (Freestyle 25m Lap)</option>
+                <option>Advanced (4-Stroke Technique)</option>
+                <option>Competitive Racing Experience</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Preferred Time Window</label>
+              <select name="preferred_batch" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500">
+                <option>Early Dawn Squad (05:30 AM - 07:00 AM)</option>
+                <option>Morning Toddlers (09:30 AM - 10:15 AM)</option>
+                <option>After-School Kids (04:30 PM - 05:30 PM)</option>
+                <option>Youth Evening (05:30 PM - 06:45 PM)</option>
+                <option>Adult Night (07:00 PM - 08:15 PM)</option>
+                <option>Weekend Intensive</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Special Goals or Health Notes</label>
+            <textarea name="message" rows="3" placeholder="Tell us if your child has water anxiety, specific competition goals, or medical notes..." class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-sky-500"></textarea>
+          </div>
+
+          <div class="flex items-center">
+            <input name="wants_free_trial" id="trial-check" type="checkbox" checked class="h-4 w-4 text-sky-600 focus:ring-sky-500 rounded">
+            <label for="trial-check" class="ml-2 rtl:ml-0 rtl:mr-2 text-xs font-semibold text-slate-700 dark:text-slate-300">Apply for 1-Day Free Swimmer Assessment Pass</label>
+          </div>
+
+          <button type="submit" class="w-full py-3.5 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs shadow-lg shadow-sky-500/25 transition-colors">
+            Submit Enrollment Application
+          </button>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Dedicated Arena Map & Operating Hours Section -->
+  <section class="py-16 bg-white dark:bg-slate-900 border-t border-slate-200/80 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="px-3 py-1 rounded-full bg-cyan-100 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 text-xs font-bold uppercase tracking-wider">Campus &amp; Location</span>
+        <h2 class="text-3xl font-bold text-slate-900 dark:text-white mt-2 mb-2 font-heading">Find Our Olympic Aquatic Arena</h2>
+        <p class="text-xs sm:text-sm text-slate-500">Visit our campus for in-person tours, poolside parent viewing lounges, and coach consultations.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        
+        <!-- Interactive Map Container -->
+        <div class="lg:col-span-8 rounded-3xl overflow-hidden shadow-xl border border-slate-200/80 dark:border-slate-800 min-h-[380px] relative bg-slate-100 dark:bg-slate-800">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26430.393553120906!2d-118.4600!3d34.0200!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2ba7035555555%3A0x1234567890abcdef!2sMarina%20Aquatic%20Center!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+            width="100%" 
+            height="100%" 
+            style="border:0; min-height: 380px;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Aquarium Pro Olympic Aquatic Arena Map">
+          </iframe>
+          <div class="absolute top-4 left-4 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-lg border border-slate-200/80 dark:border-slate-800 flex items-center gap-3">
+            <img src="assets/img/aquariumpro-logo.png" alt="Aquarium Pro" class="w-7 h-7 object-contain">
+            <div>
+              <span class="block text-xs font-bold text-slate-900 dark:text-white font-heading">Aquarium Pro Arena</span>
+              <span class="block text-[10px] text-slate-500">742 Marina Aquatic Way, CA 90210</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Operating Hours & Amenities Card -->
+        <div class="lg:col-span-4 bg-slate-50 dark:bg-slate-800/80 rounded-3xl p-6 sm:p-8 border border-slate-200/80 dark:border-slate-700 flex flex-col justify-between space-y-6">
+          <div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white font-heading mb-4 flex items-center gap-2">
+              <i class="far fa-clock text-sky-500"></i> Arena Schedule &amp; Hours
+            </h3>
+            
+            <div class="space-y-3 text-xs text-slate-600 dark:text-slate-300">
+              <div class="flex justify-between items-center py-2 border-b border-slate-200/60 dark:border-slate-700/60">
+                <span class="font-medium">Monday &ndash; Friday:</span>
+                <span class="font-bold text-slate-900 dark:text-white">05:00 AM &ndash; 09:30 PM</span>
+              </div>
+              <div class="flex justify-between items-center py-2 border-b border-slate-200/60 dark:border-slate-700/60">
+                <span class="font-medium">Saturday:</span>
+                <span class="font-bold text-slate-900 dark:text-white">06:00 AM &ndash; 08:00 PM</span>
+              </div>
+              <div class="flex justify-between items-center py-2 border-b border-slate-200/60 dark:border-slate-700/60">
+                <span class="font-medium">Sunday:</span>
+                <span class="font-bold text-slate-900 dark:text-white">07:00 AM &ndash; 06:00 PM</span>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-200/60 dark:border-slate-700/60 space-y-2">
+              <span class="text-xs font-bold text-slate-800 dark:text-slate-200 block font-heading">Campus Highlights:</span>
+              <ul class="text-[11px] text-slate-500 space-y-1">
+                <li><i class="fas fa-check text-emerald-500 mr-1.5"></i> Free 120-car on-site covered parking</li>
+                <li><i class="fas fa-check text-emerald-500 mr-1.5"></i> Heated spectator viewing gallery with Wi-Fi</li>
+                <li><i class="fas fa-check text-emerald-500 mr-1.5"></i> Pro-shop with swim caps, goggles &amp; suits</li>
+              </ul>
+            </div>
+          </div>
+
+          <a href="https://maps.google.com/?q=Marina+Aquatic+Center+CA" target="_blank" class="w-full py-3 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs text-center shadow-md transition-colors block">
+            <i class="fas fa-directions mr-1"></i> Get Driving Directions
+          </a>
         </div>
 
       </div>
+
     </div>
   </section>
 

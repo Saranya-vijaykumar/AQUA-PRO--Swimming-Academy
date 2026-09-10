@@ -78,7 +78,7 @@
       </a>
 
       <!-- Desktop Navigation Menu -->
-      <nav class="hidden lg:flex items-center space-x-7 rtl:space-x-reverse text-sm font-bold text-slate-700 dark:text-slate-200">
+      <nav class="hidden lg:flex items-center space-x-3.5 xl:space-x-6 rtl:space-x-reverse text-xs xl:text-sm font-bold text-slate-700 dark:text-slate-200">
         <div class="relative group">
           <button class="flex items-center gap-1 py-4 hover:text-sky-600 dark:hover:text-sky-400">Home <i class="fas fa-chevron-down text-[9px]"></i></button>
           <div class="absolute top-full left-0 rtl:left-auto rtl:right-0 w-52 rounded-2xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
@@ -332,58 +332,25 @@
 
 
       <!-- ========================================== -->
-      <!-- PROGRAM 2: TEENS PROGRAM (3 PICS & DESCRIBE) -->
+      <!-- PROGRAM 2: TEENS PROGRAM (3 PICS & DESCRIBE - ALTERNATE RIGHT) -->
       <!-- ========================================== -->
       <article id="teens" data-program-category="teens" class="bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-xl transition-all duration-300 hover:shadow-2xl">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
           
-          <!-- Left: 3-Picture Visual Showcase -->
-          <div class="lg:col-span-6 p-6 sm:p-8 flex flex-col justify-between bg-slate-100/60 dark:bg-slate-900/60 border-b lg:border-b-0 lg:border-r border-slate-200/70 dark:border-slate-800">
-            <!-- Active Featured Image with Badge -->
-            <div class="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-md bg-slate-200 dark:bg-slate-800">
-              <img id="teens-main-img" src="assets/img/hero-swimmer.jpg" alt="Teen swimmer practicing stroke biomechanics" class="w-full h-full object-cover transition-opacity duration-300">
-              <div class="absolute top-3 left-3 bg-blue-600/90 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full backdrop-blur-sm">
-                Photo Gallery · 3 Views
-              </div>
-              <div id="teens-img-caption" class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950/80 via-slate-950/40 to-transparent p-4 text-white text-xs font-semibold">
-                View 1: Technical stroke mechanics & high-elbow catch refinement
-              </div>
-            </div>
-
-            <!-- 3 Pictures Thumbnails Row -->
-            <div class="mt-4 grid grid-cols-3 gap-3">
-              <button type="button" onclick="switchProgramImage('teens', 'assets/img/hero-swimmer.jpg', 'View 1: Technical stroke mechanics & high-elbow catch refinement', this)" class="group gallery-ripple-hover rounded-xl overflow-hidden border-2 border-sky-500 shadow-sm focus:outline-none transition-all">
-                <img src="assets/img/hero-swimmer.jpg" alt="Stroke mechanics" class="w-full h-20 sm:h-24 object-cover group-hover:scale-105 transition-transform duration-300">
-                <span class="block bg-slate-900 text-white text-[9px] font-bold py-1 text-center truncate px-1">1. Stroke Form</span>
-              </button>
-
-              <button type="button" onclick="switchProgramImage('teens', 'assets/img/teens-2.jpg', 'View 2: Butterfly undulation, breaststroke whip & dolphin kicks', this)" class="group gallery-ripple-hover rounded-xl overflow-hidden border-2 border-transparent hover:border-sky-400 shadow-sm focus:outline-none transition-all opacity-75 hover:opacity-100">
-                <img src="assets/img/teens-2.jpg" alt="Butterfly drills" class="w-full h-20 sm:h-24 object-cover group-hover:scale-105 transition-transform duration-300">
-                <span class="block bg-slate-900 text-white text-[9px] font-bold py-1 text-center truncate px-1">2. 4-Stroke Power</span>
-              </button>
-
-              <button type="button" onclick="switchProgramImage('teens', 'assets/img/teens-3.jpg', 'View 3: Competition lane stamina, interval sets & tumble turns', this)" class="group gallery-ripple-hover rounded-xl overflow-hidden border-2 border-transparent hover:border-sky-400 shadow-sm focus:outline-none transition-all opacity-75 hover:opacity-100">
-                <img src="assets/img/teens-3.jpg" alt="Lane endurance" class="w-full h-20 sm:h-24 object-cover group-hover:scale-105 transition-transform duration-300">
-                <span class="block bg-slate-900 text-white text-[9px] font-bold py-1 text-center truncate px-1">3. Lane Drills</span>
-              </button>
-            </div>
-            <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-2 text-center italic">Click any photo above to inspect training phase</p>
-          </div>
-
-          <!-- Right: Comprehensive Program Description -->
-          <div class="lg:col-span-6 p-6 sm:p-8 flex flex-col justify-between space-y-6">
+          <!-- Left on Desktop: Comprehensive Program Description (order-2 lg:order-1) -->
+          <div class="lg:col-span-6 p-6 sm:p-8 flex flex-col justify-between space-y-6 order-2 lg:order-1 border-t lg:border-t-0 lg:border-r border-slate-200/70 dark:border-slate-800">
             <div>
               <div class="flex flex-wrap items-center gap-2 mb-3">
-                <span class="px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 text-xs font-black uppercase">Ages 13 – 18 Years</span>
+                <span class="px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 text-xs font-black uppercase">Ages 12 – 17 Years</span>
                 <span class="px-3 py-1 rounded-full bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 text-xs font-bold">Intermediate to Advanced</span>
-                <span class="text-xs font-semibold text-blue-600 dark:text-blue-400 flex items-center gap-1"><i class="fas fa-tachometer-alt"></i> Speed & Technique</span>
+                <span class="text-xs font-semibold text-blue-600 dark:text-blue-400 flex items-center gap-1"><i class="fas fa-bolt"></i> Speed &amp; Technique</span>
               </div>
 
               <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white font-heading">
                 Teens Swimming Program
               </h2>
               <p class="text-sm font-semibold text-sky-600 dark:text-sky-400 mt-1">
-                4-Stroke Mastery · Tumble Flip Turns · Cardiovascular Fitness & Aerobic Power
+                4-Stroke Mastery · Tumble Flip Turns · Cardiovascular Fitness &amp; Aerobic Power
               </p>
 
               <!-- Detailed Description -->
@@ -399,7 +366,7 @@
                   </div>
                   <div>
                     <h4 class="text-xs font-bold text-slate-900 dark:text-white">Full 4-Stroke Technique</h4>
-                    <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-tight mt-0.5">Freestyle, Backstroke, Breaststroke whip & Butterfly undulation mechanics.</p>
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-tight mt-0.5">Freestyle, Backstroke, Breaststroke whip &amp; Butterfly undulation mechanics.</p>
                   </div>
                 </div>
 
@@ -408,8 +375,8 @@
                     <i class="fas fa-rotate"></i>
                   </div>
                   <div>
-                    <h4 class="text-xs font-bold text-slate-900 dark:text-white">Turns & Block Dives</h4>
-                    <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-tight mt-0.5">Somersault flip turns, backstroke push-offs & streamlined dive entries.</p>
+                    <h4 class="text-xs font-bold text-slate-900 dark:text-white">Turns &amp; Block Dives</h4>
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-tight mt-0.5">Somersault flip turns, backstroke push-offs &amp; streamlined dive entries.</p>
                   </div>
                 </div>
 
@@ -418,8 +385,8 @@
                     <i class="fas fa-heart-pulse"></i>
                   </div>
                   <div>
-                    <h4 class="text-xs font-bold text-slate-900 dark:text-white">Aerobic Stamina & Speed</h4>
-                    <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-tight mt-0.5">Paced interval sets, heart-rate zone swimming & lactic recovery drills.</p>
+                    <h4 class="text-xs font-bold text-slate-900 dark:text-white">Aerobic Stamina &amp; Speed</h4>
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-tight mt-0.5">Paced interval sets, heart-rate zone swimming &amp; lactic recovery drills.</p>
                   </div>
                 </div>
 
@@ -465,6 +432,40 @@
             </div>
 
           </div>
+
+          <!-- Right on Desktop: 3-Picture Visual Showcase (order-1 lg:order-2) -->
+          <div class="lg:col-span-6 p-6 sm:p-8 flex flex-col justify-between bg-slate-100/60 dark:bg-slate-900/60 order-1 lg:order-2">
+            <!-- Active Featured Image with Badge -->
+            <div class="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-md bg-slate-200 dark:bg-slate-800">
+              <img id="teens-main-img" src="assets/img/hero-swimmer.jpg" alt="Teen swimmer practicing stroke biomechanics" class="w-full h-full object-cover transition-opacity duration-300">
+              <div class="absolute top-3 left-3 bg-blue-600/90 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full backdrop-blur-sm">
+                Photo Gallery · 3 Views
+              </div>
+              <div id="teens-img-caption" class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950/80 via-slate-950/40 to-transparent p-4 text-white text-xs font-semibold">
+                View 1: Technical stroke mechanics &amp; high-elbow catch refinement
+              </div>
+            </div>
+
+            <!-- 3 Pictures Thumbnails Row -->
+            <div class="mt-4 grid grid-cols-3 gap-3">
+              <button type="button" onclick="switchProgramImage('teens', 'assets/img/hero-swimmer.jpg', 'View 1: Technical stroke mechanics &amp; high-elbow catch refinement', this)" class="group gallery-ripple-hover rounded-xl overflow-hidden border-2 border-sky-500 shadow-sm focus:outline-none transition-all">
+                <img src="assets/img/hero-swimmer.jpg" alt="Stroke mechanics" class="w-full h-20 sm:h-24 object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="block bg-slate-900 text-white text-[9px] font-bold py-1 text-center truncate px-1">1. Stroke Form</span>
+              </button>
+
+              <button type="button" onclick="switchProgramImage('teens', 'assets/img/teens-2.jpg', 'View 2: Butterfly undulation, breaststroke whip &amp; dolphin kicks', this)" class="group gallery-ripple-hover rounded-xl overflow-hidden border-2 border-transparent hover:border-sky-400 shadow-sm focus:outline-none transition-all opacity-75 hover:opacity-100">
+                <img src="assets/img/teens-2.jpg" alt="Butterfly drills" class="w-full h-20 sm:h-24 object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="block bg-slate-900 text-white text-[9px] font-bold py-1 text-center truncate px-1">2. 4-Stroke Power</span>
+              </button>
+
+              <button type="button" onclick="switchProgramImage('teens', 'assets/img/teens-3.jpg', 'View 3: Competition lane stamina, interval sets &amp; tumble turns', this)" class="group gallery-ripple-hover rounded-xl overflow-hidden border-2 border-transparent hover:border-sky-400 shadow-sm focus:outline-none transition-all opacity-75 hover:opacity-100">
+                <img src="assets/img/teens-3.jpg" alt="Lane endurance" class="w-full h-20 sm:h-24 object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="block bg-slate-900 text-white text-[9px] font-bold py-1 text-center truncate px-1">3. Lane Drills</span>
+              </button>
+            </div>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-2 text-center italic">Click any photo above to inspect training phase</p>
+          </div>
+
         </div>
       </article>
 
@@ -608,54 +609,21 @@
 
 
       <!-- ========================================== -->
-      <!-- PROGRAM 4: COMPETITIVE PROGRAM (3 PICS & DESCRIBE) -->
+      <!-- PROGRAM 4: COMPETITIVE PROGRAM (3 PICS & DESCRIBE - ALTERNATE RIGHT) -->
       <!-- ========================================== -->
       <article id="competitive" data-program-category="competitive" class="bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border-2 border-sky-500 shadow-xl transition-all duration-300 hover:shadow-2xl relative">
         <div class="absolute top-4 right-4 rtl:right-auto rtl:left-4 bg-sky-500 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full z-10 shadow-md">
-          National Squad & Tryouts
+          National Squad &amp; Tryouts
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
           
-          <!-- Left: 3-Picture Visual Showcase -->
-          <div class="lg:col-span-6 p-6 sm:p-8 flex flex-col justify-between bg-slate-100/60 dark:bg-slate-900/60 border-b lg:border-b-0 lg:border-r border-slate-200/70 dark:border-slate-800">
-            <!-- Active Featured Image with Badge -->
-            <div class="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-md bg-slate-200 dark:bg-slate-800">
-              <img id="competitive-main-img" src="assets/img/competitive-1.jpg" alt="Competitive race dive block starts" class="w-full h-full object-cover transition-opacity duration-300">
-              <div class="absolute top-3 left-3 bg-amber-600/90 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full backdrop-blur-sm">
-                Photo Gallery · 3 Views
-              </div>
-              <div id="competitive-img-caption" class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950/80 via-slate-950/40 to-transparent p-4 text-white text-xs font-semibold">
-                View 1: Precision dive block reaction time & wedge launch mechanics
-              </div>
-            </div>
-
-            <!-- 3 Pictures Thumbnails Row -->
-            <div class="mt-4 grid grid-cols-3 gap-3">
-              <button type="button" onclick="switchProgramImage('competitive', 'assets/img/competitive-1.jpg', 'View 1: Precision dive block reaction time & wedge launch mechanics', this)" class="group gallery-ripple-hover rounded-xl overflow-hidden border-2 border-sky-500 shadow-sm focus:outline-none transition-all">
-                <img src="assets/img/competitive-1.jpg" alt="Dive block" class="w-full h-20 sm:h-24 object-cover group-hover:scale-105 transition-transform duration-300">
-                <span class="block bg-slate-900 text-white text-[9px] font-bold py-1 text-center truncate px-1">1. Dive Blocks</span>
-              </button>
-
-              <button type="button" onclick="switchProgramImage('competitive', 'assets/img/competitive-2.jpg', 'View 2: High cadence sprint power & butterfly racing velocity', this)" class="group gallery-ripple-hover rounded-xl overflow-hidden border-2 border-transparent hover:border-sky-400 shadow-sm focus:outline-none transition-all opacity-75 hover:opacity-100">
-                <img src="assets/img/competitive-2.jpg" alt="Sprint racing" class="w-full h-20 sm:h-24 object-cover group-hover:scale-105 transition-transform duration-300">
-                <span class="block bg-slate-900 text-white text-[9px] font-bold py-1 text-center truncate px-1">2. Sprint Racing</span>
-              </button>
-
-              <button type="button" onclick="switchProgramImage('competitive', 'assets/img/competitive-3.jpg', 'View 3: Dryland strength gym, core conditioning & video split metrics', this)" class="group gallery-ripple-hover rounded-xl overflow-hidden border-2 border-transparent hover:border-sky-400 shadow-sm focus:outline-none transition-all opacity-75 hover:opacity-100">
-                <img src="assets/img/competitive-3.jpg" alt="Dryland gym" class="w-full h-20 sm:h-24 object-cover group-hover:scale-105 transition-transform duration-300">
-                <span class="block bg-slate-900 text-white text-[9px] font-bold py-1 text-center truncate px-1">3. Dryland & Telemetry</span>
-              </button>
-            </div>
-            <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-2 text-center italic">Click any photo above to inspect training phase</p>
-          </div>
-
-          <!-- Right: Comprehensive Program Description -->
-          <div class="lg:col-span-6 p-6 sm:p-8 flex flex-col justify-between space-y-6">
+          <!-- Left on Desktop: Comprehensive Program Description (order-2 lg:order-1) -->
+          <div class="lg:col-span-6 p-6 sm:p-8 flex flex-col justify-between space-y-6 order-2 lg:order-1 border-t lg:border-t-0 lg:border-r border-slate-200/70 dark:border-slate-800">
             <div>
               <div class="flex flex-wrap items-center gap-2 mb-3">
                 <span class="px-3 py-1 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-300 text-xs font-black uppercase">Pro Squad</span>
-                <span class="px-3 py-1 rounded-full bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 text-xs font-bold">National & State Trials</span>
+                <span class="px-3 py-1 rounded-full bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 text-xs font-bold">National &amp; State Trials</span>
                 <span class="text-xs font-semibold text-amber-600 dark:text-amber-400 flex items-center gap-1"><i class="fas fa-trophy"></i> Championship Coaching</span>
               </div>
 
@@ -688,8 +656,8 @@
                     <i class="fas fa-dumbbell"></i>
                   </div>
                   <div>
-                    <h4 class="text-xs font-bold text-slate-900 dark:text-white">Dryland Strength & Core</h4>
-                    <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-tight mt-0.5">On-site athletic gym with resistance cords, medicine balls & explosive power.</p>
+                    <h4 class="text-xs font-bold text-slate-900 dark:text-white">Dryland Strength &amp; Core</h4>
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-tight mt-0.5">On-site athletic gym with resistance cords, medicine balls &amp; explosive power.</p>
                   </div>
                 </div>
 
@@ -698,8 +666,8 @@
                     <i class="fas fa-person-rays"></i>
                   </div>
                   <div>
-                    <h4 class="text-xs font-bold text-slate-900 dark:text-white">Race Strategy & Tapering</h4>
-                    <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-tight mt-0.5">Pacing for 50m sprints, 200m Medleys, 400m Free & National qualifications.</p>
+                    <h4 class="text-xs font-bold text-slate-900 dark:text-white">Race Strategy &amp; Tapering</h4>
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-tight mt-0.5">Pacing for 50m sprints, 200m Medleys, 400m Free &amp; National qualifications.</p>
                   </div>
                 </div>
 
@@ -708,8 +676,8 @@
                     <i class="fas fa-apple-whole"></i>
                   </div>
                   <div>
-                    <h4 class="text-xs font-bold text-slate-900 dark:text-white">Nutrition & Recovery</h4>
-                    <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-tight mt-0.5">Sports nutrition guidelines, ice recovery baths & physiotherapy support.</p>
+                    <h4 class="text-xs font-bold text-slate-900 dark:text-white">Nutrition &amp; Recovery</h4>
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-tight mt-0.5">Sports nutrition guidelines, ice recovery baths &amp; physiotherapy support.</p>
                   </div>
                 </div>
               </div>
@@ -745,6 +713,40 @@
             </div>
 
           </div>
+
+          <!-- Right on Desktop: 3-Picture Visual Showcase (order-1 lg:order-2) -->
+          <div class="lg:col-span-6 p-6 sm:p-8 flex flex-col justify-between bg-slate-100/60 dark:bg-slate-900/60 order-1 lg:order-2">
+            <!-- Active Featured Image with Badge -->
+            <div class="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-md bg-slate-200 dark:bg-slate-800">
+              <img id="competitive-main-img" src="assets/img/competitive-1.jpg" alt="Competitive race dive block starts" class="w-full h-full object-cover transition-opacity duration-300">
+              <div class="absolute top-3 left-3 bg-amber-600/90 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full backdrop-blur-sm">
+                Photo Gallery · 3 Views
+              </div>
+              <div id="competitive-img-caption" class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950/80 via-slate-950/40 to-transparent p-4 text-white text-xs font-semibold">
+                View 1: Precision dive block reaction time &amp; wedge launch mechanics
+              </div>
+            </div>
+
+            <!-- 3 Pictures Thumbnails Row -->
+            <div class="mt-4 grid grid-cols-3 gap-3">
+              <button type="button" onclick="switchProgramImage('competitive', 'assets/img/competitive-1.jpg', 'View 1: Precision dive block reaction time &amp; wedge launch mechanics', this)" class="group gallery-ripple-hover rounded-xl overflow-hidden border-2 border-sky-500 shadow-sm focus:outline-none transition-all">
+                <img src="assets/img/competitive-1.jpg" alt="Dive block" class="w-full h-20 sm:h-24 object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="block bg-slate-900 text-white text-[9px] font-bold py-1 text-center truncate px-1">1. Dive Blocks</span>
+              </button>
+
+              <button type="button" onclick="switchProgramImage('competitive', 'assets/img/competitive-2.jpg', 'View 2: High cadence sprint power &amp; butterfly racing velocity', this)" class="group gallery-ripple-hover rounded-xl overflow-hidden border-2 border-transparent hover:border-sky-400 shadow-sm focus:outline-none transition-all opacity-75 hover:opacity-100">
+                <img src="assets/img/competitive-2.jpg" alt="Sprint racing" class="w-full h-20 sm:h-24 object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="block bg-slate-900 text-white text-[9px] font-bold py-1 text-center truncate px-1">2. Sprint Racing</span>
+              </button>
+
+              <button type="button" onclick="switchProgramImage('competitive', 'assets/img/competitive-3.jpg', 'View 3: Dryland strength gym, core conditioning &amp; video split metrics', this)" class="group gallery-ripple-hover rounded-xl overflow-hidden border-2 border-transparent hover:border-sky-400 shadow-sm focus:outline-none transition-all opacity-75 hover:opacity-100">
+                <img src="assets/img/competitive-3.jpg" alt="Dryland gym" class="w-full h-20 sm:h-24 object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="block bg-slate-900 text-white text-[9px] font-bold py-1 text-center truncate px-1">3. Dryland &amp; Telemetry</span>
+              </button>
+            </div>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-2 text-center italic">Click any photo above to inspect training phase</p>
+          </div>
+
         </div>
       </article>
 
