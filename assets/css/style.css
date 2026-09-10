@@ -52,15 +52,14 @@ html {
   scroll-behavior: smooth;
 }
 
-/* 🌊 Global Luxury Aquatic Background Mesh & Water Lines */
+/* 🌊 Global Luxury Aquatic Background Mesh (Clean & Smooth Without Lines) */
 body {
-  background-color: #f0f9ff;
+  background-color: #f8fafc;
   background-image: 
-    radial-gradient(at 10% 10%, rgba(14, 165, 233, 0.16) 0px, transparent 45%),
-    radial-gradient(at 90% 25%, rgba(6, 182, 212, 0.16) 0px, transparent 45%),
-    radial-gradient(at 25% 65%, rgba(2, 132, 199, 0.13) 0px, transparent 50%),
-    radial-gradient(at 85% 85%, rgba(56, 189, 248, 0.15) 0px, transparent 50%),
-    url("data:image/svg+xml,%3Csvg width='80' height='28' viewBox='0 0 80 28' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 14 Q 20 2, 40 14 T 80 14' fill='none' stroke='%230284c7' stroke-width='1.5' stroke-opacity='0.09'/%3E%3C/svg%3E");
+    radial-gradient(at 10% 10%, rgba(14, 165, 233, 0.12) 0px, transparent 45%),
+    radial-gradient(at 90% 25%, rgba(6, 182, 212, 0.12) 0px, transparent 45%),
+    radial-gradient(at 25% 65%, rgba(2, 132, 199, 0.08) 0px, transparent 50%),
+    radial-gradient(at 85% 85%, rgba(56, 189, 248, 0.10) 0px, transparent 50%);
   background-attachment: fixed;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -69,11 +68,10 @@ body {
 html.dark body {
   background-color: #020817;
   background-image: 
-    radial-gradient(at 10% 10%, rgba(14, 165, 233, 0.22) 0px, transparent 45%),
-    radial-gradient(at 90% 25%, rgba(6, 182, 212, 0.18) 0px, transparent 45%),
-    radial-gradient(at 25% 65%, rgba(3, 105, 161, 0.20) 0px, transparent 50%),
-    radial-gradient(at 85% 85%, rgba(14, 165, 233, 0.18) 0px, transparent 50%),
-    url("data:image/svg+xml,%3Csvg width='80' height='28' viewBox='0 0 80 28' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 14 Q 20 2, 40 14 T 80 14' fill='none' stroke='%2338bdf8' stroke-width='1.5' stroke-opacity='0.12'/%3E%3C/svg%3E");
+    radial-gradient(at 10% 10%, rgba(14, 165, 233, 0.16) 0px, transparent 45%),
+    radial-gradient(at 90% 25%, rgba(6, 182, 212, 0.12) 0px, transparent 45%),
+    radial-gradient(at 25% 65%, rgba(3, 105, 161, 0.14) 0px, transparent 50%),
+    radial-gradient(at 85% 85%, rgba(14, 165, 233, 0.12) 0px, transparent 50%);
   background-attachment: fixed;
 }
 
@@ -725,20 +723,18 @@ a:hover footer img[src*="logo"] {
 }
 
 
-/* 🌊 Ambient Aquatic Glow & Caustic Water Reflections */
+/* 🌊 Ambient Aquatic Glow (Smooth & Clean) */
 .aquatic-section-glow {
   position: relative;
   background-image: 
-    radial-gradient(circle at 92% 12%, rgba(14, 165, 233, 0.09) 0%, transparent 45%),
-    radial-gradient(circle at 8% 88%, rgba(6, 182, 212, 0.09) 0%, transparent 45%),
-    url("data:image/svg+xml,%3Csvg width='100' height='26' viewBox='0 0 100 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 13 Q 25 2, 50 13 T 100 13' fill='none' stroke='%230284c7' stroke-width='1.2' stroke-opacity='0.065'/%3E%3C/svg%3E") !important;
+    radial-gradient(circle at 92% 12%, rgba(14, 165, 233, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 8% 88%, rgba(6, 182, 212, 0.08) 0%, transparent 45%) !important;
 }
 
 .dark .aquatic-section-glow {
   background-image: 
-    radial-gradient(circle at 92% 12%, rgba(14, 165, 233, 0.16) 0%, transparent 45%),
-    radial-gradient(circle at 8% 88%, rgba(6, 182, 212, 0.14) 0%, transparent 45%),
-    url("data:image/svg+xml,%3Csvg width='100' height='26' viewBox='0 0 100 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 13 Q 25 2, 50 13 T 100 13' fill='none' stroke='%2338bdf8' stroke-width='1.2' stroke-opacity='0.09'/%3E%3C/svg%3E") !important;
+    radial-gradient(circle at 92% 12%, rgba(14, 165, 233, 0.14) 0%, transparent 45%),
+    radial-gradient(circle at 8% 88%, rgba(6, 182, 212, 0.12) 0%, transparent 45%) !important;
 }
 
 /* Semi-translucent sections allowing background ripples to breathe */
