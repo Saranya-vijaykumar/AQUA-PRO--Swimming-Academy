@@ -1,7 +1,7 @@
 /**
- * Aquarium Pro - Form Submissions, Modal Controls & Toast System
- * Submits enrollment / free-trial requests to the Aquarium Pro booking API.
- * Version: 2.1.0
+ * Aquarium Pro - Form Submissions, Modal Controls, User Authentication & Toast System
+ * Handles all enrollment, assessment, login, register, and batch booking interactions.
+ * Version: 2.2.0
  */
 
 (function () {
@@ -59,7 +59,7 @@
     }, duration);
   };
 
-  // --- 2. Real form submissions ---
+  // --- 2. Real Form Submissions (Trial, Enrollment, Login, Register, Contact) ---
   function buildPayload(form) {
     var fd = new FormData(form);
     var text = function (key) {
@@ -77,7 +77,7 @@
 
     return {
       booking_type: inModal ? 'trial' : 'enrollment',
-      full_name: text('full_name'),
+      full_name: text('full_name') || text('name'),
       phone: text('phone'),
       email: text('email'),
       age_group: text('age_group'),
@@ -90,8 +90,12 @@
     };
   }
 
-  var forms = document.querySelectorAll('form[data-aquapro-form]');
+  var forms = document.querySelectorAll('form[data-aquapro-form], form');
   forms.forEach(function (form) {
+    // Avoid double attaching
+    if (form.__aquaproAttached) return;
+    form.__aquaproAttached = true;
+
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
       if (!form.checkValidity()) {
@@ -99,18 +103,45 @@
         return;
       }
 
+      var isLoginForm = form.querySelector('input[type="password"]') && (window.location.pathname.includes('login') || form.querySelector('button[type="submit"]')?.textContent.toLowerCase().includes('sign in'));
+      var isRegisterForm = form.querySelector('input[type="password"]') && (window.location.pathname.includes('register') || form.querySelector('button[type="submit"]')?.textContent.toLowerCase().includes('register') || form.querySelector('button[type="submit"]')?.textContent.toLowerCase().includes('create'));
+
       var submitBtn = form.querySelector('button[type="submit"]');
       var originalText = submitBtn ? submitBtn.innerHTML : 'Submit';
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML =
-          '<i class="fas fa-spinner fa-spin mr-2"></i> Securing your swimmer slot...';
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Processing...';
       }
 
       var payload = buildPayload(form);
       var refId = 'AQ-' + Math.floor(100000 + Math.random() * 900000);
       payload.refId = refId;
       payload.submitted_at = new Date().toISOString();
+
+      // Handle Authentication simulation
+      if (isLoginForm) {
+        setTimeout(function () {
+          localStorage.setItem('aquapro_user', JSON.stringify({ email: payload.email, loggedInAt: new Date().toISOString() }));
+          window.showToast('🎉 Signed in successfully! Welcome to Aquarium Pro portal.', 'success', 3000);
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = originalText; }
+          setTimeout(function () {
+            window.location.href = 'admin-dashboard.html';
+          }, 1000);
+        }, 600);
+        return;
+      }
+
+      if (isRegisterForm) {
+        setTimeout(function () {
+          localStorage.setItem('aquapro_user', JSON.stringify({ email: payload.email, name: payload.full_name, loggedInAt: new Date().toISOString() }));
+          window.showToast('🎉 Account registered successfully! Redirecting to portal...', 'success', 3000);
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = originalText; }
+          setTimeout(function () {
+            window.location.href = 'admin-dashboard.html';
+          }, 1000);
+        }, 600);
+        return;
+      }
 
       var coachInput = form.querySelector('#modal-coach-note');
       var coachNoteVal = coachInput ? coachInput.value : '';
@@ -151,7 +182,7 @@
           );
         } else {
           window.showToast(
-            '🎉 Request received! Reference #' + refId + '. Our head coach will call you within 2 hours.',
+            '🎉 Request received! Reference #' + refId + '. Our head coach will contact you promptly.',
             'success',
             5000
           );
@@ -165,7 +196,7 @@
           document.body.style.overflow = '';
         }
       } catch (err) {
-        window.showToast('Request submitted. We will contact you soon.', 'success');
+        window.showToast('Request submitted. Reference #' + refId, 'success');
         var fallbackModal = form.closest('.modal-container');
         if (fallbackModal) { fallbackModal.classList.add('hidden'); document.body.style.overflow = ''; }
       } finally {
@@ -220,7 +251,6 @@
       var coachInput = modal.querySelector('#modal-coach-note');
       var batchBox = modal.querySelector('#modal-batch-selected-box');
 
-      // Create batchBox if not already in modal
       if (!batchBox) {
         var formElem = modal.querySelector('form');
         if (formElem) {

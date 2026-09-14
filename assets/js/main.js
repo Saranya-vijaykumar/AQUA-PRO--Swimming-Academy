@@ -155,6 +155,35 @@
   // Close the main mobile drawer after selecting a page
   if (mobileMenuDrawer) mobileMenuDrawer.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileMenu));
 
+  
+  // --- Global Image Switcher for Programs & Facilities ---
+  window.switchProgramImage = function(programKey, newSrc, newCaption, clickedBtn) {
+    const imgElem = document.getElementById(programKey + '-main-img');
+    const captionElem = document.getElementById(programKey + '-img-caption');
+    if (!imgElem) return;
+
+    imgElem.style.opacity = '0.3';
+    setTimeout(() => {
+      imgElem.src = newSrc;
+      if (captionElem && newCaption) {
+        captionElem.textContent = newCaption;
+      }
+      imgElem.style.opacity = '1';
+    }, 150);
+
+    // Update active border on thumbnail
+    if (clickedBtn && clickedBtn.parentElement) {
+      const btns = clickedBtn.parentElement.querySelectorAll('button');
+      btns.forEach(b => {
+        b.classList.remove('border-sky-500', 'border-emerald-500', 'border-amber-500', 'border-cyan-500', 'border-2', 'opacity-100');
+        b.classList.add('border-transparent', 'opacity-75');
+      });
+      clickedBtn.classList.remove('border-transparent', 'opacity-75');
+      const activeColor = programKey === 'competitive' ? 'border-amber-500' : (programKey === 'adults' ? 'border-emerald-500' : (programKey === 'teens' ? 'border-sky-500' : 'border-sky-500'));
+      clickedBtn.classList.add(activeColor, 'border-2', 'opacity-100');
+    }
+  };
+
   // --- 4. Dynamic Programs Filter Engine ---
   const filterBtns = document.querySelectorAll('[data-program-filter]');
   const programCards = document.querySelectorAll('[data-program-category]');
@@ -449,3 +478,28 @@
 
 })();
 
+
+
+  // --- Desktop Navigation Dropdown Click Toggle ---
+  document.addEventListener('click', (e) => {
+    const dropBtn = e.target.closest('.group > button');
+    if (dropBtn) {
+      const menu = dropBtn.nextElementSibling;
+      if (menu && menu.classList.contains('absolute')) {
+        const isShown = menu.classList.contains('opacity-100');
+        if (isShown) {
+          menu.classList.remove('opacity-100', 'visible');
+          menu.classList.add('opacity-0', 'invisible');
+        } else {
+          menu.classList.remove('opacity-0', 'invisible');
+          menu.classList.add('opacity-100', 'visible');
+        }
+      }
+    } else {
+      // Close dropdowns if clicked outside
+      document.querySelectorAll('.group > .absolute').forEach(m => {
+        m.classList.remove('opacity-100', 'visible');
+        m.classList.add('opacity-0', 'invisible');
+      });
+    }
+  });
